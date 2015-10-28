@@ -478,9 +478,6 @@ if (!hello_run) {
                 $('body').append('<div class="medium" style="width: 100vw;height: 100vh;z-index: -999998;position: fixed; background: url('+content+');background-size: cover;top: 0;"></div>');
             }
         },
-        /*********************************************************************
-         * Some experimental features by ciscoG
-         */
         mobileSongTitle: function(){
             /* Show the song title on hover when in the mobile view */
             var mobileWidth = 1134;
@@ -514,27 +511,11 @@ if (!hello_run) {
             // bind on new song change
             Dubtrack.Events.bind("realtime:room_playlist-update", getTitle);
         },
-        twitchEmotes: function(){
-            // source:  https://twitchemotes.com/apidocs 
-            var GitHubLocation = 'https://rawgit.com/FranciscoG/DubX-Script/qa/js/';
-
-            $.getScript(GitHubLocation + 'twitchemotes.js', function(){
-              var re = new RegExp(Object.keys(twitchObject.emotes).join("|"),"g"); 
-              function makeImage(id){
-                return '<img class="emoji" src="//static-cdn.jtvnw.net/emoticons/v1/'+id+'/1.0" />';
-              }
-              function replaceTextWithEmote(){
-                var $last = $('.chat-main .text').last();
-                var emoted = $last.html().replace(re, function(matched){
-                  return makeImage(twitchObject.emotes[matched].image_id);
-                });
-                $last.html(emoted);
-              }
-              Dubtrack.Events.bind("realtime:chat-message", replaceTextWithEmote);
-            });
-        }, // end twitch Emotes
         emojiPreview: function(){
             /* global emojify, Dubtrack */
+            if (typeof emojify === 'undefined' || !emojify.emojiNames || emojify.emojiNames.length === 0) { 
+                return; // we can't do anything below if the emojis don't exist
+            }
             $('.pusher-chat-widget-input').prepend('<div id="emoji-preview" style="display: none; border: 1px solid #202020; position: absolute; bottom: 54px; background-color:#111;"></div>');
 
             function createImg(name) {
@@ -579,7 +560,6 @@ if (!hello_run) {
     hello.initialize();
     hello.personalize();
     hello.emojiPreview();
-    hello.twitchEmotes();
     hello.mobileSongTitle();
     setInterval(function() {
         hello.eta();
