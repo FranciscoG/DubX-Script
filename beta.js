@@ -540,7 +540,7 @@ if (!hello_run) {
             function createImg(name) {
                 return '<div style="display:inline-block">' +
                     '<img style="width: 1em; height: 1em; display:inline-block" src="'+emojify.defaultConfig.img_dir+'/'+encodeURI(name)+'.png" title=":'+name+':" alt=":'+name+':" align="absmiddle" />' +
-                    '<span style="font-size: 0.8em; display:inline-block; padding-left: 3px;">:' + name + ':, </span>' +
+                    '<span style="font-size: 0.8em; display:inline-block; padding:0 3px;">:' + name + ':</span>' +
                 '</div>';
             }
             function addToHelper(emojiArray) {
@@ -552,14 +552,14 @@ if (!hello_run) {
                 $('#emoji-preview').append(text).show();
             }
             function filterEmoji(str){
-                var finalStr = str.replace(/:;/g,"").replace("+","\\+");
-                var re = new RegExp('^' + finalStr ,"ig");
+                var finalStr = str.replace("+","\\+");
+                var re = new RegExp('^' + finalStr ,"i");
                 return emojify.emojiNames.filter(function(val){
                     return re.test(val);
                 });
             }
             var searchStr = "";
-            var emojiRegex = new RegExp(":([+\\-a-z0-9]+)$","i");
+            var emojiRegex = new RegExp(":([+\\-_a-z0-9]+)$","i");
             $(document.body).on('keyup', "#chat-txt-message", function(e) {
                 var currentText = $('#chat-txt-message').val();
 
