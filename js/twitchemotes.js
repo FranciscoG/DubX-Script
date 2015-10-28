@@ -624,3 +624,14 @@ window.twitchObject = {
     }
   }
 };
+
+(function(){
+  var key, keys = Object.keys(window.twitchObject.emotes);
+  var n = keys.length;
+  var newobj={};
+  while (n--) {
+    key = keys[n];
+    newobj[key.toLowerCase()] = window.twitchObject.emotes[key];
+  }
+  window.twitchObject.emotes = newobj;
+})();
