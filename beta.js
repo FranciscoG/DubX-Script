@@ -568,7 +568,7 @@ if (!hello_run) {
                     addToHelper(filterEmoji(p1));
                 });
                 
-                if (searchStr.length <= 0 || currentText.charAt(currentText.length - 1) === ":") {
+                if (e.keyCode === 13 || searchStr.length <= 0 || currentText.charAt(currentText.length - 1) === ":") {
                     searchStr = "";
                     $('#emoji-preview').empty().hide();
                 }
