@@ -516,7 +516,7 @@ if (!hello_run) {
         },
         twitchEmotes: function(){
             // source:  https://twitchemotes.com/apidocs 
-            var GitHubLocation = 'https://rawgit.com/FranciscoG/DubX-Script/dev/js/';
+            var GitHubLocation = 'https://rawgit.com/FranciscoG/DubX-Script/qa/js/';
 
             $.getScript(GitHubLocation + 'twitchemotes.js', function(){
               var re = new RegExp(Object.keys(twitchObject.emotes).join("|"),"g"); 
