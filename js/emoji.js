@@ -10,7 +10,7 @@ var hello = {
     on: function(){},
     off: function(){},
     option: function(){},
-    gitRoot: 'https://rawgit.com/FranciscoG/DubX-Script/dev',
+    gitRoot: 'https://rawgit.com/FranciscoG/DubX-Script/qa',
 
     // jQuery's getJSON kept returning errors so making my own with promise-like
     // structure and added optional Event to fire when done so can hook in elsewhere
