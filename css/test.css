@@ -7,7 +7,7 @@
 .for_content {
 	display: none;
 	position: absolute;
-	width: 344px;
+	width: 320px;
 	height: calc(100% - 112px);
 	right: 0px;
 	top: 56px;
@@ -155,15 +155,16 @@
 }
 
 /* Custom CSS for ranks & special users */
-#chat .chat-container ul.chat-main li.user-551d295433cd73030089d184 .activity-row .text span.username-handle {
-	color: #89BE6C !important;
-	font-weight: 600;
-	text-shadow: 0px 0px 1px #000;
-}
 #chat .chat-container ul.chat-main li.user-551d295433cd73030089d184 .activity-row .text p a.username:hover:before,
-#chat .chat-container ul.chat-main li.user-53f7c199892b010200a98809 .activity-row .text p a.username:hover:before,
+#chat .chat-container ul.chat-main li.user-53f7c199892b010200a98809 .activity-row .text p a.username:hover:before {
+	content: "Admin & DubX";
+    font-weight: 700;
+    font-family: proxima-nova,sans-serif;
+    font-size: 10px;
+}
 #chat .chat-container ul.chat-main li.user-55ff52375335f703008b0d38 .activity-row .text p a.username:hover:before,
-#chat .chat-container ul.chat-main li.user-5607c12b8c2ecf0300b4233b .activity-row .text p a.username:hover:before {
+#chat .chat-container ul.chat-main li.user-5607c12b8c2ecf0300b4233b .activity-row .text p a.username:hover:before,
+#chat .chat-container ul.chat-main li.user-56008425621a9e0300317238 .activity-row .text p a.username:hover:before {
     content: "DubX";
     font-weight: 700;
     font-family: proxima-nova,sans-serif;
@@ -179,7 +180,7 @@
 }
 #chat .chat-container ul.chat-main li.user-551d295433cd73030089d184 .activity-row .text p a.username:before,
 #chat .chat-container ul.chat-main li.user-53f7c199892b010200a98809 .activity-row .text p a.username:before {
-    content: "\f1af";
+    content: "\f137  \f1af";
     font-family: "foundation-icons";
     font-style: normal;
     font-weight: normal;
@@ -197,6 +198,7 @@ ul.avatar-list li.user-swordling p.dubs:before {
     font-weight: 700 !important;
     color: #89BE6C !important;
 }
+ul.avatar-list li.admin.user-sinful:after, ul.avatar-list li.admin.user-swordling:after,
 ul.avatar-list li.co-owner.user-sinful:after, ul.avatar-list li.co-owner.user-swordling:after,
 ul.avatar-list li.creator.user-sinful:after, ul.avatar-list li.creator.user-swordling:after,
 ul.avatar-list li.manager.user-sinful:after, ul.avatar-list li.manager.user-swordling:after,
@@ -207,12 +209,14 @@ ul.avatar-list li.currentDJ .user-sinful:after, ul.avatar-list li.currentDJ .use
 .user-swordling, .user-sinful, .user-swordling p.username, .user-sinful p.username {
     color: #89BE6C !important;
 }
+#main_avatar_room #main-user-list-room #avatar-list li.admin.user-sinful p.username, #main_avatar_room #main-user-list-room #avatar-list li.admin.user-sinful p.username:after,
 #main_avatar_room #main-user-list-room #avatar-list li.co-owner.user-sinful p.username, #main_avatar_room #main-user-list-room #avatar-list li.co-owner.user-sinful p.username:after,
 #main_avatar_room #main-user-list-room #avatar-list li.creator.user-sinful p.username, #main_avatar_room #main-user-list-room #avatar-list li.creator.user-sinful p.username:after,
 #main_avatar_room #main-user-list-room #avatar-list li.manager.user-sinful p.username, #main_avatar_room #main-user-list-room #avatar-list li.manager.user-sinful p.username:after,
 #main_avatar_room #main-user-list-room #avatar-list li.mod.user-sinful p.username, #main_avatar_room #main-user-list-room #avatar-list li.mod.user-sinful p.username:after,
 #main_avatar_room #main-user-list-room #avatar-list li.resident-dj.user-sinful p.username, #main_avatar_room #main-user-list-room #avatar-list li.resident-dj.user-sinful p.username:after,
 #main_avatar_room #main-user-list-room #avatar-list li.vip.user-sinful p.username, #main_avatar_room #main-user-list-room #avatar-list li.vip.user-sinful p.username:after,
+#main_avatar_room #main-user-list-room #avatar-list li.admin.user-swordling p.username, #main_avatar_room #main-user-list-room #avatar-list li.admin.user-swordling p.username:after,
 #main_avatar_room #main-user-list-room #avatar-list li.co-owner.user-swordling p.username, #main_avatar_room #main-user-list-room #avatar-list li.co-owner.user-swordling p.username:after,
 #main_avatar_room #main-user-list-room #avatar-list li.creator.user-swordling p.username, #main_avatar_room #main-user-list-room #avatar-list li.creator.user-swordling p.username:after,
 #main_avatar_room #main-user-list-room #avatar-list li.manager.user-swordling p.username, #main_avatar_room #main-user-list-room #avatar-list li.manager.user-swordling p.username:after,
@@ -376,7 +380,7 @@ ul.avatar-list li.admin p {
 /* Fix for no separation? */
 /** Admin **/
 #main_avatar_room #main-user-list-room #avatar-list li.admin p.username:after {
-	content: "-  Admin";
+	content: "-  Admin" !important;
 }
 
 /** Moderators **/

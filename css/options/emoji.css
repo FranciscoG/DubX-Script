@@ -48,8 +48,8 @@
 }
 
 #emoji-preview img {
-  height: 1.4em;
-  width: 1.4em;
+  max-height: 1.4em;
+  max-width: 1.4em;
   display:inline-block;
 }
 
@@ -62,4 +62,12 @@
   -o-transition: 0.4s;
   -webkit-transition: 0.4s;
   transition: 0.4s;
+}
+
+.twitch-emoji {
+  max-height: 1.4em;
+  max-width: 1.4em;
+  display: inline-block;
+  margin: 0 0 -.25em;
+  background-size: contain;
 }
