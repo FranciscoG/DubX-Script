@@ -44,6 +44,7 @@ if (!hello_run) {
             this.modules[moduleID].off = function(){ $("." + defineModule.cssClass + ' .for_content_off i').replaceWith('<i class="fi-x"></i>'); };
             this.modules[moduleID].option = function(value) { localStorage.setItem(moduleID, value); };
             
+            // this runs only once when a module is added.  It's like an "init" for the module
             if (defineModule.onAdd) { defineModule.onAdd(); }
 
             if (localStorage.getItem(moduleID.toLowerCase()) === 'true') {
@@ -615,10 +616,8 @@ if (!hello_run) {
                 this.option('false');
                 this.off();
             }
-        },
-
-
-    })
+        }
+    });
 
     hello.addModule('optionEmojiPreview', {
         isActive : false,
@@ -785,7 +784,7 @@ if (!hello_run) {
             }
         },
     });
-            
+
     hello.addModule('spacebar_mute', {
         isActive: false, 
         cssClass: 'spacebar_mute',
