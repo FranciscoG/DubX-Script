@@ -47,17 +47,18 @@ if (!hello_run) {
             // this runs only once when a module is added.  It's like an "init" for the module
             if (defineModule.onAdd) { defineModule.onAdd(); }
 
-            if (localStorage.getItem(moduleID.toLowerCase()) === 'true') {
-                defineModule.go();
+            if (localStorage.getItem(moduleID.toLowerCase()) === 'true' && !defineModule.alwaysOff) {
+                this.modules[moduleID].go();
             }
         },
 
         makeOptionMenu : function(){
-            var x, current, optionMenu = [];
+            var x, isOn, current, optionMenu = [];
             for (var mod in this.modules) {
                 current = this.modules[mod];
+                isOn = (current.isActive) ? 'check' : 'x';
                 x = '<li onclick="hello.modules.'+current.id+'.go();" class="for_content_li for_content_feature '+current.cssClass+'">' +
-                    '<p class="for_content_off"><i class="fi-x"></i></p>' +
+                    '<p class="for_content_off"><i class="fi-'+isOn+'"></i></p>' +
                     '<p class="for_content_p">'+current.title+'</p>' +
                 '</li>';
                 optionMenu.push(x);
@@ -281,6 +282,7 @@ if (!hello_run) {
         },
         go: function(){
             var isOn;
+            console.log(this.title, this.isActive);
             if (!this.isActive) {
                 this.isActive = true;
                 this.advance_vote();
@@ -416,6 +418,7 @@ if (!hello_run) {
     hello.addModule('afk_chat_respond', {
         isActive : false,
         cssClass : 'afk',
+        alwaysOff : true,
         title : 'AFK Autorespond',
         afk_chat_respond: function(e) {
             var content = e.message;
@@ -538,7 +541,7 @@ if (!hello_run) {
         chatRegex : new RegExp(":([-_a-z0-9]+):", "ig")
     };
 
-    hello.addModule('optionTwitchEmotes', {
+    hello.addModule('twitch_emotes', {
         isActive : false,
         cssClass : 'twitch_emotes',
         title : 'Twitch Emotes',
@@ -619,7 +622,7 @@ if (!hello_run) {
         }
     });
 
-    hello.addModule('optionEmojiPreview', {
+    hello.addModule('emoji_preview', {
         isActive : false,
         cssClass : 'emoji_preview',
         title: 'Emoji Preview',
@@ -642,26 +645,29 @@ if (!hello_run) {
             return s;
         },
         makeLi: function(type, name, img){
-            var container = this.makePreviewContainer("preview-container "+type+"-previews");
-            var span = this.makeNameSpan(name);
+            var self = hello.modules.emoji_preview;
+            var container = self.makePreviewContainer("preview-container "+type+"-previews");
+            var span = self.makeNameSpan(name);
             container.appendChild(img);
             container.appendChild(span);
             container.tabIndex = -1;
             return container;
         },
         createTwitchImg : function(id, name) {
+            var self = hello.modules.emoji_preview;
             var _src = hello.twitch.template.replace("{image_id}", id);
-            var img = this.makeEmoImage(_src);
+            var img = self.makeEmoImage(_src);
             img.title = name; img.alt = name;
-            return this.makeLi('twitch', name, img);
+            return self.makeLi('twitch', name, img);
         },
         createImg : function(name) {
-            var img = this.makeEmoImage(emojify.defaultConfig.img_dir+'/'+encodeURI(name)+'.png');
+            var self = hello.modules.emoji_preview;
+            var img = self.makeEmoImage(emojify.defaultConfig.img_dir+'/'+encodeURI(name)+'.png');
             img.title = ':'+name+':'; 
-            return this.makeLi('emoji', name, img);
+            return self.makeLi('emoji', name, img);
         },
         addToHelper : function(emojiArray) {
-            var self = this;
+            var self = hello.modules.emoji_preview;
             $('#emoji-preview').empty();
             var frag = document.createDocumentFragment();
             var _key;
@@ -682,7 +688,7 @@ if (!hello_run) {
             var finalStr = str.replace("+","\\+");
             var re = new RegExp('^' + finalStr, "i");
             var arrayToUse = emojify.emojiNames;
-            if (hello.modules.optionTwitchEmotes.isActive) {
+            if (hello.modules.twitch_emotes.isActive) {
                 arrayToUse = hello.emojiTwitch; // merged array
             }
             return arrayToUse.filter(function(val){
@@ -694,7 +700,7 @@ if (!hello_run) {
          * This handles the emoji preview in the chat input as you type
          */
         emojiKeyUpFunction: function(e){
-            var self = this;
+            var self = hello.modules.emoji_preview;
             var currentText = this.value;
             var filteredEmoji = currentText.replace(/:([+\\-_a-z0-9]+)$/i, function(matched, p1){
                 self.emojiSearchStr = p1;
@@ -714,30 +720,32 @@ if (!hello_run) {
             }
 
             if (e.keyCode === 38 || e.keyCode === 40 || $('.emoji-grow li').length === 1) {
-                hello.doNavigate(-1);
+                self.doNavigate(-1);
             }
         },
         displayBoxIndex : -1,
         doNavigate : function(diff) {
-            this.displayBoxIndex += diff;
+            var self = hello.modules.emoji_preview;
+            self.displayBoxIndex += diff;
             var oBoxCollection = $(".emoji-grow li");
-            if (this.displayBoxIndex >= oBoxCollection.length){
+            if (self.displayBoxIndex >= oBoxCollection.length){
                 this.displayBoxIndex = 0;
             }
-            if (this.displayBoxIndex < 0){
-                 this.displayBoxIndex = oBoxCollection.length - 1;
+            if (self.displayBoxIndex < 0){
+                 self.displayBoxIndex = oBoxCollection.length - 1;
              }
             var cssClass = "selected";
-            oBoxCollection.removeClass(cssClass).eq(this.displayBoxIndex).addClass(cssClass).focus();
+            oBoxCollection.removeClass(cssClass).eq(self.displayBoxIndex).addClass(cssClass).focus();
         },
         emojiKeyNavFunction: function(e){
+            var self = hello.modules.emoji_preview;
             if ( $('#emoji-preview').hasClass('emoji-grow')) {
                e.preventDefault();
                if (e.keyCode === 38) {
-                   hello.doNavigate(-1);
+                   self.doNavigate(-1);
                }
                else if (e.keyCode === 40) {
-                   hello.doNavigate(1);
+                   self.doNavigate(1);
                }
                else if (e.keyCode === 13) {
                    $('#emoji-preview li.selected').trigger('click');
@@ -746,13 +754,14 @@ if (!hello_run) {
             } 
         },
         updateChatInput: function(str){
-            var _re = new RegExp(":"+hello.emojiUtils.emojiSearchStr + "$");
+            var self = hello.modules.emoji_preview;
+            var _re = new RegExp(":"+self.emojiSearchStr + "$");
             var fixed_text = $("#chat-txt-message").val().replace(_re, str) + " ";
             $('#emoji-preview').empty().removeClass('emoji-grow');
             $("#chat-txt-message").val(fixed_text).focus();
         },
         emojiTwitchInit: function(){
-            var self = this;
+            var self = hello.modules.emoji_preview;
             // this will only be run once
             $('head').prepend('<link rel="stylesheet" type="text/css" href="'+hello.gitRoot+'/css/options/emoji.css">');
             var emojiPreview = document.createElement('ul');
