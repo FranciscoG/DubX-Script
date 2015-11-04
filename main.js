@@ -26,7 +26,7 @@
     Choice of Law
     This license is governed by the Laws of Norway. Disputes shall be settled by Oslo City Court.
 */ 
-/* global Dubtrack */
+/* global Dubtrack, emojify */
 
 var hello_run;
 if (!hello_run) {
@@ -40,9 +40,12 @@ if (!hello_run) {
             this.modules[moduleID] = defineModule;
             this.modules[moduleID].id = moduleID;
             
-            this.modules[moduleID].on = function(){ $("." + defineModule.cssClass + ' .for_content_off i').replaceWith('<i class="fi-check"></i>'); };
-            this.modules[moduleID].off = function(){ $("." + defineModule.cssClass + ' .for_content_off i').replaceWith('<i class="fi-x"></i>'); };
-            this.modules[moduleID].option = function(value) { localStorage.setItem(moduleID, value); };
+            this.modules[moduleID].toggle = function(state) {
+                var _icon = "x";
+                if (state === 'on') { _icon = 'check'; }
+                $("." + defineModule.cssClass + ' .for_content_off i').replaceWith('<i class="fi-'+_icon+'"></i>');
+            };
+            this.modules[moduleID].saveOption = function(value) { localStorage.setItem(moduleID, value); };
             
             // this runs only once when a module is added.  It's like an "init" for the module
             if (defineModule.onAdd) { defineModule.onAdd(); }
@@ -53,15 +56,16 @@ if (!hello_run) {
         },
 
         makeOptionMenu : function(){
-            var x, isOn, current, optionMenu = [];
+            var menuItem, icon, current, optionMenu = [];
             for (var mod in this.modules) {
                 current = this.modules[mod];
-                isOn = (current.isActive) ? 'check' : 'x';
-                x = '<li onclick="hello.modules.'+current.id+'.go();" class="for_content_li for_content_feature '+current.cssClass+'">' +
-                    '<p class="for_content_off"><i class="fi-'+isOn+'"></i></p>' +
+                icon = (current.isActive) ? 'check' : 'x';
+                if (current.altIcon) { icon = current.altIcon; }
+                menuItem = '<li onclick="hello.modules.'+current.id+'.go();" class="for_content_li for_content_feature '+current.cssClass+'">' +
+                    '<p class="for_content_off"><i class="fi-'+icon+'"></i></p>' +
                     '<p class="for_content_p">'+current.title+'</p>' +
                 '</li>';
-                optionMenu.push(x);
+                optionMenu.push(menuItem);
             }
             return optionMenu.join('');
         },
@@ -282,17 +286,16 @@ if (!hello_run) {
         },
         go: function(){
             var isOn;
-            console.log(this.title, this.isActive);
             if (!this.isActive) {
                 this.isActive = true;
                 this.advance_vote();
-                this.option('true');
-                this.on();
+                this.saveOption('true');
+                this.toggle('on');
                 Dubtrack.Events.bind("realtime:room_playlist-update", this.advance_vote);
             } else {
                 this.isActive = false;
-                this.option('false');
-                this.off();
+                this.saveOption('false');
+                this.toggle('off');
                 Dubtrack.Events.unbind("realtime:room_playlist-update", this.advance_vote);
             }
         }
@@ -306,43 +309,34 @@ if (!hello_run) {
             if (!this.isActive) {
                 this.isActive = true;
                 $('.chat-main').addClass('splitChat');
-                this.option('true');
-                this.on();
+                this.saveOption('true');
+                this.toggle('on');
             } else {
                 this.isActive = false;
                 $('.chat-main').removeClass('splitChat');
-                this.option('false');
-                this.off();
+                this.saveOption('false');
+                this.toggle('off');
             }
         }
     });
 
-    hello.addModule('wide_video', {
+    hello.addModule('fs', {
         isActive: false,
-        cssClass : 'wide_video',
+        cssClass : 'fs',
+        altIcon : 'arrows-out',
         title : 'Fullscreen',
-        onAdd : function(){
-            var self = this;
-            $(document.body).on('click', '.user-info-button', this.wide_video_disable);
-            window.addEventListener("resize", function(){
-                var window_width = $(window).width();
-                if (window_width <= 1185) {self.wide_video_disable();}
-            }, true);
-        },
-        wide_video_disable: function() {
-            $('.wide_video_link').remove();
-            this.isActive = false;
-            this.option('false');
-            this.off();
-        },
+        alwaysOff : true,
         go: function() {
-            if (!this.isActive) {
-                this.isActive = true;
-                this.option('true');
-                this.on();
-                $('head').prepend('<link class="wide_video_link" rel="stylesheet" type="text/css" href="'+hello.gitRoot+'/css/options/wide_video.css">');
-            } else {
-                this.wide_video_disable();
+            var elem = document.querySelector('.playerElement iframe');
+            if (!elem) { return; }
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.msRequestFullscreen) {
+                elem.msRequestFullscreen();
+            } else if (elem.mozRequestFullScreen) {
+                elem.mozRequestFullScreen();
+            } else if (elem.webkitRequestFullscreen) {
+                elem.webkitRequestFullscreen();
             }
         }
     });
@@ -356,15 +350,16 @@ if (!hello_run) {
                 this.isActive = true;
                 $('.backstretch').hide();
                 $('.medium').hide();
-                this.option('true');
-                this.on();
+                this.saveOption('true');
+                this.toggle('on');
             } else {
                 this.isActive = false;
                 $('.backstretch').show();
                 $('.medium').show();
-                this.option('false');
-                this.off();
+                this.saveOption('false');
+                this.toggle('off');
             }
+            console.log(this.title, this.isActive);
         }
     });
 
@@ -372,22 +367,18 @@ if (!hello_run) {
         isActive: false,
         cssClass : 'work',
         title : 'Work Mode',
-        onAdd : function(){
-            $(document.body).on('click', '.user-info-button',  this.disable_work);
-        },
         disable_work: function() {
             this.isActive = false;
             $('#main-room').show();
-            this.option('false');
-            this.off();
+            this.saveOption('false');
+            this.toggle('off');
         },
         go: function(){
             if (!this.isActive) {
                 this.isActive = true;
                 $('#main-room').hide();
-                hello.modules['wide_video'].wide_video_disable();
-                this.option('true');
-                this.on();
+                this.saveOption('true');
+                this.toggle('on');
             } else {
                 this.disable_work();
             }
@@ -404,13 +395,13 @@ if (!hello_run) {
                 window.onbeforeunload = function(e) {
                     return '';
                 };
-                this.option('true');
-                this.on();
+                this.saveOption('true');
+                this.toggle('on');
             } else {
                 this.isActive = false;
                 window.onbeforeunload = null;
-                this.option('false');
-                this.off();
+                this.saveOption('false');
+                this.toggle('off');
             }
         }
     });
@@ -440,11 +431,11 @@ if (!hello_run) {
             if (!this.isActive) {
                 this.isActive = true;
                 Dubtrack.Events.bind("realtime:chat-message", this.afk_chat_respond);
-                this.on();
+                this.toggle('on');
             } else {
                 this.isActive = false;
                 Dubtrack.Events.unbind("realtime:chat-message", this.afk_chat_respond);
-                this.off();
+                this.toggle('off');
             }
         }
     });
@@ -457,13 +448,13 @@ if (!hello_run) {
             if(!this.isActive) {
                 this.isActive = true;
                 $('head').append('<link class="chat_window_link" rel="stylesheet" type="text/css" href="'+hello.gitRoot+'/css/options/chat_window.css">');
-                this.option('true');
-                this.on();
+                this.saveOption('true');
+                this.toggle('on');
             } else {
                 this.isActive = false;
                 $('.chat_window_link').remove();
-                this.option('false');
-                this.off();
+                this.saveOption('false');
+                this.toggle('off');
             }
         }
     });
@@ -480,7 +471,7 @@ if (!hello_run) {
         css_import: function() {
             $('.css_import').remove();
             var css_to_import = $('.input').val();
-            this.option(css_to_import);
+            this.saveOption(css_to_import);
             $('head').append('<link class="css_import" href="'+css_to_import+'" rel="stylesheet" type="text/css">');
             $('.onErr').remove();
         },
@@ -500,16 +491,17 @@ if (!hello_run) {
                 }).done(function(e) {
                     var content = e.data.description;
                     var url = content.match(/(@dubx=)(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/);
+                    if (!url) { return; } // no room css exists 
                     var append = url[0].split('@dubx=');
                     $('head').append('<link class="css_world" href="'+append[1]+'" rel="stylesheet" type="text/css">');
                 });
-                this.option('true');
-                this.on();
+                this.saveOption('true');
+                this.toggle('on');
             } else {
                 this.isActive = false;
                 $('.css_world').remove();
-                this.option('false');
-                this.off();
+                this.saveOption('false');
+                this.toggle('off');
             }
         }
     });
@@ -522,13 +514,13 @@ if (!hello_run) {
             if (!this.isActive) {
                 this.isActive = true;
                 $('head').append('<link class="nicole_css" href="'+hello.gitRoot+'/themes/PlugTheme.css" rel="stylesheet" type="text/css">');
-                this.option('true');
-                this.on();
+                this.saveOption('true');
+                this.toggle('on');
             } else {
                 this.isActive = false;
                 $('.nicole_css').remove();
-                this.option('false');
-                this.off();
+                this.saveOption('false');
+                this.toggle('off');
             }
         }
     });
@@ -611,13 +603,13 @@ if (!hello_run) {
                 this.replaceTextWithEmote();
                 Dubtrack.Events.bind("realtime:chat-message", this.replaceTextWithEmote);
                 this.isActive = true;
-                this.option('true');
-                this.on();
+                this.saveOption('true');
+                this.toggle('on');
             } else {
                 Dubtrack.Events.unbind("realtime:chat-message", this.replaceTextWithEmote);
                 this.isActive = false;
-                this.option('false');
-                this.off();
+                this.saveOption('false');
+                this.toggle('off');
             }
         }
     });
@@ -782,14 +774,14 @@ if (!hello_run) {
                 $(document.body).on('keyup', "#chat-txt-message", this.emojiKeyUpFunction);
                 $(document.body).on('keyup', '.emoji-grow', this.emojiKeyNavFunction);
                 this.isActive = true;
-                this.option('true');
-                this.on();
+                this.saveOption('true');
+                this.toggle('on');
             } else {
                 $(document.body).off('keyup', "#chat-txt-message", this.emojiKeyUpFunction);
                 $(document.body).off('keyup', '.emoji-grow', this.emojiKeyNavFunction);
                 this.isActive = false;
-                this.option('false');
-                this.off();
+                this.saveOption('false');
+                this.toggle('off');
             }
         },
     });
@@ -809,14 +801,14 @@ if (!hello_run) {
                         $('.mute').click();
                     }
                 });
-                this.option('true');
-                this.on();
+                this.saveOption('true');
+                this.toggle('on');
             } else {
                 this.isActive = false;
                 isOn = 'off';
                 $(document).unbind("keypress.key32");
-                this.option('false');
-                this.off();
+                this.saveOption('false');
+                this.toggle('off');
             }
         }
     });
