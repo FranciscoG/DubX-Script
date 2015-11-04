@@ -58,7 +58,7 @@ a, a:active, a:focus, a:hover,
 
 /** DubX Feature Menus **/
 .onErr .container .control .confirm {
-	background: #AA74FE;
+	background: #AA74FE !important;
 }
 .for_content_c {
 	#color: #AA74FE !important;
@@ -134,7 +134,7 @@ span.name,
 	color: #AA74FE;
 }
 #mods-controllers .mods-controllers-main-wrapper .mod-controllers-headers a.active {
-	#color: #42A5DC;
+	#color: #42A5DC !important;
 }
 
 /* Video Buttons (bottom) */
