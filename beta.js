@@ -27,19 +27,7 @@
     This license is governed by the Laws of Norway. Disputes shall be settled by Oslo City Court.
 */ /* global Dubtrack, emojify */
 var hello_run;
-var ifUserBanned;
-$.ajax({
-    url: 'https://db.daggerling.com/',
-    method: 'GET',
-    async: false
-}).done(function(data) {
-    if (data.data.indexOf(Dubtrack.session.id) !== -1) {
-        ifUserBanned = true;
-    } else {
-        ifUserBanned = false;
-    }
-});
-if (!hello_run && Dubtrack.session.id && !ifUserBanned) {
+if (!hello_run && Dubtrack.session.id) {
     hello_run = true;
     var our_version = '03.03.00 - Happy Holidays';
 
@@ -78,6 +66,8 @@ if (!hello_run && Dubtrack.session.id && !ifUserBanned) {
 
     //Ref 1.1
     $('.player_sharing').append('<span class="icon-history eta_tooltip_t" onmouseover="hello.eta();" onmouseout="hello.hide_eta();"></span>');
+    $('.player_sharing').append('<span class="icon-mute snooze_btn" onclick="hello.snooze();" onmouseover="hello.snooze_tooltip();" onmouseout="hello.hide_snooze_tooltip();"></span>');
+    $('.icon-mute.snooze_btn:after').css({"content": "1", "vertical-align": "top", "font-size": "0.75rem", "font-weight": "700"});
 
     //Ref 2: Options
     var hello = {
@@ -95,7 +85,7 @@ if (!hello_run && Dubtrack.session.id && !ifUserBanned) {
             var html = [
                 '<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css">',
                 '<link rel="stylesheet" type="text/css" href="'+hello.gitRoot+'/css/asset.css">',
-                '<div class="for_content">',
+                '<div class="for_content" style="display:none;">',
                     '<span class="for_content_ver">DubX Settings</span>',
                     '<span class="for_content_version" onclick="hello.drawAll();" title="Collapse/Expand Menus">'+our_version+'</span>',
                     '<ul class="for_content_ul">',
@@ -451,13 +441,19 @@ if (!hello_run && Dubtrack.session.id && !ifUserBanned) {
             var booth_duration = parseInt($('.queue-position').text());
             var booth_time = (booth_duration * time - time) + current_time;
             if (booth_time >= 0) {
-                $('.eta_tooltip_t').append('<div class="eta_tooltip" style="position: absolute;font: 1rem/1.5 proxima-nova,sans-serif;display: block;left: -33px;cursor: pointer;border-radius: 1.5rem;padding: 8px 16px;background: #fff;font-weight: 700;font-size: 13.6px;text-transform: uppercase;color: #000;opacity: .8;text-align: center;z-index: 9;">ETA: '+booth_time+' minutes.</div>');
+                $('.eta_tooltip_t').append('<div class="eta_tooltip" style="position: absolute;font: 1rem/1.5 proxima-nova,sans-serif;display: block;left: -33px;cursor: pointer;border-radius: 1.5rem;padding: 8px 16px;background: #fff;font-weight: 700;font-size: 13.6px;text-transform: uppercase;color: #000;opacity: .8;text-align: center;z-index: 9;">ETA: '+booth_time+' minutes</div>');
             } else {
-                $('.eta_tooltip_t').append('<div class="eta_tooltip" style="position: absolute;font: 1rem/1.5 proxima-nova,sans-serif;display: block;left: -33px;cursor: pointer;border-radius: 1.5rem;padding: 8px 16px;background: #fff;font-weight: 700;font-size: 13.6px;text-transform: uppercase;color: #000;opacity: .8;text-align: center;z-index: 9;">You\'re not in the queue.</div>');
+                $('.eta_tooltip_t').append('<div class="eta_tooltip" style="position: absolute;font: 1rem/1.5 proxima-nova,sans-serif;display: block;left: -33px;cursor: pointer;border-radius: 1.5rem;padding: 8px 16px;background: #fff;font-weight: 700;font-size: 13.6px;text-transform: uppercase;color: #000;opacity: .8;text-align: center;z-index: 9;">You\'re not in the queue</div>');
             }
         },
         hide_eta: function() {
             $('.eta_tooltip').remove();
+        },
+        snooze_tooltip: function() {
+            $('.snooze_btn').append('<div class="snooze_tooltip" style="position: absolute;font: 1rem/1.5 proxima-nova,sans-serif;display: block;left: -33px;cursor: pointer;border-radius: 1.5rem;padding: 8px 16px;background: #fff;font-weight: 700;font-size: 13.6px;text-transform: uppercase;color: #000;opacity: .8;text-align: center;z-index: 9;">Mute current song</div>');
+        },
+        hide_snooze_tooltip: function() {
+            $('.snooze_tooltip').remove();
         },
         report_content: function() {
             var content = $('.input').val();
@@ -543,7 +539,7 @@ if (!hello_run && Dubtrack.session.id && !ifUserBanned) {
                     options.let_active_afk = false;
                     setTimeout(function() {
                         options.let_active_afk = true;
-                    }, 30000);
+                    }, 180000);
                 }
             }
         },
@@ -1055,18 +1051,28 @@ if (!hello_run && Dubtrack.session.id && !ifUserBanned) {
         },
         previewSearchStr : "",
         updateChatInput: function(str){
-            var regStart = "@";
-            if (str.indexOf(":") === 0) { regStart = ":";}
-            var _re = new RegExp(regStart+"[&!()\\-_a-z0-9]+?($|\\s)", "ig");
-            var fixed_text = $("#chat-txt-message").val().replace(_re, str  + " ");
+            var inputText = $("#chat-txt-message").val();
+            var updatedText = inputText.split(' ').map(function(c,i,r){
+                var fullStr = str.toLowerCase();
+                var partialStr = c.toLowerCase();
+                if (fullStr.indexOf(partialStr) === 0) { 
+                    return str;
+                } else {
+                    return c;
+                }
+            });
             $('#autocomplete-preview').empty().removeClass('ac-show');
-            $("#chat-txt-message").val(fixed_text).focus();
+            $("#chat-txt-message").val(updatedText.join(' ') + ' ').focus();
         },
         displayBoxIndex : -1,
         doNavigate : function(diff) {
             var self = hello;
             self.displayBoxIndex += diff;
             var oBoxCollection = $(".ac-show li");
+            
+            // remove "press enter to select" span
+            $('.ac-list-press-enter').remove();
+
             if (self.displayBoxIndex >= oBoxCollection.length){
                 hello.displayBoxIndex = 0;
             }
@@ -1074,7 +1080,8 @@ if (!hello_run && Dubtrack.session.id && !ifUserBanned) {
                  self.displayBoxIndex = oBoxCollection.length - 1;
              }
             var cssClass = "selected";
-            oBoxCollection.removeClass(cssClass).eq(self.displayBoxIndex).addClass(cssClass).focus();
+            var enterToSelectSpan = '<span class="ac-list-press-enter">press enter to select</span>';
+            oBoxCollection.removeClass(cssClass).eq(self.displayBoxIndex).addClass(cssClass).append(enterToSelectSpan).focus();
         },
         previewListKeyUp: function(e){
             e.preventDefault();
@@ -1087,7 +1094,8 @@ if (!hello_run && Dubtrack.session.id && !ifUserBanned) {
                     break;
                 case 39:
                 case 13:
-                    $('#autocomplete-preview li.selected').trigger('click');
+                    var new_text = $('#autocomplete-preview li.selected').find('.ac-text')[0].textContent;
+                    hello.updateChatInput(new_text);
                     break;
                 default:
                     $("#chat-txt-message").focus();
@@ -1165,7 +1173,7 @@ if (!hello_run && Dubtrack.session.id && !ifUserBanned) {
             // console.log("cursorPos", cursorPos);
             var strStart;
             var strEnd;
-            var inputRegex = new RegExp('(:|@)([&!()\+\-_a-z0-9]+)($|\s)', 'ig');
+            var inputRegex = new RegExp('(:|@)([&!()\\+\\-_a-z0-9]+)($|\\s)', 'ig');
             var filterText = currentText.replace(inputRegex, function(matched, p1, p2, p3, pos, str){
                 // console.dir( arguments );
                 strStart = pos;
@@ -1198,12 +1206,15 @@ if (!hello_run && Dubtrack.session.id && !ifUserBanned) {
                 $('#autocomplete-preview').empty().removeClass('ac-show');
             }
 
-            if ($('.ac-show li').length === 1) {
-                $('.ac-show li').append('<span>press enter to select</span>').addClass('selected');
+            // automatically make first item selectable if not already
+            if (!$('.ac-show li:first-child').find(".ac-list-press-enter").length) {
+                var spanToEnter = '<span class="ac-list-press-enter">press enter to select</span>';
+                $('.ac-show li:first-child').append(spanToEnter).addClass('selected');
             }
 
-            if ($('.ac-show li').length === 1 && e.keyCode === 13) {
-                $('#autocomplete-preview li:first').trigger('click');
+            if (e.keyCode === 13 && $('#autocomplete-preview li').length > 0) {
+                var new_text = $('#autocomplete-preview li.selected').find('.ac-text')[0].textContent;
+                hello.updateChatInput(new_text);
                 return;
             }
 
@@ -1350,6 +1361,30 @@ if (!hello_run && Dubtrack.session.id && !ifUserBanned) {
             Dubtrack.Events.bind("realtime:user-join", hello.updateUsersArray);
             Dubtrack.Events.bind("realtime:user-kick", hello.updateUsersArray);
             Dubtrack.Events.bind("realtime:user-leave", hello.updateUsersArray);
+        },
+        snooze: function() {
+            if (!hello.eventUtils.snoozed && Dubtrack.room.player.player_volume_level > 2) {
+                hello.eventUtils.currentVol = Dubtrack.room.player.player_volume_level;
+                Dubtrack.room.player.setVolume(0);
+                hello.eventUtils.snoozed = true;
+                Dubtrack.Events.bind("realtime:room_playlist-update", hello.eventSongAdvance);
+            } else if (hello.eventUtils.snoozed) {
+                Dubtrack.room.player.setVolume(hello.eventUtils.currentVol);
+                hello.eventUtils.snoozed = false;
+            }
+        },
+        eventSongAdvance: function(e) {
+            if (e.startTime < 2) {
+                if (hello.eventUtils.snoozed) {
+                    Dubtrack.room.player.setVolume(hello.eventUtils.currentVol);
+                    hello.eventUtils.snoozed = false;
+                }
+                return true;
+            }
+        },
+        eventUtils: {
+            currentVol: 50,
+            snoozed: false
         }
     };
     //Ref 3:
@@ -1465,8 +1500,6 @@ if (!hello_run && Dubtrack.session.id && !ifUserBanned) {
     }
     if (!Dubtrack.session.id) {
         onErr('You\'re not logged in. Please login to use DUBX.');
-    } else if (ifUserBanned) {
-        onErr('You\'ve been banned from using DUBX. If you believe this to be a mistake please contact us on Github');
     } else {
         onErr('Oh noes! We\'ve encountered a runtime error');
     };
