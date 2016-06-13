@@ -1,0 +1,3586 @@
+{
+    "gifs": {
+        "BearDance": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/gifs/7.gif",
+            "width": "27px"
+        },
+        "Bouncy": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/gifs/24.gif",
+            "width": "31px"
+        },
+        "CantTouchThis": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/gifs/10.gif",
+            "width": "18px"
+        },
+        "CarltonDance": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/gifs/29.gif",
+            "width": "51px"
+        },
+        "Chompy": {
+            "height": "25px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/gifs/50.gif",
+            "width": "25px"
+        },
+        "Ditto": {
+            "height": "28px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/gifs/48.gif",
+            "width": "28px"
+        },
+        "Donk": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/gifs/43.gif",
+            "width": "23px"
+        },
+        "Firework": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/gifs/40.gif",
+            "width": "37px"
+        },
+        "Flappy": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/gifs/44.gif",
+            "width": "62px"
+        },
+        "Gir": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/gifs/45.gif",
+            "width": "33px"
+        },
+        "HappyIsaac": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/gifs/52.gif",
+            "width": "34px"
+        },
+        "Headbang": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/gifs/35.gif",
+            "width": "35px"
+        },
+        "HeartGrab": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/gifs/49.gif",
+            "width": "35px"
+        },
+        "HighShere": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/gifs/25.gif",
+            "width": "35px"
+        },
+        "HighRowan": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/gifs/30.gif",
+            "width": "35px"
+        },
+        "Hypnotoad": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/gifs/12.gif",
+            "width": "50px"
+        },
+        "InYoFace": {
+            "height": "30px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/gifs/26.gif",
+            "width": "35px"
+        },
+        "JeffSpin": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/gifs/41.gif",
+            "width": "32px"
+        },
+        "JuanAndOnly": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/gifs/21.gif",
+            "width": "40px"
+        },
+        "Kappai": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/gifs/37.gif",
+            "width": "35px"
+        },
+        "KappaSpin": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/gifs/34.gif",
+            "width": "36px"
+        },
+        "KarateDance": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/gifs/23.gif",
+            "width": "35px"
+        },
+        "KirbyHP": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/gifs/53.gif",
+            "width": "29px"
+        },
+        "Kong": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/gifs/27.gif",
+            "width": "35px"
+        },
+        "Kupo": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/gifs/14.gif",
+            "width": "35px"
+        },
+        "MarioJackson": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/gifs/20.gif",
+            "width": "33px"
+        },
+        "MudkipDance": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/gifs/9.gif",
+            "width": "35px"
+        },
+        "NoBones": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/gifs/13.gif",
+            "width": "23px"
+        },
+        "PBJTime": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/gifs/15.gif",
+            "width": "33px"
+        },
+        "PeanutDance": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/gifs/4.gif",
+            "width": "28px"
+        },
+        "PugLife": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/gifs/33.gif",
+            "width": "53px"
+        },
+        "Putinonaritz": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/gifs/46.gif",
+            "width": "26px"
+        },
+        "RaptorDance": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/gifs/42.gif",
+            "width": "40px"
+        },
+        "Ravechu": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/gifs/51.gif",
+            "width": "48px"
+        },
+        "RedPanda": {
+            "height": "30px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/gifs/38.gif",
+            "width": "30px"
+        },
+        "SadBear": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/gifs/6.gif",
+            "width": "35px"
+        },
+        "Shepard": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/gifs/8.gif",
+            "width": "35px"
+        },
+        "Snoop": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/gifs/36.gif",
+            "width": "35px"
+        },
+        "Stitch": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/gifs/31.gif",
+            "width": "39px"
+        },
+        "Twerk": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/gifs/47.gif",
+            "width": "27px"
+        },
+        "TwoHearts": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/gifs/32.gif",
+            "width": "55px"
+        },
+        "WarmBeat": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/gifs/28.gif",
+            "width": "35px"
+        },
+        "boop": {
+            "height": "199px",
+            "url": "https://i.imgur.com/rvtP4u2.gif",
+            "width": "279px",
+            "hidden": true
+        },
+        "snugglebunny": {
+            "url": "https://i.imgur.com/ZiJYxCt.gif",
+            "width": "280px",
+            "height": "168px",
+            "hidden": true
+        }
+    },
+    "logos": {
+        "3LAU": {
+            "height": "19px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/387.png",
+            "width": "75px"
+        },
+        "7MD": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/41.png",
+            "width": "38px"
+        },
+        "Above&amp;Beyond": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/275.png",
+            "width": "37px"
+        },
+        "ActingDamage": {
+            "height": "28px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/388.png",
+            "width": "75px"
+        },
+        "Adri": {
+            "height": "18px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/86.png",
+            "width": "75px"
+        },
+        "AdventureClub": {
+            "height": "32px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/108.png",
+            "width": "75px"
+        },
+        "AeroChord": {
+            "height": "33px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/349.png",
+            "width": "75px"
+        },
+        "Afrojack": {
+            "height": "12px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/173.png",
+            "width": "75px"
+        },
+        "AlexanderPBN": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/12.png",
+            "width": "29px"
+        },
+        "AlexMORPH": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/162.png",
+            "width": "60px"
+        },
+        "AlphaVibez": {
+            "height": "34px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/142.png",
+            "width": "75px"
+        },
+        "Anamanaguchi": {
+            "height": "34px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/291.png",
+            "width": "75px"
+        },
+        "AndrewRayel": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/256.png",
+            "width": "33px"
+        },
+        "Anjunabeats": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/179.png",
+            "width": "70px"
+        },
+        "Apashe": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/152.png",
+            "width": "62px"
+        },
+        "ApproachingNirvana": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/296.png",
+            "width": "37px"
+        },
+        "Archie": {
+            "height": "20px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/299.png",
+            "width": "72px"
+        },
+        "Arion": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/153.png",
+            "width": "24px"
+        },
+        "Armada": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/72.png",
+            "width": "35px"
+        },
+        "Arty": {
+            "height": "22px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/257.png",
+            "width": "75px"
+        },
+        "ASOT": {
+            "height": "32px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/217.png",
+            "width": "75px"
+        },
+        "Astronaut": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/23.png",
+            "width": "42px"
+        },
+        "ATB": {
+            "height": "25px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/65.png",
+            "width": "74px"
+        },
+        "Atmozfears": {
+            "height": "26px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/143.png",
+            "width": "75px"
+        },
+        "Au5": {
+            "height": "30px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/34.png",
+            "width": "72px"
+        },
+        "Audien": {
+            "height": "24px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/389.png",
+            "width": "75px"
+        },
+        "Auratic": {
+            "height": "21px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/350.png",
+            "width": "72px"
+        },
+        "Autolaser": {
+            "height": "29px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/304.png",
+            "width": "70px"
+        },
+        "Auvic": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/330.png",
+            "width": "64px"
+        },
+        "AVB": {
+            "height": "30px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/88.png",
+            "width": "74px"
+        },
+        "Avicii": {
+            "height": "34px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/188.png",
+            "width": "75px"
+        },
+        "AZEDIA": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/55.png",
+            "width": "36px"
+        },
+        "BachelorsOfScience": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/292.png",
+            "width": "45px"
+        },
+        "BarelyAlive": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/219.png",
+            "width": "34px"
+        },
+        "BasementMusic": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/327.png",
+            "width": "32px"
+        },
+        "BassCity": {
+            "height": "30px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/408.png",
+            "width": "75px"
+        },
+        "BassNation": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/409.png",
+            "width": "35px"
+        },
+        "Bassnectar": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/390.png",
+            "width": "35px"
+        },
+        "Bcee": {
+            "height": "20px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/197.png",
+            "width": "75px"
+        },
+        "BingoPlayers": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/241.png",
+            "width": "36px"
+        },
+        "Bitclic": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/252.png",
+            "width": "35px"
+        },
+        "BMotion": {
+            "height": "13px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/193.png",
+            "width": "75px"
+        },
+        "BombsAway": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/308.png",
+            "width": "45px"
+        },
+        "Borgeous": {
+            "height": "20px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/139.png",
+            "width": "75px"
+        },
+        "Borgore": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/391.png",
+            "width": "26px"
+        },
+        "Botnek": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/203.png",
+            "width": "42px"
+        },
+        "Braken": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/29.png",
+            "width": "43px"
+        },
+        "BrookesBrothers": {
+            "height": "21px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/216.png",
+            "width": "75px"
+        },
+        "BT": {
+            "height": "26px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/154.png",
+            "width": "75px"
+        },
+        "BTSM": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/351.png",
+            "width": "28px"
+        },
+        "Bustre": {
+            "height": "15px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/46.png",
+            "width": "64px"
+        },
+        "CalvinHarris": {
+            "height": "32px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/167.png",
+            "width": "75px"
+        },
+        "Camo&amp;Krooked": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/140.png",
+            "width": "75px"
+        },
+        "CarlCox": {
+            "height": "30px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/185.png",
+            "width": "75px"
+        },
+        "Cartoon": {
+            "height": "16px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/367.png",
+            "width": "75px"
+        },
+        "Case&amp;Point": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/45.png",
+            "width": "53px"
+        },
+        "CashCash": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/137.png",
+            "width": "58px"
+        },
+        "Cazzette": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/239.png",
+            "width": "21px"
+        },
+        "Celldweller": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/155.png",
+            "width": "51px"
+        },
+        "Chainsmokers": {
+            "height": "14px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/298.png",
+            "width": "75px"
+        },
+        "Champion": {
+            "height": "21px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/87.png",
+            "width": "73px"
+        },
+        "Chase&amp;Status": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/417.png",
+            "width": "31px"
+        },
+        "ChemicalBrothers": {
+            "height": "27px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/135.png",
+            "width": "75px"
+        },
+        "ChillAndTrap": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/328.png",
+            "width": "35px"
+        },
+        "ChillCity": {
+            "height": "30px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/410.png",
+            "width": "75px"
+        },
+        "ChillNation": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/411.png",
+            "width": "35px"
+        },
+        "ChrisRamos": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/48.png",
+            "width": "61px"
+        },
+        "ClosedEyes": {
+            "height": "26px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/207.png",
+            "width": "75px"
+        },
+        "ConcordDawn": {
+            "height": "25px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/177.png",
+            "width": "75px"
+        },
+        "CoyoteKisses": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/368.png",
+            "width": "32px"
+        },
+        "Cryptex": {
+            "height": "17px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/418.png",
+            "width": "100px"
+        },
+        "CyberPixl": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/309.png",
+            "width": "36px"
+        },
+        "DadaLife": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/181.png",
+            "width": "38px"
+        },
+        "DaftPunk": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/103.png",
+            "width": "61px"
+        },
+        "DaftPunkGuy": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/74.png",
+            "width": "28px"
+        },
+        "DaftPunkThomas": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/73.png",
+            "width": "32px"
+        },
+        "Dannic": {
+            "height": "17px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/244.png",
+            "width": "75px"
+        },
+        "DannyByrd": {
+            "height": "34px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/116.png",
+            "width": "75px"
+        },
+        "DarrenStyles": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/276.png",
+            "width": "65px"
+        },
+        "DashBerlin": {
+            "height": "16px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/174.png",
+            "width": "75px"
+        },
+        "Datsik": {
+            "height": "19px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/318.png",
+            "width": "75px"
+        },
+        "DaTweekaz": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/277.png",
+            "width": "48px"
+        },
+        "DavidQuinn": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/258.png",
+            "width": "64px"
+        },
+        "DayOne": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/63.png",
+            "width": "32px"
+        },
+        "Deadmau5": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/22.png",
+            "width": "48px"
+        },
+        "Defqon1": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/70.png",
+            "width": "37px"
+        },
+        "DeltaHeavy": {
+            "height": "29px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/293.png",
+            "width": "75px"
+        },
+        "Deorro": {
+            "height": "15px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/259.png",
+            "width": "75px"
+        },
+        "Deutgen": {
+            "height": "25px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/50.png",
+            "width": "70px"
+        },
+        "Dexcell": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/118.png",
+            "width": "35px"
+        },
+        "DGM": {
+            "height": "28px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/289.png",
+            "width": "75px"
+        },
+        "DillonFrancis": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/164.png",
+            "width": "72px"
+        },
+        "DillonFrancisFace": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/101.png",
+            "width": "26px"
+        },
+        "Diplo": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/208.png",
+            "width": "29px"
+        },
+        "Direct": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/38.png",
+            "width": "37px"
+        },
+        "Dirtyphonics": {
+            "height": "33px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/131.png",
+            "width": "75px"
+        },
+        "Disclosure": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/331.png",
+            "width": "31px"
+        },
+        "Diskord": {
+            "height": "32px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/352.png",
+            "width": "75px"
+        },
+        "DJFresh": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/195.png",
+            "width": "41px"
+        },
+        "DnbPortal": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/324.png",
+            "width": "35px"
+        },
+        "DonDiablo": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/385.png",
+            "width": "36px"
+        },
+        "DonDiablo2": {
+            "height": "31px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/392.png",
+            "width": "75px"
+        },
+        "DotEXE": {
+            "height": "14px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/64.png",
+            "width": "75px"
+        },
+        "Draper": {
+            "height": "18px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/54.png",
+            "width": "73px"
+        },
+        "Droptek": {
+            "height": "25px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/24.png",
+            "width": "59px"
+        },
+        "DropTheBassline": {
+            "height": "27px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/189.png",
+            "width": "75px"
+        },
+        "Dubwoofer": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/227.png",
+            "width": "49px"
+        },
+        "DukeDumont": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/290.png",
+            "width": "39px"
+        },
+        "DVBBS": {
+            "height": "26px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/138.png",
+            "width": "75px"
+        },
+        "Dyro": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/243.png",
+            "width": "75px"
+        },
+        "EDMCity": {
+            "height": "33px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/412.png",
+            "width": "75px"
+        },
+        "EDMNetwork": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/278.png",
+            "width": "31px"
+        },
+        "EH!DE": {
+            "height": "27px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/232.png",
+            "width": "75px"
+        },
+        "ElectrostepNation": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/180.png",
+            "width": "34px"
+        },
+        "ElectrostepNetwork": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/120.png",
+            "width": "35px"
+        },
+        "Elephante": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/419.png",
+            "width": "49px"
+        },
+        "ElysianRecords": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/393.png",
+            "width": "23px"
+        },
+        "Eminence": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/42.png",
+            "width": "43px"
+        },
+        "Ephixa": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/16.png",
+            "width": "36px"
+        },
+        "Eptic": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/159.png",
+            "width": "75px"
+        },
+        "EpticRobot": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/160.png",
+            "width": "45px"
+        },
+        "EricPrydz": {
+            "height": "34px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/424.png",
+            "width": "75px"
+        },
+        "Excision": {
+            "height": "23px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/297.png",
+            "width": "75px"
+        },
+        "FarTooLoud": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/100.png",
+            "width": "29px"
+        },
+        "Favright": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/15.png",
+            "width": "35px"
+        },
+        "FavrightFace": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/14.png",
+            "width": "25px"
+        },
+        "FeedMe": {
+            "height": "33px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/260.png",
+            "width": "75px"
+        },
+        "Feint": {
+            "height": "15px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/26.png",
+            "width": "56px"
+        },
+        "FerryCorsten": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/201.png",
+            "width": "27px"
+        },
+        "FijiWiji": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/18.png",
+            "width": "35px"
+        },
+        "FijiWijiBag": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/20.png",
+            "width": "31px"
+        },
+        "Flite": {
+            "height": "15px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/186.png",
+            "width": "75px"
+        },
+        "Fliwo": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/93.png",
+            "width": "35px"
+        },
+        "Flume": {
+            "height": "15px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/261.png",
+            "width": "75px"
+        },
+        "FluxPavilion": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/369.png",
+            "width": "71px"
+        },
+        "Fono": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/394.png",
+            "width": "29px"
+        },
+        "FOOL": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/237.png",
+            "width": "40px"
+        },
+        "Foxsky": {
+            "height": "30px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/353.png",
+            "width": "75px"
+        },
+        "FoxStevenson": {
+            "height": "21px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/145.png",
+            "width": "75px"
+        },
+        "FoxStevenson2": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/425.png",
+            "width": "35px"
+        },
+        "Fractal": {
+            "height": "32px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/62.png",
+            "width": "73px"
+        },
+        "Frantix": {
+            "height": "24px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/317.png",
+            "width": "75px"
+        },
+        "FredV&amp;Grafix": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/370.png",
+            "width": "47px"
+        },
+        "Frontliner": {
+            "height": "21px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/262.png",
+            "width": "75px"
+        },
+        "FunkyPanda": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/371.png",
+            "width": "25px"
+        },
+        "FutureCity": {
+            "height": "25px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/413.png",
+            "width": "75px"
+        },
+        "Galantis": {
+            "height": "15px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/263.png",
+            "width": "75px"
+        },
+        "GalaxyMusic": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/336.png",
+            "width": "35px"
+        },
+        "Gammer": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/279.png",
+            "width": "40px"
+        },
+        "GarethEmery": {
+            "height": "29px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/161.png",
+            "width": "75px"
+        },
+        "Gemini": {
+            "height": "22px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/395.png",
+            "width": "75px"
+        },
+        "GoingQuantum": {
+            "height": "25px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/37.png",
+            "width": "74px"
+        },
+        "Goldfish": {
+            "height": "23px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/230.png",
+            "width": "75px"
+        },
+        "GoldfishLogo": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/229.png",
+            "width": "66px"
+        },
+        "Grabbitz": {
+            "height": "25px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/223.png",
+            "width": "75px"
+        },
+        "GrantBowtie": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/187.png",
+            "width": "40px"
+        },
+        "Griz": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/426.png",
+            "width": "49px"
+        },
+        "GUARD1AN": {
+            "height": "33px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/337.png",
+            "width": "35px"
+        },
+        "Habstrakt": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/354.png",
+            "width": "30px"
+        },
+        "Hardwell": {
+            "height": "15px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/77.png",
+            "width": "74px"
+        },
+        "Haszan&amp;Overload": {
+            "height": "24px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/338.png",
+            "width": "75px"
+        },
+        "Haywyre": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/47.png",
+            "width": "39px"
+        },
+        "Heatbeat": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/280.png",
+            "width": "50px"
+        },
+        "Hellberg": {
+            "height": "25px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/25.png",
+            "width": "71px"
+        },
+        "Herobust": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/355.png",
+            "width": "35px"
+        },
+        "HeroicRecordings": {
+            "height": "19px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/339.png",
+            "width": "75px"
+        },
+        "HexMusique": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/98.png",
+            "width": "34px"
+        },
+        "HighContrast": {
+            "height": "31px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/333.png",
+            "width": "75px"
+        },
+        "HighMaintenance": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/192.png",
+            "width": "57px"
+        },
+        "Histibe": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/220.png",
+            "width": "35px"
+        },
+        "HospitalRecords": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/71.png",
+            "width": "35px"
+        },
+        "HouseCity": {
+            "height": "27px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/414.png",
+            "width": "75px"
+        },
+        "HouseNation": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/415.png",
+            "width": "35px"
+        },
+        "HyperPotions": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/420.png",
+            "width": "75px"
+        },
+        "IlanBluestone": {
+            "height": "28px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/255.png",
+            "width": "75px"
+        },
+        "Imagin8": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/396.png",
+            "width": "43px"
+        },
+        "InfectedMushroom": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/397.png",
+            "width": "45px"
+        },
+        "INNO": {
+            "height": "31px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/178.png",
+            "width": "75px"
+        },
+        "INNOSpace": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/251.png",
+            "width": "35px"
+        },
+        "Insan3Lik3": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/10.png",
+            "width": "35px"
+        },
+        "Inspector": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/5.png",
+            "width": "60px"
+        },
+        "ISeeMonstas": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/233.png",
+            "width": "25px"
+        },
+        "IYFFE": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/206.png",
+            "width": "66px"
+        },
+        "JackU": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/372.png",
+            "width": "49px"
+        },
+        "JamesEgbert": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/356.png",
+            "width": "36px"
+        },
+        "JayCosmic": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/357.png",
+            "width": "58px"
+        },
+        "JesseAbiko": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/381.png",
+            "width": "75px"
+        },
+        "JohnOCallaghan": {
+            "height": "20px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/209.png",
+            "width": "75px"
+        },
+        "Joyryde": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/416.png",
+            "width": "48px"
+        },
+        "K-391": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/358.png",
+            "width": "65px"
+        },
+        "K-3912": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/373.png",
+            "width": "35px"
+        },
+        "KaiWachi": {
+            "height": "34px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/151.png",
+            "width": "75px"
+        },
+        "KarmaFields": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/340.png",
+            "width": "68px"
+        },
+        "Kasbo": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/234.png",
+            "width": "35px"
+        },
+        "Kasger": {
+            "height": "13px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/323.png",
+            "width": "75px"
+        },
+        "Kasum": {
+            "height": "26px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/281.png",
+            "width": "75px"
+        },
+        "KatKrazy": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/113.png",
+            "width": "36px"
+        },
+        "KatKrazyWhite": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/114.png",
+            "width": "28px"
+        },
+        "KDrew": {
+            "height": "18px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/149.png",
+            "width": "75px"
+        },
+        "Keeno": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/335.png",
+            "width": "42px"
+        },
+        "KevinVillecco": {
+            "height": "27px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/264.png",
+            "width": "75px"
+        },
+        "KeysNKrates": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/427.png",
+            "width": "35px"
+        },
+        "KickTheHabit": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/104.png",
+            "width": "48px"
+        },
+        "KillParis": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/282.png",
+            "width": "59px"
+        },
+        "KillTheNoise": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/283.png",
+            "width": "50px"
+        },
+        "KlangKarussell": {
+            "height": "19px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/165.png",
+            "width": "75px"
+        },
+        "Klingande": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/382.png",
+            "width": "40px"
+        },
+        "KnifeParty": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/35.png",
+            "width": "36px"
+        },
+        "KoalaKontrol": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/341.png",
+            "width": "35px"
+        },
+        "Kontor": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/194.png",
+            "width": "35px"
+        },
+        "Kove": {
+            "height": "19px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/215.png",
+            "width": "75px"
+        },
+        "Koven": {
+            "height": "19px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/265.png",
+            "width": "75px"
+        },
+        "Krewella": {
+            "height": "15px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/76.png",
+            "width": "72px"
+        },
+        "KTheory": {
+            "height": "17px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/428.png",
+            "width": "75px"
+        },
+        "Kygo": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/383.png",
+            "width": "35px"
+        },
+        "Labisch": {
+            "height": "15px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/228.png",
+            "width": "75px"
+        },
+        "LAOS": {
+            "height": "24px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/202.png",
+            "width": "75px"
+        },
+        "Laszlo": {
+            "height": "17px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/248.png",
+            "width": "75px"
+        },
+        "LAXX": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/214.png",
+            "width": "40px"
+        },
+        "LektriQue": {
+            "height": "29px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/398.png",
+            "width": "75px"
+        },
+        "LetsBeFriends": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/166.png",
+            "width": "37px"
+        },
+        "Liquicity": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/1.png",
+            "width": "40px"
+        },
+        "Loadstar": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/307.png",
+            "width": "40px"
+        },
+        "LondonElektricity": {
+            "height": "22px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/342.png",
+            "width": "75px"
+        },
+        "LondonGrammar": {
+            "height": "28px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/117.png",
+            "width": "75px"
+        },
+        "LVTHER": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/284.png",
+            "width": "40px"
+        },
+        "Macarize": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/359.png",
+            "width": "35px"
+        },
+        "Madeon": {
+            "height": "15px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/213.png",
+            "width": "75px"
+        },
+        "MADnB": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/198.png",
+            "width": "40px"
+        },
+        "MADubstep": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/105.png",
+            "width": "40px"
+        },
+        "Maduk": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/57.png",
+            "width": "29px"
+        },
+        "MajorLazer": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/360.png",
+            "width": "50px"
+        },
+        "MajorLook": {
+            "height": "25px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/322.png",
+            "width": "75px"
+        },
+        "MAKJ": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/266.png",
+            "width": "39px"
+        },
+        "MANT": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/240.png",
+            "width": "71px"
+        },
+        "marshmello": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/361.png",
+            "width": "64px"
+        },
+        "MartinGarrix": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/285.png",
+            "width": "44px"
+        },
+        "Matduke": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/157.png",
+            "width": "56px"
+        },
+        "Matoma": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/421.png",
+            "width": "35px"
+        },
+        "Matrix&amp;Futurebound": {
+            "height": "18px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/374.png",
+            "width": "75px"
+        },
+        "MatZo": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/236.png",
+            "width": "49px"
+        },
+        "MDK": {
+            "height": "26px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/311.png",
+            "width": "53px"
+        },
+        "Mediks": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/53.png",
+            "width": "59px"
+        },
+        "Melvv": {
+            "height": "18px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/221.png",
+            "width": "75px"
+        },
+        "Metrik": {
+            "height": "24px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/51.png",
+            "width": "74px"
+        },
+        "MichaelHerrera": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/362.png",
+            "width": "41px"
+        },
+        "MichaelPBN": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/13.png",
+            "width": "27px"
+        },
+        "MiddleMilk": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/343.png",
+            "width": "67px"
+        },
+        "Mikkas": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/246.png",
+            "width": "54px"
+        },
+        "MING": {
+            "height": "29px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/226.png",
+            "width": "75px"
+        },
+        "MitchellClaxton": {
+            "height": "23px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/112.png",
+            "width": "75px"
+        },
+        "MitiS": {
+            "height": "20px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/59.png",
+            "width": "72px"
+        },
+        "Modestep": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/17.png",
+            "width": "49px"
+        },
+        "Monoverse": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/130.png",
+            "width": "41px"
+        },
+        "Montee": {
+            "height": "30px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/210.png",
+            "width": "75px"
+        },
+        "MordFustang": {
+            "height": "33px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/235.png",
+            "width": "75px"
+        },
+        "MustDie!": {
+            "height": "19px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/158.png",
+            "width": "75px"
+        },
+        "Muzzy": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/8.png",
+            "width": "24px"
+        },
+        "MuzzyNew": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/250.png",
+            "width": "31px"
+        },
+        "MuzzyOld": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/7.png",
+            "width": "35px"
+        },
+        "MynuLeng": {
+            "height": "17px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/399.png",
+            "width": "75px"
+        },
+        "nanobii": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/111.png",
+            "width": "20px"
+        },
+        "nanobiiFace": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/121.png",
+            "width": "38px"
+        },
+        "NCS": {
+            "height": "32px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/190.png",
+            "width": "75px"
+        },
+        "Neilio": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/375.png",
+            "width": "61px"
+        },
+        "Nero": {
+            "height": "22px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/133.png",
+            "width": "75px"
+        },
+        "NERVO": {
+            "height": "21px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/205.png",
+            "width": "75px"
+        },
+        "Netsky": {
+            "height": "17px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/61.png",
+            "width": "75px"
+        },
+        "NeverSayDie": {
+            "height": "29px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/170.png",
+            "width": "75px"
+        },
+        "NGHTMRE": {
+            "height": "19px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/429.png",
+            "width": "75px"
+        },
+        "NickyRomero": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/132.png",
+            "width": "67px"
+        },
+        "NikCooper": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/168.png",
+            "width": "45px"
+        },
+        "NitroFun": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/81.png",
+            "width": "51px"
+        },
+        "Noisestorm": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/43.png",
+            "width": "60px"
+        },
+        "Noisia": {
+            "height": "11px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/225.png",
+            "width": "75px"
+        },
+        "NoisiaLogo": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/224.png",
+            "width": "35px"
+        },
+        "Nu:Logic": {
+            "height": "13px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/218.png",
+            "width": "75px"
+        },
+        "Nymfo": {
+            "height": "22px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/128.png",
+            "width": "75px"
+        },
+        "Obsidia": {
+            "height": "12px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/156.png",
+            "width": "75px"
+        },
+        "OliverHeldens": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/245.png",
+            "width": "43px"
+        },
+        "Omnitica": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/267.png",
+            "width": "51px"
+        },
+        "OnderKoffer": {
+            "height": "30px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/344.png",
+            "width": "75px"
+        },
+        "OVERWERK": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/253.png",
+            "width": "35px"
+        },
+        "Pandasian": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/99.png",
+            "width": "37px"
+        },
+        "Paradoxium": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/268.png",
+            "width": "42px"
+        },
+        "ParisBlohm": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/127.png",
+            "width": "75px"
+        },
+        "Parry": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/376.png",
+            "width": "75px"
+        },
+        "PartyGhost": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/150.png",
+            "width": "40px"
+        },
+        "PaulKalkbrenner": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/136.png",
+            "width": "35px"
+        },
+        "PaulvanDyk": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/200.png",
+            "width": "38px"
+        },
+        "PBNHeart": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/11.png",
+            "width": "40px"
+        },
+        "Pendulum": {
+            "height": "7px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/124.png",
+            "width": "75px"
+        },
+        "PIXL": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/40.png",
+            "width": "41px"
+        },
+        "plugdj": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/102.png",
+            "width": "33px"
+        },
+        "PorterRobinson": {
+            "height": "21px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/184.png",
+            "width": "75px"
+        },
+        "PriorityOne": {
+            "height": "27px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/249.png",
+            "width": "75px"
+        },
+        "ProdigyAnt": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/122.png",
+            "width": "35px"
+        },
+        "Project46": {
+            "height": "21px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/36.png",
+            "width": "71px"
+        },
+        "Protostar": {
+            "height": "16px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/60.png",
+            "width": "74px"
+        },
+        "PrototypeRaptor": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/377.png",
+            "width": "35px"
+        },
+        "Proximity": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/2.png",
+            "width": "26px"
+        },
+        "Puppet": {
+            "height": "25px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/303.png",
+            "width": "55px"
+        },
+        "Pylot": {
+            "height": "30px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/312.png",
+            "width": "103px"
+        },
+        "R3HAB": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/400.png",
+            "width": "75px"
+        },
+        "RamesesB": {
+            "height": "25px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/44.png",
+            "width": "57px"
+        },
+        "RamRecords": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/332.png",
+            "width": "35px"
+        },
+        "Razihel": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/67.png",
+            "width": "66px"
+        },
+        "Rezonate": {
+            "height": "19px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/58.png",
+            "width": "75px"
+        },
+        "RichEdwards": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/313.png",
+            "width": "75px"
+        },
+        "RIOT": {
+            "height": "20px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/364.png",
+            "width": "75px"
+        },
+        "RLGrime": {
+            "height": "30px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/365.png",
+            "width": "75px"
+        },
+        "RobGasser": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/247.png",
+            "width": "30px"
+        },
+        "Rockwell": {
+            "height": "14px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/175.png",
+            "width": "75px"
+        },
+        "Rogue": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/69.png",
+            "width": "31px"
+        },
+        "Rootkit": {
+            "height": "20px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/83.png",
+            "width": "72px"
+        },
+        "Rudimental": {
+            "height": "17px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/141.png",
+            "width": "75px"
+        },
+        "S3RL": {
+            "height": "20px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/301.png",
+            "width": "70px"
+        },
+        "SanHolo": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/306.png",
+            "width": "60px"
+        },
+        "Savant": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/163.png",
+            "width": "63px"
+        },
+        "SCNDL": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/21.png",
+            "width": "74px"
+        },
+        "Seafox": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/329.png",
+            "width": "35px"
+        },
+        "SevenLions": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/97.png",
+            "width": "35px"
+        },
+        "ShawnWasabi": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/222.png",
+            "width": "34px"
+        },
+        "Shazzka": {
+            "height": "31px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/79.png",
+            "width": "75px"
+        },
+        "ShockOne": {
+            "height": "11px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/191.png",
+            "width": "75px"
+        },
+        "Shogun": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/300.png",
+            "width": "44px"
+        },
+        "ShogunAudio": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/242.png",
+            "width": "31px"
+        },
+        "ShogunTaira": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/107.png",
+            "width": "35px"
+        },
+        "Showtek": {
+            "height": "22px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/110.png",
+            "width": "75px"
+        },
+        "Sian": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/27.png",
+            "width": "44px"
+        },
+        "Sigma": {
+            "height": "13px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/196.png",
+            "width": "75px"
+        },
+        "SirensCeol": {
+            "height": "13px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/109.png",
+            "width": "75px"
+        },
+        "Skism": {
+            "height": "27px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/378.png",
+            "width": "75px"
+        },
+        "Skrillex": {
+            "height": "33px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/92.png",
+            "width": "75px"
+        },
+        "Skrux": {
+            "height": "33px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/314.png",
+            "width": "25px"
+        },
+        "Slips&amp;Slurs": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/401.png",
+            "width": "58px"
+        },
+        "Smooth": {
+            "height": "16px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/96.png",
+            "width": "75px"
+        },
+        "Snails": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/115.png",
+            "width": "58px"
+        },
+        "Snakehips": {
+            "height": "13px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/269.png",
+            "width": "75px"
+        },
+        "Soulero": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/30.png",
+            "width": "68px"
+        },
+        "SoundRemedy": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/211.png",
+            "width": "63px"
+        },
+        "SpagHeddy": {
+            "height": "22px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/288.png",
+            "width": "75px"
+        },
+        "Spinnin": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/176.png",
+            "width": "35px"
+        },
+        "SpinninSpinnin": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/1.gif",
+            "width": "35px"
+        },
+        "Splitbreed": {
+            "height": "13px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/49.png",
+            "width": "73px"
+        },
+        "StationEarth": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/94.png",
+            "width": "35px"
+        },
+        "StephenWalking": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/82.png",
+            "width": "62px"
+        },
+        "Stereotronique": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/68.png",
+            "width": "75px"
+        },
+        "SteveAoki": {
+            "height": "30px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/78.png",
+            "width": "75px"
+        },
+        "Stonebank": {
+            "height": "32px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/85.png",
+            "width": "75px"
+        },
+        "SubFocus": {
+            "height": "19px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/422.png",
+            "width": "75px"
+        },
+        "Submatik": {
+            "height": "27px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/334.png",
+            "width": "35px"
+        },
+        "SuicideSheep": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/119.png",
+            "width": "32px"
+        },
+        "SummerWasFun": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/423.png",
+            "width": "37px"
+        },
+        "Super8&amp;Tab": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/326.png",
+            "width": "35px"
+        },
+        "SushiKiller": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/270.png",
+            "width": "44px"
+        },
+        "SwingWhale": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/379.png",
+            "width": "44px"
+        },
+        "SynCole": {
+            "height": "12px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/272.png",
+            "width": "75px"
+        },
+        "T-Nan": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/212.png",
+            "width": "43px"
+        },
+        "Televisor": {
+            "height": "33px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/39.png",
+            "width": "73px"
+        },
+        "Teminite": {
+            "height": "25px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/402.png",
+            "width": "75px"
+        },
+        "Teqq": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/19.png",
+            "width": "36px"
+        },
+        "TetrixBass": {
+            "height": "28px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/271.png",
+            "width": "75px"
+        },
+        "TheDubRebellion": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/403.png",
+            "width": "22px"
+        },
+        "TheEdenProject": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/305.png",
+            "width": "35px"
+        },
+        "TheFatRat": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/302.png",
+            "width": "28px"
+        },
+        "TheProdigy": {
+            "height": "22px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/123.png",
+            "width": "75px"
+        },
+        "ThePrototypes": {
+            "height": "13px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/129.png",
+            "width": "75px"
+        },
+        "TheSoundYouNeed": {
+            "height": "33px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/345.png",
+            "width": "75px"
+        },
+        "Throttle": {
+            "height": "28px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/52.png",
+            "width": "75px"
+        },
+        "ThugLife": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/386.png",
+            "width": "42px"
+        },
+        "Tiesto": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/89.png",
+            "width": "44px"
+        },
+        "Tobu": {
+            "height": "30px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/183.png",
+            "width": "75px"
+        },
+        "Traktion": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/346.png",
+            "width": "35px"
+        },
+        "Trap&amp;Bass": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/169.png",
+            "width": "74px"
+        },
+        "TrapBear": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/274.png",
+            "width": "43px"
+        },
+        "TrapCity": {
+            "height": "31px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/4.png",
+            "width": "75px"
+        },
+        "TrapNation": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/404.png",
+            "width": "39px"
+        },
+        "Tristam": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/9.png",
+            "width": "51px"
+        },
+        "Tritonal": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/405.png",
+            "width": "41px"
+        },
+        "Trivecta": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/75.png",
+            "width": "37px"
+        },
+        "TrolleySnatcha": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/287.png",
+            "width": "53px"
+        },
+        "TutTutChild": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/6.png",
+            "width": "72px"
+        },
+        "TVDS": {
+            "height": "18px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/56.png",
+            "width": "77px"
+        },
+        "Twine": {
+            "height": "29px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/294.png",
+            "width": "75px"
+        },
+        "TwoThirds": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/33.png",
+            "width": "68px"
+        },
+        "UKF": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/406.png",
+            "width": "35px"
+        },
+        "UKFDnb": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/32.png",
+            "width": "35px"
+        },
+        "UKFDubstep": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/31.png",
+            "width": "35px"
+        },
+        "Uppermost": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/273.png",
+            "width": "33px"
+        },
+        "Vanden": {
+            "height": "16px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/84.png",
+            "width": "74px"
+        },
+        "Vanic": {
+            "height": "31px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/348.png",
+            "width": "35px"
+        },
+        "Varien": {
+            "height": "13px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/204.png",
+            "width": "75px"
+        },
+        "Veela": {
+            "height": "19px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/199.png",
+            "width": "75px"
+        },
+        "Vexento": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/315.png",
+            "width": "27px"
+        },
+        "Vice&amp;Virtue": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/134.png",
+            "width": "67px"
+        },
+        "Vicetone": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/28.png",
+            "width": "63px"
+        },
+        "Viper": {
+            "height": "14px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/295.png",
+            "width": "75px"
+        },
+        "VirtualRiot": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/66.png",
+            "width": "53px"
+        },
+        "VOIA": {
+            "height": "27px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/106.png",
+            "width": "75px"
+        },
+        "VOIAHelmet": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/366.png",
+            "width": "33px"
+        },
+        "Volant": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/320.png",
+            "width": "33px"
+        },
+        "Vulpey": {
+            "height": "28px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/380.png",
+            "width": "75px"
+        },
+        "Wilkinson": {
+            "height": "20px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/319.png",
+            "width": "75px"
+        },
+        "Wobblecraft": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/171.png",
+            "width": "35px"
+        },
+        "WolfBeats": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/347.png",
+            "width": "30px"
+        },
+        "Woody": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/144.png",
+            "width": "42px"
+        },
+        "WRLD": {
+            "height": "30px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/95.png",
+            "width": "75px"
+        },
+        "Xilent": {
+            "height": "29px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/238.png",
+            "width": "75px"
+        },
+        "xKito": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/384.png",
+            "width": "35px"
+        },
+        "xKore": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/148.png",
+            "width": "35px"
+        },
+        "XYPO": {
+            "height": "26px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/407.png",
+            "width": "75px"
+        },
+        "YellowClaw": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/286.png",
+            "width": "52px"
+        },
+        "Zedd": {
+            "height": "25px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/147.png",
+            "width": "75px"
+        },
+        "ZedsDead": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/146.png",
+            "width": "24px"
+        },
+        "Zomboy": {
+            "height": "32px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/90.png",
+            "width": "73px"
+        },
+        "ZomboyFace": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/91.png",
+            "width": "33px"
+        },
+        "Zyphon": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/logos/254.png",
+            "width": "33px"
+        }
+    },
+    "misc": {
+        "Ackbar": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/83.png",
+            "width": "32px"
+        },
+        "Airhorn": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/136.png",
+            "width": "23px"
+        },
+        "AwesomeFace": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/17.png",
+            "width": "35px"
+        },
+        "Babby": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/3.png",
+            "width": "25px"
+        },
+        "Bacon": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/50.png",
+            "width": "35px"
+        },
+        "BadJoke": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/4.png",
+            "width": "35px"
+        },
+        "Bagon": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/27.png",
+            "width": "35px"
+        },
+        "BanHammer": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/91.png",
+            "width": "75px"
+        },
+        "Bazinga": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/28.png",
+            "width": "41px"
+        },
+        "Billy": {
+            "height": "34px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/137.png",
+            "width": "23px"
+        },
+        "Brother": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/151.png",
+            "width": "35px"
+        },
+        "CanYouNot": {
+            "height": "35px",
+            "width": "29px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/93.png"
+        },
+        "Carlton": {
+            "height": "35px",
+            "width": "25px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/38.png"
+        },
+        "Catbug": {
+            "height": "35px",
+            "width": "37px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/87.png"
+        },
+        "Cena": {
+            "height": "35px",
+            "width": "27px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/170.png"
+        },
+        "Choooone": {
+            "height": "35px",
+            "width": "75px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/62.png"
+        },
+        "ClapTrap": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/32.png",
+            "width": "37px"
+        },
+        "CrayC": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/165.png",
+            "width": "35px"
+        },
+        "Dank": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/160.png",
+            "width": "27px"
+        },
+        "Darude": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/110.png",
+            "width": "29px"
+        },
+        "Despair": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/114.png",
+            "width": "32px"
+        },
+        "DickButt": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/18.png",
+            "width": "28px"
+        },
+        "DoctorKappa": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/152.png",
+            "width": "29px"
+        },
+        "DogeW": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/164.png",
+            "width": "35px"
+        },
+        "Dolan": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/109.png",
+            "width": "25px"
+        },
+        "DonutOwl": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/100.png",
+            "width": "35px"
+        },
+        "DonutPanda": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/123.png",
+            "width": "37px"
+        },
+        "DogLick": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/171.png",
+            "width": "46px"
+        },
+        "DropThatBray": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/122.png",
+            "width": "35px"
+        },
+        "DropThatEmsi": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/116.png",
+            "width": "40px"
+        },
+        "DropThatRaptor": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/119.png",
+            "width": "40px"
+        },
+        "DropThatShere": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/117.png",
+            "width": "40px"
+        },
+        "DropThatSoap": {
+            "height": "34px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/124.png",
+            "width": "75px"
+        },
+        "DropTheBass": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/15.png",
+            "width": "40px"
+        },
+        "EmsiLick": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/15.png",
+            "width": "40px"
+        },
+        "EphixaCook": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/25.png",
+            "width": "21px"
+        },
+        "Facepalm": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/65.png",
+            "width": "35px"
+        },
+        "FOF": {
+            "height": "30px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/112.png",
+            "width": "50px"
+        },
+        "Foongus": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/40.png",
+            "width": "35px"
+        },
+        "GabeN": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/115.png",
+            "width": "28px"
+        },
+        "Gasp4": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/118.png",
+            "width": "35px"
+        },
+        "GayWolverine": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/10.png",
+            "width": "23px"
+        },
+        "Ghostbusters": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/125.png",
+            "width": "41px"
+        },
+        "Guinea": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/138.png",
+            "width": "44px"
+        },
+        "Glare": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/79.png",
+            "width": "55px"
+        },
+        "Goose": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/126.png",
+            "width": "44px"
+        },
+        "Grabbed": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/155.png",
+            "width": "73px"
+        },
+        "Headshot": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/59.png",
+            "width": "75px"
+        },
+        "hhhehehe": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/60.png",
+            "width": "42px"
+        },
+        "Hodor": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/1.png",
+            "width": "26px"
+        },
+        "HorseMask": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/92.png",
+            "width": "37px"
+        },
+        "Hue": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/43.png",
+            "width": "31px"
+        },
+        "Illuminati": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/36.png",
+            "width": "35px"
+        },
+        "ILoveHaters": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/156.png",
+            "width": "73px"
+        },
+        "ISeeWhat": {
+            "height": "33px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/106.png",
+            "width": "37px"
+        },
+        "Jaraxxus": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/140.png",
+            "width": "25px"
+        },
+        "Jeff": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/131.png",
+            "width": "32px"
+        },
+        "Jelly": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/30.png",
+            "width": "32px"
+        },
+        "JustDoIt": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/157.png",
+            "width": "36px"
+        },
+        "Kappify": {
+            "height": "33px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/146.png",
+            "width": "25px"
+        },
+        "KingKappa": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/147.png",
+            "width": "24px"
+        },
+        "Kirby": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/23.png",
+            "width": "38px"
+        },
+        "LeftShark": {
+            "height": "35px",
+            "width": "26px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/132.png"
+        },
+        "Legit": {
+            "height": "35px",
+            "width": "28px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/39.png"
+        },
+        "Lenny": {
+            "height": "20px",
+            "width": "56px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/99.png"
+        },
+        "Leviosah": {
+            "height": "35px",
+            "width": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/128.png"
+        },
+        "Lies": {
+            "height": "35px",
+            "width": "75px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/72.png"
+        },
+        "Loki": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/148.png",
+            "width": "32px"
+        },
+        "LondonFace": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/141.png",
+            "width": "21px"
+        },
+        "LongCatB": {
+            "height": "22px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/166.png",
+            "width": "43px"
+        },
+        "LongCatH": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/167.png",
+            "width": "43px"
+        },
+        "MoonMoon": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/139.png",
+            "width": "35px"
+        },
+        "NoSkip": {
+            "height": "35px",
+            "width": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/51.png"
+        },
+        "Notorious": {
+            "height": "35px",
+            "width": "75px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/172.png"
+        },
+        "NotSureIf": {
+            "height": "35px",
+            "width": "30px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/47.png"
+        },
+        "NotToday": {
+            "height": "35px",
+            "width": "29px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/94.png"
+        },
+        "NyanPasu": {
+           "height": "33px",
+           "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/142.png",
+           "width": "37px"
+        },
+        "OfficerKappa": {
+           "height": "35px",
+           "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/158.png",
+           "width": "30px"
+        },
+        "OhYou": {
+            "height": "35px",
+            "width": "53px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/102.png"
+        },
+        "OhYou2": {
+            "height": "35px",
+            "width": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/133.png"
+        },
+        "Orly": {
+            "height": "35px",
+            "width": "39px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/134.png"
+        },
+        "Peace": {
+            "height": "33px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/107.png",
+            "width": "24px"
+        },
+        "Pikachu": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/29.png",
+            "width": "41px"
+        },
+        "Potato": {
+            "height": "30px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/113.png",
+            "width": "49px"
+        },
+        "RageCage": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/11.png",
+            "width": "23px"
+        },
+        "Raptor": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/21.png",
+            "width": "35px"
+        },
+        "Raptor2": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/26.png",
+            "width": "33px"
+        },
+        "really": {
+           "height": "28px",
+           "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/143.png",
+           "width": "48px"
+        },
+        "Rekt": {
+            "height": "28px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/103.png",
+            "width": "28px"
+        },
+        "Rigged": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/159.png",
+            "width": "72px"
+        },
+        "SadMuffin": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/89.png",
+            "width": "35px"
+        },
+        "Sandu": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/41.png",
+            "width": "29px"
+        },
+        "Sanic": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/48.png",
+            "width": "38px"
+        },
+        "Scatman": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/135.png",
+            "width": "33px"
+        },
+        "Scotland": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/44.png",
+            "width": "31px"
+        },
+        "Serraphix": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/129.png",
+            "width": "35px"
+        },
+        "sGrin": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/127.png",
+            "width": "27px"
+        },
+        "Sherebug": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/88.png",
+            "width": "33px"
+        },
+        "Shrek": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/42.png",
+            "width": "35px"
+        },
+        "Shrek2": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/49.png",
+            "width": "35px"
+        },
+        "shrug": {
+           "height": "20px",
+           "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/144.png",
+           "width": "75px"
+        },
+        "Skappa": {
+           "height": "35px",
+           "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/168.png",
+           "width": "35px"
+        },
+        "SlothFace": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/12.png",
+            "width": "35px"
+        },
+        "Smash": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/95.png",
+            "width": "35px"
+        },
+        "Smug2": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/173.png",
+            "width": "27px"
+        },
+        "SmugLiz": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/104.png",
+            "width": "35px"
+        },
+        "Spam": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/61.png",
+            "width": "35px"
+        },
+        "Speed": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/52.png",
+            "width": "35px"
+        },
+        "Squappa": {
+            "height": "26px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/161.png",
+            "width": "35px"
+        },
+        "Squid": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/153.png",
+            "width": "35px"
+        },
+        "SuchDoge": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/2.png",
+            "width": "31px"
+        },
+        "TableFlip": {
+            "height": "13px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/145.png",
+            "width": "74px"
+        },
+        "tfw": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/80.png",
+            "width": "37px"
+        },
+        "TheHoff": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/174.png",
+            "width": "25px"
+        },
+        "Toast": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/82.png",
+            "width": "35px"
+        },
+        "Sinful": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/98.png",
+            "width": "35px"
+        },
+        "SoapChan": {
+            "height": "34px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/105.png",
+            "width": "55px"
+        },
+        "Steve": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/130.png",
+            "width": "35px"
+        },
+        "uwotm8": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/46.png",
+            "width": "25px"
+        },
+        "Waffle": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/90.png",
+            "width": "35px"
+        },
+        "wat": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/35.png",
+            "width": "27px"
+        },
+        "Weegee": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/162.png",
+            "width": "29px"
+        },
+        "welp": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/121.png",
+            "width": "35px"
+        },
+        "welp2": {
+            "height": "34px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/149.png",
+            "width": "39px"
+        },
+        "w0t": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/169.png",
+            "width": "35px"
+        },
+        "WOW": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/163.png",
+            "width": "35px"
+        },
+        "yarly": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/150.png",
+            "width": "39px"
+        },
+        "yee": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/120.png",
+            "width": "21px"
+        },
+        "YouDontSay": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/111.png",
+            "width": "33px"
+        },
+        "YouKnowIt": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/108.png",
+            "width": "33px"
+        },
+        "Zergling": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/misc/154.png",
+            "width": "50px"
+        }
+    },
+    "cats": {
+        "AngryMittens": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/cats/2.png",
+            "width": "36px"
+        },
+        "Basssss": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/cats/3.png",
+            "width": "36px"
+        },
+        "BoopBlock": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/cats/5.png",
+            "width": "35px"
+        },
+        "BoopInc": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/cats/6.png",
+            "width": "35px"
+        },
+        "Brushy": {
+            "height": "25px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/cats/8.gif",
+            "width": "33px"
+        },
+        "CatWink": {
+            "height": "28px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/cats/1.png",
+            "width": "34px"
+        },
+        "Despair2": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/cats/24.png",
+            "width": "35px"
+        },
+        "DontEven": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/cats/14.png",
+            "width": "43px"
+        },
+        "FatCat": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/cats/4.png",
+            "width": "35px"
+        },
+        "Gasp": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/cats/7.png",
+            "width": "35px"
+        },
+        "Gasp2": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/cats/22.png",
+            "width": "35px"
+        },
+        "Gasp3": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/cats/23.png",
+            "width": "35px"
+        },
+        "Gasp5": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/cats/25.png",
+            "width": "35px"
+        },
+        "Gasp6": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/cats/26.png",
+            "width": "32px"
+        },
+        "Gasp7": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/cats/28.png",
+            "width": "35px"
+        },
+        "Gasp420": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/cats/27.png",
+            "width": "39px"
+        },
+        "Grumpy": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/cats/8.png",
+            "width": "35px"
+        },
+        "KittyPalm": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/cats/9.png",
+            "width": "35px"
+        },
+        "OMG": {
+            "height": "35px",
+            "width": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/cats/10.png"
+        },
+        "PizzaCat": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/cats/12.png",
+            "width": "39px"
+        },
+        "Puss": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/cats/11.png",
+            "width": "35px"
+        },
+        "Sadness": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/cats/13.png",
+            "width": "35px"
+        },
+        "SayWhat": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/cats/15.png",
+            "width": "40px"
+        },
+        "ShadyCat": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/cats/16.png",
+            "width": "35px"
+        },
+        "SmartCat": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/cats/17.png",
+            "width": "35px"
+        },
+        "Smug": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/cats/18.png",
+            "width": "41px"
+        },
+        "Wilson": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/cats/21.png",
+            "width": "35px"
+        },
+        "Skrillbug": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/cats/19.png",
+            "width": "26px"
+        },
+        "Buggu": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/cats/20.png",
+            "width": "33px"
+        },
+        "ChillCat": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/cats/5.gif",
+            "width": "35px"
+        },
+        "HatersGonnaHate": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/cats/4.gif",
+            "width": "35px"
+        },
+        "HighCat": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/cats/6.gif",
+            "width": "35px"
+        },
+        "HKitty": {
+            "height": "33px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/cats/7.gif",
+            "width": "33px"
+        },
+        "NyanCat": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/cats/1.gif",
+            "width": "50px"
+        },
+        "SpazCat": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/cats/2.gif",
+            "width": "40px"
+        },
+        "Yaaay": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/cats/3.gif",
+            "width": "33px"
+        }
+    },
+    "tastycat": {
+        "DnbCat": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/tastycat/1.png",
+            "width": "35px"
+        },
+        "DrumstepCat": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/tastycat/8.png",
+            "width": "35px"
+        },
+        "DubstepCat": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/tastycat/9.png",
+            "width": "35px"
+        },
+        "EdmCat": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/tastycat/10.png",
+            "width": "35px"
+        },
+        "ElectroCat": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/tastycat/3.png",
+            "width": "35px"
+        },
+        "FutureBassCat": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/tastycat/17.png",
+            "width": "35px"
+        },
+        "GlitchCat": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/tastycat/5.png",
+            "width": "35px"
+        },
+        "HardDanceCat": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/tastycat/4.png",
+            "width": "35px"
+        },
+        "HouseCat": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/tastycat/2.png",
+            "width": "35px"
+        },
+        "NuDiscoCat": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/tastycat/6.png",
+            "width": "35px"
+        },
+        "TranceCat": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/tastycat/7.png",
+            "width": "35px"
+        },
+        "TrapCat": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/tastycat/18.png",
+            "width": "35px"
+        },
+        "Monstercat": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/tastycat/11.png",
+            "width": "35px"
+        },
+        "Monsterbutt": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/tastycat/20.png",
+            "width": "26px"
+        },
+        "RainbowCat": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/tastycat/1.gif",
+            "width": "32px"
+        },
+        "DanceCat": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/tastycat/3.gif",
+            "width": "35px"
+        },
+        "TastyBot": {
+            "height": "30px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/tastycat/19.png",
+            "width": "30px"
+        },
+        "Tastycat": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/tastycat/21.png",
+            "width": "35px"
+        },
+        "Tasty": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/tastycat/12.png",
+            "width": "35px"
+        },
+        "TastyKitten": {
+            "height": "32px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/tastycat/13.png",
+            "width": "35px"
+        },
+        "RaveCat": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/tastycat/2.gif",
+            "width": "33px"
+        }
+    },
+    "userfaces": {
+        "AbbyFace": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/41.png",
+            "width": "30px"
+        },
+        "AeroFace": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/1.png",
+            "width": "26px"
+        },
+        "AngryFungus": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/6.png",
+            "width": "28px"
+        },
+        "BananaBoi": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/64.png",
+            "width": "28px"
+        },
+        "BasicFace": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/45.png",
+            "width": "23px"
+        },
+        "BrayFace": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/51.png",
+            "width": "35px"
+        },
+        "BrayPalm": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/50.png",
+            "width": "35px"
+        },
+        "Brayspair": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/53.png",
+            "width": "35px"
+        },
+        "CeliFace": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/3.png",
+            "width": "30px"
+        },
+        "CeliGlasses": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/19.png",
+            "width": "35px"
+        },
+        "Dutto": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/46.png",
+            "width": "38px"
+        },
+        "EmsiFace": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/4.png",
+            "width": "25px"
+        },
+        "EmsiPalm": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/17.png",
+            "width": "28px"
+        },
+        "Fatsify": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/65.png",
+            "width": "25px"
+        },
+        "FlashFace": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/20.png",
+            "width": "28px"
+        },
+        "FrantixFace": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/52.png",
+            "width": "35px"
+        },
+        "FungChamp": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/67.png",
+            "width": "26px"
+        },
+        "FungFace": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/5.png",
+            "width": "25px"
+        },
+        "HallyFace": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/44.png",
+            "width": "35px"
+        },
+        "Hekya": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/47.png",
+            "width": "35px"
+        },
+        "HighBray": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/56.gif",
+            "width": "35px"
+        },
+        "HighEmsi": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/57.gif",
+            "width": "35px"
+        },
+        "IgorFace": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/38.png",
+            "width": "31px"
+        },
+        "IlyiaFace": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/63.png",
+            "width": "35px"
+        },
+        "InYoShere": {
+            "height": "30px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/58.gif",
+            "width": "35px"
+        },
+        "KatieFace": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/62.png",
+            "width": "34px"
+        },
+        "Labitch": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/40.png",
+            "width": "35px"
+        },
+        "MuffinChin": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/22.png",
+            "width": "28px"
+        },
+        "MuffinFace": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/10.png",
+            "width": "23px"
+        },
+        "MuffinLean": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/12.png",
+            "width": "31px"
+        },
+        "MuffinSmile": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/11.png",
+            "width": "25px"
+        },
+        "MuffinWhat": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/30.png",
+            "width": "30px"
+        },
+        "MuzzyFace": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/27.png",
+            "width": "22px"
+        },
+        "NashiFairy": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/25.png",
+            "width": "13px"
+        },
+        "NashiTutu": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/23.png",
+            "width": "22px"
+        },
+        "OmiFace": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/16.png",
+            "width": "25px"
+        },
+        "PandaFace": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/7.png",
+            "width": "30px"
+        },
+        "PuhzestFace": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/26.png",
+            "width": "24px"
+        },
+        "RaptorFace": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/9.png",
+            "width": "29px"
+        },
+        "RaptorPalm": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/33.png",
+            "width": "22px"
+        },
+        "Refute": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/49.png",
+            "width": "33px"
+        },
+        "RowanFace": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/39.png",
+            "width": "25px"
+        },
+        "SandyFace": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/21.png",
+            "width": "26px"
+        },
+        "DNAFace": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/48.png",
+            "width": "26px"
+        },
+        "SchlurbiDwit": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/54.png",
+            "width": "32px"
+        },
+        "SchlurbiFace": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/68.png",
+            "width": "28px"
+        },
+        "SchlurbiHappy": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/55.png",
+            "width": "24px"
+        },
+        "SchlurbiTongue": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/37.png",
+            "width": "25px"
+        },
+        "ShazzkaFace": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/28.png",
+            "width": "30px"
+        },
+        "Sherebie": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/43.png",
+            "width": "35px"
+        },
+        "ShereButt": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/59.png",
+            "width": "28px"
+        },
+        "ShereFace": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/15.png",
+            "width": "32px"
+        },
+        "ShereShave": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/42.png",
+            "width": "35px"
+        },
+        "ShereSpin": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/60.gif",
+            "width": "36px"
+        },
+        "ShereStache": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/18.png",
+            "width": "25px"
+        },
+        "Sheretato": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/61.png",
+            "width": "35px"
+        },
+        "SloaneFace": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/14.png",
+            "width": "35px"
+        },
+        "SloaneSmile": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/34.png",
+            "width": "30px"
+        },
+        "SpekFace": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/13.png",
+            "width": "32px"
+        },
+        "StanFace": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/2.png",
+            "width": "29px"
+        },
+        "Steven": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/66.png",
+            "width": "35px"
+        },
+        "SuperFace": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/36.png",
+            "width": "26px"
+        },
+        "UpSkirt": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/8.png",
+            "width": "31px"
+        },
+        "WTFungus": {
+            "height": "35px",
+            "url": "https://raw.githubusercontent.com/sinfulBA/DubX-Script/master/emotes/userfaces/35.png",
+            "width": "28px"
+        }
+    }
+}

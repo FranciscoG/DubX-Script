@@ -12,14 +12,17 @@ Our Team
  - [Kris](https://github.com/PossiblyKris) __(Helper/Developer)__
  - [Al3366](https://github.com/Al3366) __(Helper/Extension Manager)__
  - [Ciscog](https://github.com/FranciscoG) __(Helper/Developer)__
+ - [mbsurfer](https://github.com/coryshaw1) __(Helper/Developer)__
 
 -----------------
 IMPORTANT
 ---
 
-__Updates (Version 03.00.50)__
+__Updates (Version 03.05.00)__
 
-- Updated for the new Dubtrack UI
+ - Add ability to see dub vote information whenever hovering over the corresponding vote buttons
+ - Add option to see dub votes on your song as chat notifications
+ - __**NOTE*:__ All downdub vote information is only visible to mods and higher
 
 -----------------
 Usage
@@ -37,28 +40,36 @@ javascript:(function(){$.getScript('https://rawgit.com/sinfulBA/DubX-Script/mast
 Custom CSS
 ---
 
-* plug.dj theme made by Kris and edited by sinful. Paste `https://rawgit.com/sinfulBA/DubX-Script/master/themes/PlugTheme.css` in the Custom CSS option in Dub X, then click 'Okay' 
+* plug.dj theme made by Kris and edited by sinful. Paste `https://rawgit.com/sinfulBA/DubX-Script/master/themes/PlugTheme.css` in the Custom CSS option in Dub X, then click 'Okay'
 
 -----------------
 Features
 ---
 
 - Autovote
+- AFK Autorespond with Custom Message
+- Emotes
+- Autocomplete Emoji
+- Autocomplete Mentions
+- Custom Mention Triggers
+- Notification on Mentions
+- Dub Vote Information When Hovering Vote Buttons
+- Updub Chat Notification When DJ
+- Downdub Chat Notification When DJ (Mod Only)
 - Fullscreen Video
-- Notifications for moderators & friends (followers/following)
-- Ping for user mentions (will add a highlit bar on the side of the message container)
-- Staff (helps differentiate staff members from normal users)
-- Work Mode (no video or chat)
-- Bug Report (report bugs to the developers)
-- Split Chat (easily see the difference in chat blocks)
-- Custom CSS
-- Chat Only
-- Custom Background
+- Split Chat
+- Hide Chat
+- Hide Video
+- Hide Avatars
 - Hide Background
-- Community CSS
-- Prompt before refreshing page
-- Autorespond
-- Plug CSS Theme
+- Spacebar Mute
+- Show Timestamps
+- Warn on Navigation
+- plug.dj Theme
+- Community Theme
+- Custom CSS
+- Custom Background
+- Bug Report
 
 -----------------
 Translations
