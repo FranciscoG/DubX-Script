@@ -1,0 +1,19 @@
+{
+  "name": "dubx-script",
+  "version": "3.5.0",
+  "description": "- A simple script/extension for Dubtrack.fm",
+  "main": "beta.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sinfulBA/DubX-Script.git"
+  },
+  "author": "",
+  "license": "THE Q PUBLIC LICENSE version 1.0",
+  "bugs": {
+    "url": "https://github.com/sinfulBA/DubX-Script/issues"
+  },
+  "homepage": "https://github.com/sinfulBA/DubX-Script#readme"
+}
