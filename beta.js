@@ -1092,34 +1092,40 @@ if (!hello_run && Dubtrack.session.id) {
         },
         displayBoxIndex : -1,
         doNavigate : function(diff) {
+            var cssClass = "selected";
             var self = hello;
-            self.displayBoxIndex += diff;
             var oBoxCollection = $(".ac-show li");
+
+            // get current index of active element
+            var activeIndex = $('.' + cssClass).index();
+            // add/sub the new index
+            var newItem = activeIndex + diff;
             
             // remove "press enter to select" span
             $('.ac-list-press-enter').remove();
 
-            if (self.displayBoxIndex >= oBoxCollection.length){
-                hello.displayBoxIndex = 0;
+            var childLen = oBoxCollection.length;
+            if (newItem < 0) {
+                newItem = childLen - 1;
+            } else if (newItem > childLen - 1) {
+                newItem = 0;
             }
-            if (self.displayBoxIndex < 0){
-                 self.displayBoxIndex = oBoxCollection.length - 1;
-             }
-            var cssClass = "selected";
+            
             var enterToSelectSpan = '<span class="ac-list-press-enter">press enter to select</span>';
-            oBoxCollection.removeClass(cssClass).eq(self.displayBoxIndex).addClass(cssClass).append(enterToSelectSpan).focus();
+            oBoxCollection.removeClass(cssClass).eq(self.displayBoxIndex).addClass(cssClass);
+            $("."+cssClass).append(enterToSelectSpan).get(0).scrollIntoView(false);
         },
         previewListKeyUp: function(e){
             e.preventDefault();
             switch(e.keyCode) {
-                case 38:
+                case 38: // up
                     hello.doNavigate(-1);
                     break;
-                case 40:
+                case 40: // down
                     hello.doNavigate(1);
                     break;
-                case 39:
-                case 13:
+                case 39: // right arrow
+                case 13: // enter
                     var new_text = $('#autocomplete-preview li.selected').find('.ac-text')[0].textContent;
                     hello.updateChatInput(new_text);
                     break;
@@ -1140,6 +1146,7 @@ if (!hello_run && Dubtrack.session.id) {
             });
 
             $(document.body).on('keyup', '.ac-show', hello.previewListKeyUp);
+            $(document.body).on('keyup', '#chat-txt-message', hello.previewListKeyUp);
         },
         /**************************************************************************
          * A bunch of utility helpers for the emoji preview
