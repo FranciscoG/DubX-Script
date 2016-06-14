@@ -18,11 +18,10 @@ Our Team
 IMPORTANT
 ---
 
-__Updates (Version 03.05.00)__
+__Updates (Version 03.02.04)__
 
- - Add ability to see dub vote information whenever hovering over the corresponding vote buttons
- - Add option to see dub votes on your song as chat notifications
- - __**NOTE*:__ All downdub vote information is only visible to mods and higher
+- Added ability to set custom text phrases that trigger a mention sound
+- Notifications now check for custom mention triggers as well
 
 -----------------
 Usage
@@ -47,15 +46,12 @@ Features
 ---
 
 - Autovote
-- AFK Autorespond with Custom Message
+- AFK Autorespond
 - Emotes
 - Autocomplete Emoji
 - Autocomplete Mentions
 - Custom Mention Triggers
 - Notification on Mentions
-- Dub Vote Information When Hovering Vote Buttons
-- Updub Chat Notification When DJ
-- Downdub Chat Notification When DJ (Mod Only)
 - Fullscreen Video
 - Split Chat
 - Hide Chat
@@ -76,6 +72,32 @@ Translations
 ---
 
 **None so far**
+
+-----------------
+Development
+---
+
+Requirements:  
+- [NodeJS](https://nodejs.org/en/)
+- [Sass](http://sass-lang.com/) 
+
+Install Node dependencies from the root directory of the repo
+```bash
+$ npm install && npm install gulp -g
+```
+
+**Javascript**    
+In order to build all of the source files from `src/js/*` into `beta.js`, run:   
+```bash
+$ gulp
+```
+For continous development you can watch for changes and auto-compile by running:
+```bash
+$ gulp watch
+```
+
+**SASS/CSS**    
+_coming soon_
 
 -----------------
 Thanks To
