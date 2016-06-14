@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/sinfulBA/DubX-Script/issues"
   },
-  "homepage": "https://github.com/sinfulBA/DubX-Script#readme"
+  "homepage": "https://github.com/sinfulBA/DubX-Script#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0"
+  }
 }
