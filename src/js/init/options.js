@@ -39,5 +39,66 @@ var dubx = {
       downDubs: [],
       grabs: []
     }
+};
 
+dubx.saveOption = function(selector,value) {
+  localStorage.setItem(selector,value);
+
+  // new options
+  if ( /^draw/i.test(selector) ) {
+    dubx.settings.menu[selector] = value;
+  } else if (/(css|customAfkMessage)/i.test(selector)) {
+    dubx.settings.custom[selector] = value;
+  } else {
+    dubx.settings.general[selector] = value;
+  }
+  localStorage.setItem( 'dubxUserSettings', JSON.stringify(dubx.settings) );
+};
+
+/**
+ * TODO: go through all the files and replace .on and .off with the new toggleOption
+ */
+
+// deprecating these 2 eventually, for now they are pass-throughs
+dubx.on = function(selector) {
+  // $(selector + ' .for_content_off i').replaceWith('<i class="fi-check"></i>');
+  dubx.toggleOption(selector, true);
+};
+dubx.off = function(selector) {
+  // $(selector + ' .for_content_off i').replaceWith('<i class="fi-x"></i>');
+  dubx.toggleOption(selector, false);
+};
+
+/**
+ * Updates the on/off state of the option in the dubx menu
+ * @param  {String} selector name of the selector to be updated
+ * @param  {Bool} state      true to convert to checkmark, false to convert to an X
+ * @return {undefined}         
+ */
+dubx.toggleOption = function(selector, state){
+  var status = state ? "check" : "x";
+  $(selector + ' .for_content_off i').replaceWith('<i class="fi-'+status+'"></i>');
+};
+
+
+/**
+ * converts a string from camelCase to snake_case
+ * @param  {String} str the camelCase string
+ * @return {String}     the converted snake_case string
+ */
+dubx.camelToSnake = function (str){
+  return str.replace(/([A-Z])/g, function (x,y){
+    return "_" + y.toLowerCase();
+  }).replace(/^_/, "");
+};
+
+/**
+ * converts a string in snake_case to camelCase
+ * @param  {String} str the snake_case string
+ * @return {String}     the converted camelCase string
+ */
+dubx.snakeToCamel = function (str) {
+  return str.replace(/(_[a-z])/ig, function (x,y){
+    return y.replace("_","").toUpperCase();
+  });
 };

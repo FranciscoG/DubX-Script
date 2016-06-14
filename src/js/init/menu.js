@@ -1,9 +1,6 @@
 /* global dubx */
-dubx.saveOption = function(selector,value) {
-  localStorage.setItem(selector,value);
-};
-
 dubx.sectionList = ['draw_general','draw_userinterface','draw_settings','draw_customize','draw_contact','draw_social','draw_chrome'];
+
 dubx.drawSection = function(el) {
     $(el).next('ul').slideToggle('fast');
     var sectionClass = $(el).next('ul').attr('class');
@@ -22,42 +19,44 @@ dubx.drawSection = function(el) {
     }
 
 };
+
+dubx.openAllMenus = function(){
+  dubx.sectionList.forEach(function(section,i,arr){
+    $('.'+section).slideDown('fast');
+    $('.'+section).prev('li').find('i').removeClass('fi-plus').addClass('fi-minus');
+    dubx.saveOption(section, 'true');
+    dubx.options[section] = 'true';
+  });
+};
+
+dubx.closeAllMenus = function(){
+  dubx.sectionList.forEach(function(section,i,arr){
+    $('.'+section).slideUp();
+    $('.'+section).prev('li').find('i').removeClass('fi-minus').addClass('fi-plus');
+    dubx.saveOption(section,'false');
+    dubx.options[section] = 'false';
+  });
+};
+
 dubx.drawAll = function() {
     var allClosed = true;
-    var i;
-    for(i = 0; i < dubx.sectionList.length; i++) {
-        if($('.'+dubx.sectionList[i]).css('display') === 'block'){
-            allClosed = false;
-        }
-    }
+
+    dubx.sectionList.forEach(function(section, i, arr){
+      if($('.'+section).css('display') === 'block'){
+          allClosed = false;
+      }
+    });
 
     if(allClosed) {
-        dubx.sectionList.forEach(function(section,i,arr){
-          $('.'+section).slideDown('fast');
-          $('.'+section).prev('li').find('i').removeClass('fi-plus').addClass('fi-minus');
-          dubx.saveOption(section, 'true');
-          dubx.options[section] = 'true';
-        });
+      dubx.openAllMenus();
     }
     else {
-        dubx.sectionList.forEach(function(section,i,arr){
-          $('.'+section).slideUp();
-          $('.'+section).prev('li').find('i').removeClass('fi-minus').addClass('fi-plus');
-          dubx.saveOption(section,'false');
-          dubx.options[section] = 'false';
-        });
+      dubx.closeAllMenus();
     }
 };
 
 dubx.slide = function() {
   $('.for_content').slideToggle('fast');
-};
-
-dubx.on = function(selector) {
-  $(selector + ' .for_content_off i').replaceWith('<i class="fi-check"></i>');
-};
-dubx.off = function(selector) {
-  $(selector + ' .for_content_off i').replaceWith('<i class="fi-x"></i>');
 };
 
 dubx.menu = {
@@ -83,11 +82,11 @@ dubx.menu = {
               '<p onclick="dubx.createAfkMessage();" class="for_content_edit" style="display: inline-block;color: #878c8e;font-size: .85rem;font-weight: bold;float: right;"><i class="fi-pencil"></i></p>',
               '<p class="for_content_p">AFK Autorespond</p>',
           '</li>',
-          '<li onclick="dubx.optionTwitchEmotes();" class="for_content_li for_content_feature twitch_emotes">',
+          '<li onclick="dubx.twitch_emotes();" class="for_content_li for_content_feature twitch_emotes">',
               '<p class="for_content_off"><i class="fi-x"></i></p>',
               '<p class="for_content_p">Emotes</p>',
           '</li>',
-          '<li onclick="dubx.optionEmojiPreview();" class="for_content_li for_content_feature emoji_preview">',
+          '<li onclick="dubx.emoji_preview();" class="for_content_li for_content_feature emoji_preview">',
               '<p class="for_content_off"><i class="fi-x"></i></p>',
               '<p class="for_content_p">Autocomplete Emoji</p>',
           '</li>',
@@ -196,7 +195,7 @@ dubx.menu = {
               '<p class="for_content_off"><i class="fi-x"></i></p>',
               '<p class="for_content_p">Plug.dj Theme</p>',
           '</li>',
-          '<li onclick="dubx.css_for_the_world();" class="for_content_li for_content_feature css">',
+          '<li onclick="dubx.css_world();" class="for_content_li for_content_feature css">',
               '<p class="for_content_off"><i class="fi-x"></i></p>',
               '<p class="for_content_p">Community Theme</p>',
           '</li>',

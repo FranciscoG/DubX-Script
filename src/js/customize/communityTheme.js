@@ -1,4 +1,4 @@
-dubx.css_for_the_world = function() {
+dubx.css_world = function() {
     if (!dubx.options.let_css) {
         dubx.options.let_css = true;
         var location = Dubtrack.room.model.get('roomUrl');

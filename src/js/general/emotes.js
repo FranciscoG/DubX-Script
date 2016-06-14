@@ -3,7 +3,7 @@
 /**************************************************************************
  * Turn on/off the twitch emoji in chat
  */
-dubx.optionTwitchEmotes =function(){
+dubx.twitch_emotes =function(){
     document.body.addEventListener('twitch:loaded', this.loadBTTVEmotes);
     document.body.addEventListener('bttv:loaded', this.loadTastyEmotes);
     
@@ -144,7 +144,7 @@ dubx.chatInputKeyupFunc = function(e){
     }
 };
 
-dubx.optionEmojiPreview =function(){
+dubx.emoji_preview =function(){
     if (!dubx.options.let_emoji_preview) {
         dubx.options.let_emoji_preview = true;
         dubx.saveOption('emoji_preview', 'true');

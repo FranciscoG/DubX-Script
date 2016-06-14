@@ -67,7 +67,68 @@ var dubx = {
       downDubs: [],
       grabs: []
     }
+};
 
+dubx.saveOption = function(selector,value) {
+  localStorage.setItem(selector,value);
+
+  // new options
+  if ( /^draw/i.test(selector) ) {
+    dubx.settings.menu[selector] = value;
+  } else if (/(css|customAfkMessage)/i.test(selector)) {
+    dubx.settings.custom[selector] = value;
+  } else {
+    dubx.settings.general[selector] = value;
+  }
+  localStorage.setItem( 'dubxUserSettings', JSON.stringify(dubx.settings) );
+};
+
+/**
+ * TODO: go through all the files and replace .on and .off with the new toggleOption
+ */
+
+// deprecating these 2 eventually, for now they are pass-throughs
+dubx.on = function(selector) {
+  // $(selector + ' .for_content_off i').replaceWith('<i class="fi-check"></i>');
+  dubx.toggleOption(selector, true);
+};
+dubx.off = function(selector) {
+  // $(selector + ' .for_content_off i').replaceWith('<i class="fi-x"></i>');
+  dubx.toggleOption(selector, false);
+};
+
+/**
+ * Updates the on/off state of the option in the dubx menu
+ * @param  {String} selector name of the selector to be updated
+ * @param  {Bool} state      true to convert to checkmark, false to convert to an X
+ * @return {undefined}         
+ */
+dubx.toggleOption = function(selector, state){
+  var status = state ? "check" : "x";
+  $(selector + ' .for_content_off i').replaceWith('<i class="fi-'+status+'"></i>');
+};
+
+
+/**
+ * converts a string from camelCase to snake_case
+ * @param  {String} str the camelCase string
+ * @return {String}     the converted snake_case string
+ */
+dubx.camelToSnake = function (str){
+  return str.replace(/([A-Z])/g, function (x,y){
+    return "_" + y.toLowerCase();
+  }).replace(/^_/, "");
+};
+
+/**
+ * converts a string in snake_case to camelCase
+ * @param  {String} str the snake_case string
+ * @return {String}     the converted camelCase string
+ */
+dubx.snakeToCamel = function (str) {
+  return str.replace(/(_[a-z])/ig, function (x,y){
+    return y.replace("_","").toUpperCase();
+  });
 };
 // jQuery's getJSON kept returning errors so making my own with promise-like
 // structure and added optional Event to fire when done so can hook in elsewhere
@@ -556,7 +617,7 @@ dubx.previewListInit = function(){
 /**************************************************************************
  * Turn on/off the twitch emoji in chat
  */
-dubx.optionTwitchEmotes =function(){
+dubx.twitch_emotes =function(){
     document.body.addEventListener('twitch:loaded', this.loadBTTVEmotes);
     document.body.addEventListener('bttv:loaded', this.loadTastyEmotes);
     
@@ -697,7 +758,7 @@ dubx.chatInputKeyupFunc = function(e){
     }
 };
 
-dubx.optionEmojiPreview =function(){
+dubx.emoji_preview =function(){
     if (!dubx.options.let_emoji_preview) {
         dubx.options.let_emoji_preview = true;
         dubx.saveOption('emoji_preview', 'true');
@@ -1714,7 +1775,7 @@ dubx.css_run = function() {
         $('head').append('<link class="css_import" href="'+css_to_load+'" rel="stylesheet" type="text/css">');
     }
 };
-dubx.css_for_the_world = function() {
+dubx.css_world = function() {
     if (!dubx.options.let_css) {
         dubx.options.let_css = true;
         var location = Dubtrack.room.model.get('roomUrl');
@@ -1785,11 +1846,8 @@ dubx.hide_eta = function() {
     $('.eta_tooltip').remove();
 };
 /* global dubx */
-dubx.saveOption = function(selector,value) {
-  localStorage.setItem(selector,value);
-};
-
 dubx.sectionList = ['draw_general','draw_userinterface','draw_settings','draw_customize','draw_contact','draw_social','draw_chrome'];
+
 dubx.drawSection = function(el) {
     $(el).next('ul').slideToggle('fast');
     var sectionClass = $(el).next('ul').attr('class');
@@ -1808,42 +1866,44 @@ dubx.drawSection = function(el) {
     }
 
 };
+
+dubx.openAllMenus = function(){
+  dubx.sectionList.forEach(function(section,i,arr){
+    $('.'+section).slideDown('fast');
+    $('.'+section).prev('li').find('i').removeClass('fi-plus').addClass('fi-minus');
+    dubx.saveOption(section, 'true');
+    dubx.options[section] = 'true';
+  });
+};
+
+dubx.closeAllMenus = function(){
+  dubx.sectionList.forEach(function(section,i,arr){
+    $('.'+section).slideUp();
+    $('.'+section).prev('li').find('i').removeClass('fi-minus').addClass('fi-plus');
+    dubx.saveOption(section,'false');
+    dubx.options[section] = 'false';
+  });
+};
+
 dubx.drawAll = function() {
     var allClosed = true;
-    var i;
-    for(i = 0; i < dubx.sectionList.length; i++) {
-        if($('.'+dubx.sectionList[i]).css('display') === 'block'){
-            allClosed = false;
-        }
-    }
+
+    dubx.sectionList.forEach(function(section, i, arr){
+      if($('.'+section).css('display') === 'block'){
+          allClosed = false;
+      }
+    });
 
     if(allClosed) {
-        dubx.sectionList.forEach(function(section,i,arr){
-          $('.'+section).slideDown('fast');
-          $('.'+section).prev('li').find('i').removeClass('fi-plus').addClass('fi-minus');
-          dubx.saveOption(section, 'true');
-          dubx.options[section] = 'true';
-        });
+      dubx.openAllMenus();
     }
     else {
-        dubx.sectionList.forEach(function(section,i,arr){
-          $('.'+section).slideUp();
-          $('.'+section).prev('li').find('i').removeClass('fi-minus').addClass('fi-plus');
-          dubx.saveOption(section,'false');
-          dubx.options[section] = 'false';
-        });
+      dubx.closeAllMenus();
     }
 };
 
 dubx.slide = function() {
   $('.for_content').slideToggle('fast');
-};
-
-dubx.on = function(selector) {
-  $(selector + ' .for_content_off i').replaceWith('<i class="fi-check"></i>');
-};
-dubx.off = function(selector) {
-  $(selector + ' .for_content_off i').replaceWith('<i class="fi-x"></i>');
 };
 
 dubx.menu = {
@@ -1869,11 +1929,11 @@ dubx.menu = {
               '<p onclick="dubx.createAfkMessage();" class="for_content_edit" style="display: inline-block;color: #878c8e;font-size: .85rem;font-weight: bold;float: right;"><i class="fi-pencil"></i></p>',
               '<p class="for_content_p">AFK Autorespond</p>',
           '</li>',
-          '<li onclick="dubx.optionTwitchEmotes();" class="for_content_li for_content_feature twitch_emotes">',
+          '<li onclick="dubx.twitch_emotes();" class="for_content_li for_content_feature twitch_emotes">',
               '<p class="for_content_off"><i class="fi-x"></i></p>',
               '<p class="for_content_p">Emotes</p>',
           '</li>',
-          '<li onclick="dubx.optionEmojiPreview();" class="for_content_li for_content_feature emoji_preview">',
+          '<li onclick="dubx.emoji_preview();" class="for_content_li for_content_feature emoji_preview">',
               '<p class="for_content_off"><i class="fi-x"></i></p>',
               '<p class="for_content_p">Autocomplete Emoji</p>',
           '</li>',
@@ -1982,7 +2042,7 @@ dubx.menu = {
               '<p class="for_content_off"><i class="fi-x"></i></p>',
               '<p class="for_content_p">Plug.dj Theme</p>',
           '</li>',
-          '<li onclick="dubx.css_for_the_world();" class="for_content_li for_content_feature css">',
+          '<li onclick="dubx.css_world();" class="for_content_li for_content_feature css">',
               '<p class="for_content_off"><i class="fi-x"></i></p>',
               '<p class="for_content_p">Community Theme</p>',
           '</li>',
@@ -2104,13 +2164,88 @@ dubx.makeMenu = function(){
     $('.for_content').perfectScrollbar();
 
 };
+/**
+ * conver all the current individual saved settings to the new version
+ *
+ * Options will be saved as JSON made from the dubx.options object under one location
+ */
+
+dubx.oldSettings = {
+  general : [
+    'autovote',
+    'split_chat',
+    'medium_disable',
+    'warn_redirect',
+    'chat_window',
+    'hide_avatars',
+    'show_timestamps',
+    'video_window',
+    'css_world',
+    'nicole',
+    'twitch_emotes',
+    'emoji_preview',
+    'autocomplete_mentions',
+    'mention_notifications',
+    'custom_mentions',
+    'spacebar_mute',
+    'downdub_chat',
+    'updub_chat',
+    'grab_chat',
+    'dubs_hover',
+    'snow'
+  ],
+  menu: [
+    'draw_general',
+    'draw_userinterface',
+    'draw_settings',
+    'draw_customize',
+    'draw_contact',
+    'draw_social',
+    'draw_chrome',
+  ],
+  custom: [
+    'css',
+    'customAfkMessage'
+  ]
+};
+
+
+dubx.convertSettings = function(){
+
+  if ( localStorage.getItem( 'dubxUserSettings') !== null ) {
+    return;
+  }
+
+  var newSettings = {
+    general : {},
+    menu : {},
+    custom : {}
+  };
+
+  dubx.oldSettings.general.forEach(function(el,i,r){
+    newSettings.general[el] = localStorage.getItem(el);
+  });
+
+  dubx.oldSettings.menu.forEach(function(el,i,r){
+    newSettings.menu[el] = localStorage.getItem(el);
+  });
+
+  dubx.oldSettings.custom.forEach(function(el,i,r){
+    newSettings.custom[el] = localStorage.getItem(el);
+  });
+
+  dubx.settings = newSettings;
+
+  localStorage.setItem( 'dubxUserSettings', JSON.stringify(dubx.settings) );
+
+};
 
 dubx.personalize = function() {
   $('.isUser').text(Dubtrack.session.get('username'));
 };
 
 dubx.dubinfoInit = function(){
-    $('head').prepend('<link rel="stylesheet" type="text/css" href="'+hello.gitRoot+'/css/options/dubinfo.css">');
+    $('head').prepend('<link rel="stylesheet" type="text/css" href="'+dubx.gitRoot+'/css/options/dubinfo.css">');
 };
 
 dubx.init = function() {
@@ -2126,6 +2261,10 @@ dubx.init = function() {
   dubx.previewListInit();
   dubx.userAutoComplete();
   dubx.dubinfoInit();
+
+  // dubx.convertSettings();
+
+  // dubx.settings = JSON.parse( localStorage.getItem( 'dubxUserSettings' ) );
 
   //Ref 4:
   if (localStorage.getItem('autovote') === 'true') {
@@ -2153,16 +2292,16 @@ dubx.init = function() {
       dubx.video_window();
   }
   if (localStorage.getItem('css_world') === 'true') {
-      dubx.css_for_the_world();
+      dubx.css_world();
   }
   if (localStorage.getItem('nicole') === 'true') {
       dubx.nicole();
   }
   if (localStorage.getItem('twitch_emotes') === 'true') {
-      dubx.optionTwitchEmotes();
+      dubx.twitch_emotes();
   }
   if (localStorage.getItem('emoji_preview') === 'true') {
-      dubx.optionEmojiPreview();
+      dubx.emoji_preview();
   }
   if (localStorage.getItem('autocomplete_mentions') === 'true') {
       dubx.optionMentions();

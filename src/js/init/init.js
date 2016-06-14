@@ -21,6 +21,10 @@ dubx.init = function() {
   dubx.userAutoComplete();
   dubx.dubinfoInit();
 
+  // dubx.convertSettings();
+
+  // dubx.settings = JSON.parse( localStorage.getItem( 'dubxUserSettings' ) );
+
   //Ref 4:
   if (localStorage.getItem('autovote') === 'true') {
       dubx.autovote();
@@ -47,16 +51,16 @@ dubx.init = function() {
       dubx.video_window();
   }
   if (localStorage.getItem('css_world') === 'true') {
-      dubx.css_for_the_world();
+      dubx.css_world();
   }
   if (localStorage.getItem('nicole') === 'true') {
       dubx.nicole();
   }
   if (localStorage.getItem('twitch_emotes') === 'true') {
-      dubx.optionTwitchEmotes();
+      dubx.twitch_emotes();
   }
   if (localStorage.getItem('emoji_preview') === 'true') {
-      dubx.optionEmojiPreview();
+      dubx.emoji_preview();
   }
   if (localStorage.getItem('autocomplete_mentions') === 'true') {
       dubx.optionMentions();

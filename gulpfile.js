@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
  
 // Change the concat order here
 var jsBuildOrder = [
@@ -7,7 +8,7 @@ var jsBuildOrder = [
   'LICENSE/LICENSE.js',
 
   // options.js should always be the first file after license because
-  // it starts the dubx namespace
+  // it starts the dubx object namespace
   'src/js/init/options.js',
 
   // all utils first
@@ -54,6 +55,7 @@ var jsBuildOrder = [
   // init
   'src/js/init/eta.js',
   'src/js/init/menu.js',
+  'src/js/init/convertSettings.js',
   'src/js/init/init.js'
 ];
 
@@ -63,13 +65,18 @@ gulp.task('build:js', function() {
     .pipe(gulp.dest('./'));
 });
 
+/*
+  not using this yet
+ */
+gulp.task('build:min', function() {
+  return gulp.src('beta.js')
+    .pipe(uglify())
+    .pipe(gulp.dest('./'));
+});
 
 gulp.task('watch', function() {
   gulp.watch('src/js/**/*.js', ['build:js']); 
 });
 
-/**********************************************
- * Default and specific tasks
- */
 
 gulp.task('default', ['build:js']);
