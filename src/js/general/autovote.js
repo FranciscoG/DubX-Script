@@ -1,3 +1,13 @@
+dubx.advance_vote = function() {
+    $('.dubup').click();
+};
+
+dubx.voteCheck = function (obj) {
+    if (obj.startTime < 2) {
+        dubx.advance_vote();
+    }
+};
+
 dubx.autovote = function() {
   if (!dubx.options.let_autovote) {
       dubx.options.let_autovote = true;

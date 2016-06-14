@@ -1,4 +1,4 @@
-
+/* global dubx */
 dubx.saveOption = function(selector,value) {
   localStorage.setItem(selector,value);
 };
@@ -13,38 +13,39 @@ dubx.drawSection = function(el) {
     if(clicked.hasClass('fi-minus')){
         clicked.removeClass('fi-minus').addClass('fi-plus');
         dubx.saveOption(sectionClass,'false');
-        options[sectionClass] = 'false';
+        dubx.options[sectionClass] = 'false';
     }
     else{
         clicked.removeClass('fi-plus').addClass('fi-minus');
         dubx.saveOption(sectionClass,'true');
-        options[sectionClass] = 'true';
+        dubx.options[sectionClass] = 'true';
     }
 
 };
 dubx.drawAll = function() {
     var allClosed = true;
-    for(var i = 0; i < dubx.sectionList.length; i++) {
+    var i;
+    for(i = 0; i < dubx.sectionList.length; i++) {
         if($('.'+dubx.sectionList[i]).css('display') === 'block'){
             allClosed = false;
         }
     }
 
     if(allClosed) {
-        for(var i = 0; i < dubx.sectionList.length; i++) {
-            $('.'+dubx.sectionList[i]).slideDown('fast');
-            $('.'+dubx.sectionList[i]).prev('li').find('i').removeClass('fi-plus').addClass('fi-minus');
-            dubx.saveOption(dubx.sectionList[i], 'true');
-            options[dubx.sectionList[i]] = 'true';
-        }
+        dubx.sectionList.forEach(function(section,i,arr){
+          $('.'+section).slideDown('fast');
+          $('.'+section).prev('li').find('i').removeClass('fi-plus').addClass('fi-minus');
+          dubx.saveOption(section, 'true');
+          dubx.options[section] = 'true';
+        });
     }
     else {
-        for(var i = 0; i < dubx.sectionList.length; i++) {
-            $('.'+dubx.sectionList[i]).slideUp();
-            $('.'+dubx.sectionList[i]).prev('li').find('i').removeClass('fi-minus').addClass('fi-plus');
-            dubx.saveOption(dubx.sectionList[i],'false');
-            options[dubx.sectionList[i]] = 'false';
-        }
+        dubx.sectionList.forEach(function(section,i,arr){
+          $('.'+section).slideUp();
+          $('.'+section).prev('li').find('i').removeClass('fi-minus').addClass('fi-plus');
+          dubx.saveOption(section,'false');
+          dubx.options[section] = 'false';
+        });
     }
 };
 
@@ -131,7 +132,7 @@ dubx.menu = {
           '</p>',
       '</li>',
       '<ul class="draw_userinterface">',
-          '<li onclick="dubx.fs();" class="for_content_li for_content_feature fs">',
+          '<li onclick="dubx.fullscreen();" class="for_content_li for_content_feature fs">',
               '<p class="for_content_off"><i class="fi-arrows-out"></i></p>',
               '<p class="for_content_p">Fullscreen Video</p>',
           '</li>',
@@ -300,7 +301,7 @@ dubx.makeMenu = function(){
     var html = [
         '<div class="for_content" style="display:none;">',
           '<span class="for_content_ver">DubX Settings</span>',
-          '<span class="for_content_version" onclick="dubx.drawAll();" title="Collapse/Expand Menus">'+our_version+'</span>',
+          '<span class="for_content_version" onclick="dubx.drawAll();" title="Collapse/Expand Menus">'+dubx.our_version+'</span>',
           '<ul class="for_content_ul">',
             dubx.menu.general(),
             dubx.menu.ui(),
@@ -309,7 +310,7 @@ dubx.makeMenu = function(){
             dubx.menu.contact(),
             dubx.menu.social(),
             dubx.menu.extension(),
-          '</ul>'
+          '</ul>',
         '</div>'
     ].join('');
 
