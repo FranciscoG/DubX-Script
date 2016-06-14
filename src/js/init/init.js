@@ -4,7 +4,7 @@ dubx.personalize = function() {
 };
 
 dubx.dubinfoInit = function(){
-    $('head').prepend('<link rel="stylesheet" type="text/css" href="'+hello.gitRoot+'/css/options/dubinfo.css">');
+    $('head').prepend('<link rel="stylesheet" type="text/css" href="'+dubx.gitRoot+'/css/options/dubinfo.css">');
 };
 
 dubx.init = function() {
