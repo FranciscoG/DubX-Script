@@ -1,5 +1,5 @@
 /**
- * conver all the current individual saved settings to the new version
+ * convert all the current individual saved settings to the new version
  *
  * Options will be saved as JSON made from the dubx.options object under one location
  */
@@ -72,4 +72,19 @@ dubx.convertSettings = function(){
 
   localStorage.setItem( 'dubxUserSettings', JSON.stringify(dubx.settings) );
 
+};
+
+dubx.delOldSettings = function(){
+
+  dubx.oldSettings.general.forEach(function(el,i,r){
+    localStorage.removeItem(el);
+  });
+
+  dubx.oldSettings.menu.forEach(function(el,i,r){
+    localStorage.removeItem(el);
+  });
+
+  dubx.oldSettings.custom.forEach(function(el,i,r){
+    localStorage.removeItem(el);
+  });
 };

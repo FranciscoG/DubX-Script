@@ -43,9 +43,7 @@ var dubx = {
 
 dubx.saveOption = function(selector,value) {
   localStorage.setItem(selector,value);
-};
 
-dubx.newSaveOption = function(selector,value){
   // new options
   if ( /^draw/i.test(selector) ) {
     dubx.settings.menu[selector] = value;
@@ -56,6 +54,7 @@ dubx.newSaveOption = function(selector,value){
   }
   localStorage.setItem( 'dubxUserSettings', JSON.stringify(dubx.settings) );
 };
+
 
 /**
  * TODO: go through all the files and replace .on and .off with the new toggleOption
