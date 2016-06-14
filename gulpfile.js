@@ -6,6 +6,10 @@ var jsBuildOrder = [
   // license goes on top
   'LICENSE/LICENSE.js',
 
+  // options.js should always be the first file after license because
+  // it starts the dubx namespace
+  'src/js/init/options.js',
+
   // all utils first
   'src/js/utils/*.js',
   
@@ -22,6 +26,7 @@ var jsBuildOrder = [
   'src/js/general/dubsInChat.js',
   'src/js/general/grabsInChat.js',
   'src/js/general/showDubsOnHover.js',
+  'src/js/general/autocompleteUsers.js',
 
   // user interface section
   'src/js/ui/fullscreen.js',
@@ -38,6 +43,7 @@ var jsBuildOrder = [
   // settings section
   'src/js/settings/warnOnNavigation.js',
   'src/js/settings/showTimestamps.js',
+  'src/js/settings/spacebarMute.js',
 
   // customize section
   'src/js/customize/customCSS.js',
@@ -46,9 +52,9 @@ var jsBuildOrder = [
   'src/js/customize/customBackground.js',
 
   // init
-  'src/js/ui/eta.js',
-  'src/js/menu.js',
-  'src/js/init.js'
+  'src/js/init/eta.js',
+  'src/js/init/menu.js',
+  'src/js/init/init.js'
 ];
 
 gulp.task('build:js', function() {
