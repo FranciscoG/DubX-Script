@@ -9,6 +9,7 @@ var jsBuildOrder = [
   // all utils first
   'src/js/utils/*.js',
   
+  // general section
   'src/js/general/snow.js',
   'src/js/general/autovote.js',
   'src/js/general/afk.js',
@@ -17,19 +18,34 @@ var jsBuildOrder = [
   'src/js/general/emotes.js',
   'src/js/general/mentions.js',
   'src/js/general/customMention.js',
+  'src/js/general/dubGrabUtils.js',
+  'src/js/general/dubsInChat.js',
+  'src/js/general/grabsInChat.js',
+  'src/js/general/showDubsOnHover.js',
 
+  // user interface section
   'src/js/ui/fullscreen.js',
   'src/js/ui/splitChat.js',
   'src/js/ui/hideBackground.js',
   'src/js/ui/snoozeTooltip.js',
   'src/js/ui/hideVideo.js',
+  'src/js/ui/hideAvatars.js',
+  'src/js/ui/hideChat.js',
 
+  // contact section
   'src/js/contact/bugReport.js',
 
+  // settings section
   'src/js/settings/warnOnNavigation.js',
+  'src/js/settings/showTimestamps.js',
 
+  // customize section
   'src/js/customize/customCSS.js',
+  'src/js/customize/communityTheme.js',
+  'src/js/customize/plugDjTheme.js',
+  'src/js/customize/customBackground.js',
 
+  // init
   'src/js/ui/eta.js',
   'src/js/menu.js',
   'src/js/init.js'
