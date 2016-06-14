@@ -1,6 +1,6 @@
 var dubx = {
   our_version : '03.05.00 - Dub Vote Info',
-  gitRoot: 'https://rawgit.com/FranciscoG/DubX-Script/dev',
+  gitRoot: 'https://rawgit.com/FranciscoG/DubX-Script/modularize',
   options : {
       let_autovote: false,
       let_split_chat: false,
