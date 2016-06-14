@@ -71,7 +71,9 @@ var dubx = {
 
 dubx.saveOption = function(selector,value) {
   localStorage.setItem(selector,value);
+};
 
+dubx.newSaveOption = function(selector,value){
   // new options
   if ( /^draw/i.test(selector) ) {
     dubx.settings.menu[selector] = value;
@@ -2262,9 +2264,9 @@ dubx.init = function() {
   dubx.userAutoComplete();
   dubx.dubinfoInit();
 
-  // dubx.convertSettings();
+  dubx.convertSettings();
 
-  // dubx.settings = JSON.parse( localStorage.getItem( 'dubxUserSettings' ) );
+  dubx.settings = JSON.parse( localStorage.getItem( 'dubxUserSettings' ) );
 
   //Ref 4:
   if (localStorage.getItem('autovote') === 'true') {

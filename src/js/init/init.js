@@ -21,9 +21,9 @@ dubx.init = function() {
   dubx.userAutoComplete();
   dubx.dubinfoInit();
 
-  // dubx.convertSettings();
+  dubx.convertSettings();
 
-  // dubx.settings = JSON.parse( localStorage.getItem( 'dubxUserSettings' ) );
+  dubx.settings = JSON.parse( localStorage.getItem( 'dubxUserSettings' ) );
 
   //Ref 4:
   if (localStorage.getItem('autovote') === 'true') {
