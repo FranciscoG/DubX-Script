@@ -1662,7 +1662,7 @@ dubx.warn_redirect = function() {
         dubx.off('.warn_redirect');
     }
 };
-diubx.show_timestamps = function() {
+dubx.show_timestamps = function() {
     if(!dubx.options.let_show_timestamps) {
         dubx.options.let_show_timestamps = true;
         $('head').append('<link class="show_timestamps_link" rel="stylesheet" type="text/css" href="'+dubx.gitRoot+'/css/options/show_timestamps.css">');
