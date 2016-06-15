@@ -291,11 +291,11 @@ dubx.menu = {
 
 dubx.makeMenu = function(){
     // add icon to the upper right corner
-    var li = '<div class="for" onclick="dubx.slide();"><img src="'+dubx.gitRoot+'/params/params.svg" alt=""></div>';
+    var li = '<div class="for" onclick="dubx.slide();"><img src="'+dubx.srcRoot+'/params/params.svg" alt=""></div>';
     $('.header-right-navigation').append(li);
 
     $('head').append('<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css">');
-    $('head').append('<link rel="stylesheet" type="text/css" href="'+dubx.gitRoot+'/css/asset.css">');
+    $('head').append('<link rel="stylesheet" type="text/css" href="'+dubx.srcRoot+'/css/asset.css">');
 
     var html = [
         '<div class="for_content" style="display:none;">',

@@ -1,7 +1,7 @@
 dubx.show_timestamps = function() {
     if(!dubx.options.let_show_timestamps) {
         dubx.options.let_show_timestamps = true;
-        $('head').append('<link class="show_timestamps_link" rel="stylesheet" type="text/css" href="'+dubx.gitRoot+'/css/options/show_timestamps.css">');
+        $('head').append('<link class="show_timestamps_link" rel="stylesheet" type="text/css" href="'+dubx.srcRoot+'/css/options/show_timestamps.css">');
         dubx.saveOption('show_timestamps','true');
         dubx.on('.show_timestamps');
     } else {

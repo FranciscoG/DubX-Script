@@ -81,7 +81,7 @@ dubx.loadTastyEmotes = function(){
     var savedData;
     console.log('Dubx','tasty','loading from api');
     // since we control this API we should always have it load from remote
-    var tastyApi = new self.getJSON(dubx.gitRoot + '/emotes/tastyemotes.json', 'tasty:loaded');
+    var tastyApi = new self.getJSON(dubx.srcRoot + '/emotes/tastyemotes.json', 'tasty:loaded');
     tastyApi.done(function(data){
         localStorage.setItem('tasty_api', data);
         self.processTastyEmotes(JSON.parse(data));

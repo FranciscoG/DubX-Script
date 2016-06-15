@@ -4,7 +4,7 @@ dubx.personalize = function() {
 };
 
 dubx.dubinfoInit = function(){
-    $('head').prepend('<link rel="stylesheet" type="text/css" href="'+dubx.gitRoot+'/css/options/dubinfo.css">');
+    $('head').prepend('<link rel="stylesheet" type="text/css" href="'+dubx.srcRoot+'/css/options/dubinfo.css">');
 };
 
 dubx.init = function() {
@@ -129,7 +129,7 @@ if (!dubxLoaded && Dubtrack.session.id) {
 } else {
     function onErr(error) {
         var onErr = [
-            '<link rel="stylesheet" type="text/css" href="'+dubx.gitRoot+'/css/asset.css">',
+            '<link rel="stylesheet" type="text/css" href="'+dubx.srcRoot+'/css/asset.css">',
             '<div class="onErr">',
                 '<div class="container">',
                     '<div class="title">',

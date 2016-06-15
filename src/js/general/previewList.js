@@ -129,7 +129,7 @@ dubx.previewList = function(acArray) {
 };
 
 dubx.previewListInit = function(){
-    $('head').prepend('<link rel="stylesheet" type="text/css" href="'+dubx.gitRoot+'/css/options/autocomplete.css">');
+    $('head').prepend('<link rel="stylesheet" type="text/css" href="'+dubx.srcRoot+'/css/options/autocomplete.css">');
     var acUL = document.createElement('ul');
     acUL.id = "autocomplete-preview";
     $('.pusher-chat-widget-input').prepend(acUL);
