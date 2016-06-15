@@ -27,6 +27,4 @@ The utils folder is used for files with any functions that are agnostic to any s
 
 ####Building
 
-When adding new JS files, don't forget to add it to the gulpfile build script in the root of this repo.
-
-Right now I've decided to specificy the exact order that the files concatenate in.  I think eventually I'll move to using wildcards so we don't have to think about this anymore.  I just need to test that out to make sure it's not an issue
+The build script will automatically include any JS file you place in the `src/js` subfolders EXCEPT for the `src/js/init` folder.  Anything you place in there needs to be added to the gulpfile.js `jsBuildOrder` array.
