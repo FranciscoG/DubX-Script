@@ -4,7 +4,8 @@
   "description": "- A simple script/extension for Dubtrack.fm",
   "main": "beta.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "bundle": "browserify src/js/beta.js > beta.js",
+    "watch" : "watchify src/js/beta.js -o beta.js -v"
   },
   "repository": {
     "type": "git",
@@ -17,8 +18,10 @@
   },
   "homepage": "https://github.com/sinfulBA/DubX-Script#readme",
   "devDependencies": {
+    "browserify": "^13.0.1",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
-    "gulp-uglify": "^1.5.3"
+    "gulp-uglify": "^1.5.3",
+    "watchify": "^3.7.0"
   }
 }
