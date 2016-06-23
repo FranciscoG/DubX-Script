@@ -1,22 +1,26 @@
-dubx.emoji = {
+/* global Dubtrack, emojify */
+
+var prepEmoji = {};
+
+prepEmoji.emoji = {
     template: function(id) { return emojify.defaultConfig.img_dir+'/'+encodeURI(id)+'.png'; },
 };
-dubx.twitch = {
+prepEmoji.twitch = {
     template: function(id) { return "//static-cdn.jtvnw.net/emoticons/v1/" + id + "/3.0"; },
     specialEmotes: [],
     emotes: {},
     chatRegex : new RegExp(":([-_a-z0-9]+):", "ig")
 };
-dubx.bttv = {
+prepEmoji.bttv = {
     template: function(id) { return  "//cdn.betterttv.net/emote/" + id + "/3x";  },
     emotes: {},
     chatRegex : new RegExp(":([&!()\\-_a-z0-9]+):", "ig")
 };
-dubx.tasty = {
-    template: function(id) { return dubx.tasty.emotes[id].url; },
+prepEmoji.tasty = {
+    template: function(id) { return this.emotes[id].url; },
     emotes: {}
 };
-dubx.shouldUpdateAPIs = function(apiName){
+prepEmoji.shouldUpdateAPIs = function(apiName){
     var self = this;
     var day = 86400000; // milliseconds in a day
 
@@ -28,8 +32,8 @@ dubx.shouldUpdateAPIs = function(apiName){
  * Loads the twitch emotes from the api.
  * http://api.twitch.tv/kraken/chat/emoticon_images
  */
-dubx.loadTwitchEmotes = function(){
-    var self = dubx;
+prepEmoji.loadTwitchEmotes = function(){
+    var self = this;
     var savedData;
     // if it doesn't exist in localStorage or it's older than 5 days
     // grab it from the twitch API
@@ -52,8 +56,8 @@ dubx.loadTwitchEmotes = function(){
 
 };
 
-dubx.loadBTTVEmotes = function(){
-    var self = dubx;
+prepEmoji.loadBTTVEmotes = function(){
+    var self = this;
     var savedData;
     // if it doesn't exist in localStorage or it's older than 5 days
     // grab it from the bttv API
@@ -76,8 +80,8 @@ dubx.loadBTTVEmotes = function(){
 
 };
 
-dubx.loadTastyEmotes = function(){
-    var self = dubx;
+prepEmoji.loadTastyEmotes = function(){
+    var self = this;
     var savedData;
     console.log('Dubx','tasty','loading from api');
     // since we control this API we should always have it load from remote
@@ -88,8 +92,8 @@ dubx.loadTastyEmotes = function(){
     });
 };
 
-dubx.processTwitchEmotes = function(data) {
-    var self = dubx;
+prepEmoji.processTwitchEmotes = function(data) {
+    var self = this;
     data.emoticons.forEach(function(el,i,arr){
         var _key = el.code.toLowerCase();
 
@@ -116,8 +120,8 @@ dubx.processTwitchEmotes = function(data) {
     self.emojiEmotes = emojify.emojiNames.concat(Object.keys(self.twitch.emotes));
 };
 
-dubx.processBTTVEmotes = function(data){
-    var self = dubx;
+prepEmoji.processBTTVEmotes = function(data){
+    var self = this;
     data.emotes.forEach(function(el,i,arr){
         var _key = el.code.toLowerCase();
 
@@ -140,9 +144,11 @@ dubx.processBTTVEmotes = function(data){
     self.emojiEmotes = self.emojiEmotes.concat(Object.keys(self.bttv.emotes));
 };
 
-dubx.processTastyEmotes = function(data) {
-    var self = dubx;
+prepEmoji.processTastyEmotes = function(data) {
+    var self = this;
     self.tasty.emotes = data.emotes;
     self.tastyJSONLoaded = true;
     self.emojiEmotes = self.emojiEmotes.concat(Object.keys(self.tasty.emotes));
 };
+
+module.exports = prepEmoji;

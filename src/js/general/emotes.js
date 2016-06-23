@@ -1,60 +1,37 @@
-/* global dubx, Dubtrack, emojify */
+/* global Dubtrack, emojify */
+var options = require('../utils/options.js');
+var dubx_emoji = require('./prepEmoji.js');
+var previewList = require('./previewList.js');
 
-/**************************************************************************
- * Turn on/off the twitch emoji in chat
- */
-dubx.twitch_emotes =function(){
-    document.body.addEventListener('twitch:loaded', this.loadBTTVEmotes);
-    document.body.addEventListener('bttv:loaded', this.loadTastyEmotes);
-    
-    if (!dubx.options.let_twitch_emotes) {
-        if (!dubx.twitchJSONSLoaded) {
-            dubx.loadTwitchEmotes();
-        } else {
-            this.replaceTextWithEmote();
-        }
-
-        Dubtrack.Events.bind("realtime:chat-message", this.replaceTextWithEmote);
-        dubx.options.let_twitch_emotes = true;
-        dubx.saveOption('twitch_emotes', 'true');
-        dubx.on('.twitch_emotes');
-    } else {
-        Dubtrack.Events.unbind("realtime:chat-message", this.replaceTextWithEmote);
-        dubx.options.let_twitch_emotes = false;
-        dubx.saveOption('twitch_emotes', 'false');
-        dubx.off('.twitch_emotes');
-    }
-};
-
-dubx.previewSearchStr = "";
+var previewSearchStr = "";
 
 
 /**************************************************************************
  * A bunch of utility helpers for the emoji preview
  */
-dubx.emojiUtils = {
+var emojiUtils = {
     createPreviewObj : function(type, id, name) {
         return {
-            src : dubx[type].template(id),
+            src : dubx_emoji[type].template(id),
             text : ":" + name + ":",
             alt : name,
             cn : type
         };
     },
     addToPreviewList : function(emojiArray) {
-        var self = dubx.emojiUtils;
+        var self = this;
         var listArray = [];
         var _key;
 
         emojiArray.forEach(function(val,i,arr){
             _key = val.toLowerCase();
-            if (typeof dubx.twitch.emotes[_key] !== 'undefined') {
-                listArray.push(self.createPreviewObj("twitch", dubx.twitch.emotes[_key], val));
+            if (typeof dubx_emoji.twitch.emotes[_key] !== 'undefined') {
+                listArray.push(self.createPreviewObj("twitch", dubx_emoji.twitch.emotes[_key], val));
             }
-            if (typeof dubx.bttv.emotes[_key] !== 'undefined') {
-                listArray.push(self.createPreviewObj("bttv", dubx.bttv.emotes[_key], val));
+            if (typeof dubx_emoji.bttv.emotes[_key] !== 'undefined') {
+                listArray.push(self.createPreviewObj("bttv", dubx_emoji.bttv.emotes[_key], val));
             }
-            if (typeof dubx.tasty.emotes[_key] !== 'undefined') {
+            if (typeof dubx_emoji.tasty.emotes[_key] !== 'undefined') {
                 listArray.push(self.createPreviewObj("tasty", _key, val));
             }
             if (emojify.emojiNames.indexOf(_key) >= 0) {
@@ -62,14 +39,14 @@ dubx.emojiUtils = {
             }
         });
 
-        dubx.previewList(listArray);
+        previewList.previewList(listArray);
     },
     filterEmoji : function(str){
         var finalStr = str.replace(/([+()])/,"\\$1");
         var re = new RegExp('^' + finalStr, "i");
         var arrayToUse = emojify.emojiNames;
         if (dubx.options.let_twitch_emotes) {
-            arrayToUse = dubx.emojiEmotes; // merged array
+            arrayToUse = dubx_emoji.emojiEmotes; // merged array
         }
         return arrayToUse.filter(function(val){
             return re.test(val);
@@ -80,7 +57,7 @@ dubx.emojiUtils = {
 /**************************************************************************
  * handles filtering emoji, twitch, and users preview autocomplete popup on keyup
  */
-dubx.chatInputKeyupFunc = function(e){
+var chatInputKeyupFunc = function(e){
     var self = dubx;
     var currentText = this.value;
     var keyCharMin = 3; // when to start showing previews, default to 3 chars
@@ -94,7 +71,7 @@ dubx.chatInputKeyupFunc = function(e){
         strStart = pos;
         strEnd = pos + matched.length;
 
-        dubx.previewSearchStr = p2;
+        previewSearchStr = p2;
         keyCharMin = (p1 === "@") ? 1 : 3;
 
         if (cursorPos >= strStart && cursorPos <= strEnd) {
@@ -129,7 +106,7 @@ dubx.chatInputKeyupFunc = function(e){
 
     if (e.keyCode === 13 && $('#autocomplete-preview li').length > 0) {
         var new_text = $('#autocomplete-preview li.selected').find('.ac-text')[0].textContent;
-        dubx.updateChatInput(new_text);
+        previewList.updateChatInput(new_text);
         return;
     }
 
@@ -144,23 +121,25 @@ dubx.chatInputKeyupFunc = function(e){
     }
 };
 
-dubx.emoji_preview =function(){
+var emoji_preview =function(){
+    var newOptionState;
+    var optionName = 'emoji_preview';
+
     if (!dubx.options.let_emoji_preview) {
-        dubx.options.let_emoji_preview = true;
-        dubx.saveOption('emoji_preview', 'true');
-        dubx.on('.emoji_preview');
+        newOptionState = true;
     } else {
-        dubx.options.let_emoji_preview = false;
-        dubx.saveOption('emoji_preview', 'false');
-        dubx.off('.emoji_preview');
+        newOptionState = false;
     }
+
+    dubx.options.let_emoji_preview = newOptionState;
+    dubx.settings = options.toggleAndSave(optionName, newOptionState, dubx.settings);
 };
 
 /**********************************************************************
  * handles replacing twitch emotes in the chat box with the images
  */
 
-dubx.replaceTextWithEmote = function(){
+var replaceTextWithEmote = function(){
     var self = dubx;
     var _regex = self.twitch.chatRegex;
 
@@ -201,4 +180,38 @@ dubx.replaceTextWithEmote = function(){
 
     $chatTarget.html(emoted);
     // TODO : Convert existing :emotes: in chat on plugin load
+};
+
+/**************************************************************************
+ * Turn on/off the twitch emoji in chat
+ */
+var twitch_emotes =function(){
+    document.body.addEventListener('twitch:loaded', this.loadBTTVEmotes);
+    document.body.addEventListener('bttv:loaded', this.loadTastyEmotes);
+    
+    var newOptionState;
+    var optionName = 'twitch_emotes';
+
+    if (!dubx.options.let_twitch_emotes) {
+        if (!dubx.twitchJSONSLoaded) {
+            loadTwitchEmotes();
+        } else {
+            this.replaceTextWithEmote();
+        }
+
+        Dubtrack.Events.bind("realtime:chat-message", this.replaceTextWithEmote);
+        newOptionState = true;
+    } else {
+        Dubtrack.Events.unbind("realtime:chat-message", this.replaceTextWithEmote);
+        newOptionState = false;
+    }
+
+    dubx.options.let_twitch_emotes = newOptionState;
+    dubx.settings = options.toggleAndSave(optionName, newOptionState, dubx.settings);
+};
+
+
+module.exports = {
+    twitch_emotes: twitch_emotes,
+    emoji_preview: emoji_preview
 };

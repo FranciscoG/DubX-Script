@@ -1,37 +1,43 @@
-dubx.advance_vote = function() {
+var options = require('../utils/options.js');
+
+/* global dubx, Dubtrack */
+var advance_vote = function() {
     $('.dubup').click();
 };
 
-dubx.voteCheck = function (obj) {
+var voteCheck = function (obj) {
     if (obj.startTime < 2) {
-        dubx.advance_vote();
+        advance_vote();
     }
 };
 
-dubx.autovote = function() {
+var autovote = function() {
+  var newOptionState;
+  var optionName = 'autovote';
+  
   if (!dubx.options.let_autovote) {
-      dubx.options.let_autovote = true;
+      newOptionState = true;
 
       var song = Dubtrack.room.player.activeSong.get('song');
       var dubCookie = Dubtrack.helpers.cookie.get('dub-' + Dubtrack.room.model.get("_id"));
       var dubsong = Dubtrack.helpers.cookie.get('dub-song');
 
-      if(!Dubtrack.room || !song || song.songid !== dubsong) {
+      if (!Dubtrack.room || !song || song.songid !== dubsong) {
           dubCookie = false;
       }
-
       //Only cast the vote if user hasn't already voted
-      if(!$('.dubup, .dubdown').hasClass('voted') && !dubCookie) {
-          dubx.advance_vote();
+      if (!$('.dubup, .dubdown').hasClass('voted') && !dubCookie) {
+          advance_vote();
       }
 
-      dubx.saveOption('autovote','true');
-      dubx.on('.autovote');
-      Dubtrack.Events.bind("realtime:room_playlist-update", dubx.voteCheck);
+      Dubtrack.Events.bind("realtime:room_playlist-update", voteCheck);
   } else {
-      dubx.options.let_autovote = false;
-      dubx.saveOption('autovote','false');
-      dubx.off('.autovote');
-      Dubtrack.Events.unbind("realtime:room_playlist-update", dubx.voteCheck);
+      newOptionState = false;
+      Dubtrack.Events.unbind("realtime:room_playlist-update", voteCheck);
   }
+
+  dubx.options.let_snow = newOptionState;
+  dubx.settings = options.toggleAndSave(optionName, newOptionState, dubx.settings);
 };
+
+module.exports = autovote;

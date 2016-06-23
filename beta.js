@@ -27,11 +27,57 @@
     Choice of Law
     This license is governed by the Laws of Norway. Disputes shall be settled by Oslo City Court.
 */
+var bugReport = require('./contact/bugReport.js');
+var snow = require('./general/snow.js');
 
-var x = require('./contact/bugReport.js');
+var dubx = {
+  // options and constants  
+  our_version : '03.05.00 - Dub Vote Info',
+  srcRoot: 'https://rawgit.com/FranciscoG/DubX-Script/modularize',
+  options : {
+      let_autovote: false,
+      let_split_chat: false,
+      let_fs: false,
+      let_medium_disable: false,
+      let_warn_redirect: false,
+      let_afk: false,
+      let_active_afk: true,
+      let_chat_window: false,
+      let_css: false,
+      let_hide_avatars: false,
+      let_nicole: false,
+      let_show_timestamps: false,
+      let_video_window: false,
+      let_twitch_emotes: false,
+      let_emoji_preview: false,
+      let_spacebar_mute: false,
+      let_autocomplete_mentions: false,
+      let_mention_notifications: false,
+      let_downdub_chat_notifications: false,
+      let_updub_chat_notifications: false,
+      let_grab_chat_notifications: false,
+      let_dubs_hover: false,
+      let_custom_mentions: false,
+      let_snow: false,
+      draw_general: false,
+      draw_userinterface: false,
+      draw_settings: false,
+      draw_customize: false,
+      draw_contact: false,
+      draw_social: false,
+      draw_chrome: false
+    },
+    dubs : {
+      upDubs: [],
+      downDubs: [],
+      grabs: []
+    },
 
-x.report_modal();
-},{"./contact/bugReport.js":2}],2:[function(require,module,exports){
+    // functions
+    report_modal: bugReport.report_modal,
+    snow: snow
+};
+},{"./contact/bugReport.js":2,"./general/snow.js":3}],2:[function(require,module,exports){
 var modal = require('../utils/modal.js');
 
 var report_content = function() {
@@ -58,16 +104,55 @@ var report_content = function() {
 };
 
 var report_modal = function() {
-    modal.input('Bug Report:','','Please only report bugs for DubX, not Dubtrack. \nBe sure to give a detailed description of the bug, and a way to replicate it, if possible.','confirm-for36','999');
-    $('.confirm-for36').click(report_content);
-    $('.confirm-for36').click(modal.closeErr);
+    modal.create(
+        {
+            title: 'Bug Report:',
+            content: '',
+            placeholder:'Please only report bugs for DubX, not Dubtrack. \nBe sure to give a detailed description of the bug, and a way to replicate it, if possible.'
+            ,
+            confirmButtonClass: 'confirm-for36',
+            maxlength: '999',
+            confirmCallback: function(){
+                report_content();
+                modal.close();
+            }
+        }
+    );
 };
 
 module.exports = {
-    report_content: report_content,
     report_modal: report_modal
 };
-},{"../utils/modal.js":3}],3:[function(require,module,exports){
+},{"../utils/modal.js":4}],3:[function(require,module,exports){
+var options = require('../utils/options.js');
+
+/* global dubx  */
+var snow = function() {
+    var newOptionState;
+    
+    if (!dubx.options.let_snow) {
+        newOptionState = true;
+        $(document).snowfall({
+            round: true,
+            shadow: true,
+            flakeCount: 50,
+            minSize: 1,
+            maxSize: 5,
+            minSpeed: 5,
+            maxSpeed: 5
+        });
+    } else {
+        newOptionState= false;
+        $(document).snowfall('clear');
+    }
+
+    dubx.options.let_snow = newOptionState;
+    options.toggle('.snow', newOptionState);
+    dubx.settings = options.saveOption('snow', newOptionState.toString(), dubx.settings);
+};
+
+module.exports = snow;
+},{"../utils/options.js":5}],4:[function(require,module,exports){
 /**
  * input is a modal used to display messages and also capture data
  * 
@@ -77,28 +162,40 @@ module.exports = {
  * @param  {String} confirm     a way to customize the text of the confirm button
  * @param  {Number} maxlength   for the textarea maxlength attribute
  */
-var input = function(title,content,placeholder,confirm,maxlength) {
-    var textarea = '', confirmButton = '';
-    if (placeholder) {
-        var mx = maxlength || 999;
-        textarea = '<textarea class="input" type="text" placeholder="'+placeholder+'" maxlength="'+ mx +'">'+content+'</textarea>';
+var create = function(infoObj) {
+    var defaults = {
+        title: null,
+        content: null,
+        placeholder: null,
+        confirmButtonClass: null,
+        maxlength: null,
+        confirmCallback: null
+    };
+    var opts = $.extend(true, {}, this.defaults, infoObj);
+    
+    var textarea = '';
+    var confirmButton = '';
+
+    if (opts.placeholder) {
+        var mx = opts.maxlength || 999;
+        textarea = '<textarea class="input" type="text" placeholder="'+opts.placeholder+'" maxlength="'+ mx +'">'+opts.content+'</textarea>';
     }
-    if (confirm) {
-        confirmButton = '<div class="'+confirm+' confirm"><p>Okay</p></div>';
+    if (opts.confirmButtonClass) {
+        confirmButton = '<div class="'+opts.confirmButtonClass+' confirm"><p>Okay</p></div>';
     }
     
-    var onErr = [
+    var dubxModal = [
         '<div class="onErr">',
             '<div class="container">',
                 '<div class="title">',
-                    '<h1>'+title+'</h1>',
+                    '<h1>'+opts.title+'</h1>',
                 '</div>',
                 '<div class="content">',
-                    '<p>'+content+'</p>',
+                    '<p>'+opts.content+'</p>',
                     textarea,
                 '</div>',
                 '<div class="control">',
-                    '<div class="cancel" onclick="dubx.closeErr();">',
+                    '<div class="cancel dubx-js-cancel">',
                         '<p>Cancel</p>',
                     '</div>',
                     confirmButton,
@@ -106,16 +203,85 @@ var input = function(title,content,placeholder,confirm,maxlength) {
             '</div>',
         '</div>'
     ].join('');
-    $('body').prepend(onErr);
+    $('body').append(dubxModal);
+
+    // add one time cancel click
+    $('.dubx-js-cancel').one("click",function(){
+        $('.onErr').remove();
+    });
+    
+    // add one time confirm action click
+    if (typeof opts.confirmCallback === 'function'){
+        $('.'+opts.confirmButtonClass).one("click", opts.confirmCallback);
+    }
+    
 };
 
 
-var closeErr = function() {
+var close = function() {
     $('.onErr').remove();
 };
 
 module.exports = {
-    input: input,
-    closeErr : closeErr
-}
+    create: create,
+    close : close
+};
+},{}],5:[function(require,module,exports){
+/**
+ * Save an option to localStorage.  To keep it functional, you need to pass it
+ * the current dubx.settings object and it will return the updated object
+ * used the returned object to replace dubx.settings
+ * example:
+ * var options = require('../utils/options.js');
+ * dubx.settings = options.saveOption('snow','true', dubx.settings);
+ * 
+ * @param  {sring} selector     the name of the option
+ * @param  {Variable} value     the option value, usually string, bool, or number
+ * @param  {Object} settingObj  the dubx.settings object
+ * @return {Object}             the updated dubx.settings obj
+ */
+var saveOption = function(optionName, value, settingObj) {
+  localStorage.setItem(optionName,value);
+
+  // new options
+  if ( /^draw/i.test(optionName) ) {
+    settingObj.menu[optionName] = value;
+  } else if (/(css|customAfkMessage)/i.test(optionName)) {
+    settingObj.custom[optionName] = value;
+  } else {
+    settingObj.general[optionName] = value;
+  }
+  localStorage.setItem( 'dubxUserSettings', JSON.stringify(settingObj) );
+  return settingObj;
+};
+
+/**
+ * Updates the on/off state of the option in the dubx menu
+ * @param  {String} selector name of the selector to be updated
+ * @param  {Bool} state      true for "on", false for "off"
+ * @return {undefined}         
+ */
+var toggle = function(selector, state){
+  var status = state ? "check" : "x";
+  $(selector + ' .for_content_off i').replaceWith('<i class="fi-'+status+'"></i>');
+};
+
+/**
+ * TODO: go through all the files and replace .on and .off with the new toggle
+ */
+// deprecating these 2 eventually, for now they are pass-throughs
+var on = function(selector) {
+  // $(selector + ' .for_content_off i').replaceWith('<i class="fi-check"></i>');
+  toggle(selector, true);
+};
+var off = function(selector) {
+  // $(selector + ' .for_content_off i').replaceWith('<i class="fi-x"></i>');
+  toggle(selector, false);
+};
+
+module.exports = {
+  on: on,
+  off: off,
+  toggle: toggle
+};
 },{}]},{},[1]);

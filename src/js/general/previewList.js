@@ -1,3 +1,4 @@
+/* global dubx, Dubtrack, emojify */
 /**
  * previewList
  * 
@@ -8,7 +9,7 @@
  * and also placing selected text into the chat
  */
 
-dubx.updateChatInput = function(str){
+var updateChatInput = function(str){
     var inputText = $("#chat-txt-message").val();
     var updatedText = inputText.split(' ').map(function(c,i,r){
         var fullStr = str.toLowerCase();
@@ -23,39 +24,39 @@ dubx.updateChatInput = function(str){
     $("#chat-txt-message").val(updatedText.join(' ') + ' ').focus();
 };
 
-dubx.displayBoxIndex = -1;
-dubx.doNavigate = function(diff) {
-  var self = dubx;
+var displayBoxIndex = -1;
+var doNavigate = function(diff) {
+  var self = this;
   self.displayBoxIndex += diff;
   var oBoxCollection = $(".ac-show li");
   
   // remove "press enter to select" span
   $('.ac-list-press-enter').remove();
 
-  if (self.displayBoxIndex >= oBoxCollection.length){
-      dubx.displayBoxIndex = 0;
+  if (displayBoxIndex >= oBoxCollection.length){
+      displayBoxIndex = 0;
   }
   if (self.displayBoxIndex < 0){
-       self.displayBoxIndex = oBoxCollection.length - 1;
+      displayBoxIndex = oBoxCollection.length - 1;
    }
   var cssClass = "selected";
   var enterToSelectSpan = '<span class="ac-list-press-enter">press enter to select</span>';
-  dubx.oBoxCollection.removeClass(cssClass).eq(self.displayBoxIndex).addClass(cssClass).append(enterToSelectSpan).focus();
+  oBoxCollection.removeClass(cssClass).eq(self.displayBoxIndex).addClass(cssClass).append(enterToSelectSpan).focus();
 };
 
-dubx.previewListKeyUp = function(e){
+var previewListKeyUp = function(e){
   e.preventDefault();
   switch(e.keyCode) {
       case 38:
-          dubx.doNavigate(-1);
+          doNavigate(-1);
           break;
       case 40:
-          dubx.doNavigate(1);
+          doNavigate(1);
           break;
       case 39:
       case 13:
           var new_text = $('#autocomplete-preview li.selected').find('.ac-text')[0].textContent;
-          dubx.updateChatInput(new_text);
+          updateChatInput(new_text);
           break;
       default:
           $("#chat-txt-message").focus();
@@ -74,7 +75,7 @@ dubx.previewListKeyUp = function(e){
  *   alt : OPTIONAL, to add to alt and title tag
  * }
  */
-dubx.previewList = function(acArray) {
+var previewList = function(acArray) {
     var self = this;
 
     function makePreviewContainer(cn){
@@ -128,7 +129,7 @@ dubx.previewList = function(acArray) {
     aCp.classList.add('ac-show');
 };
 
-dubx.previewListInit = function(){
+var previewListInit = function(){
     $('head').prepend('<link rel="stylesheet" type="text/css" href="'+dubx.srcRoot+'/css/options/autocomplete.css">');
     var acUL = document.createElement('ul');
     acUL.id = "autocomplete-preview";
@@ -136,8 +137,14 @@ dubx.previewListInit = function(){
 
     $(document.body).on('click', '.preview-item', function(e){
         var new_text = $(this).find('.ac-text')[0].textContent;
-        dubx.updateChatInput(new_text);
+        updateChatInput(new_text);
     });
 
-    $(document.body).on('keyup', '.ac-show', dubx.previewListKeyUp);
+    $(document.body).on('keyup', '.ac-show', previewListKeyUp);
+};
+
+module.exports = {
+  previewListInit: previewListInit,
+  previewList: previewList,
+  updateChatInput: updateChatInput
 };
