@@ -36,7 +36,7 @@ var afkStuff = require('./general/afk.js');
 
 var dubx = {
   // options and constants  
-  our_version : '03.05.00 - Dub Vote Info',
+  our_version : '03.06.00 - The rewrite',
   srcRoot: 'https://rawgit.com/FranciscoG/DubX-Script/modularize',
   options : {
       let_autovote: false,

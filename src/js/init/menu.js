@@ -1,7 +1,9 @@
-/* global dubx */
-dubx.sectionList = ['draw_general','draw_userinterface','draw_settings','draw_customize','draw_contact','draw_social','draw_chrome'];
+var options = require('../utils/options.js');
 
-dubx.drawSection = function(el) {
+/* global Dubtrack */
+var sectionList = ['draw_general','draw_userinterface','draw_settings','draw_customize','draw_contact','draw_social','draw_chrome'];
+
+var drawSection = function(el) {
     $(el).next('ul').slideToggle('fast');
     var sectionClass = $(el).next('ul').attr('class');
 
@@ -9,57 +11,57 @@ dubx.drawSection = function(el) {
 
     if(clicked.hasClass('fi-minus')){
         clicked.removeClass('fi-minus').addClass('fi-plus');
-        dubx.saveOption(sectionClass,'false');
+        options.saveOption(sectionClass,'false');
         dubx.options[sectionClass] = 'false';
     }
     else{
         clicked.removeClass('fi-plus').addClass('fi-minus');
-        dubx.saveOption(sectionClass,'true');
+        options.saveOption(sectionClass,'true');
         dubx.options[sectionClass] = 'true';
     }
 
 };
 
-dubx.openAllMenus = function(){
-  dubx.sectionList.forEach(function(section,i,arr){
+var openAllMenus = function(){
+  sectionList.forEach(function(section,i,arr){
     $('.'+section).slideDown('fast');
     $('.'+section).prev('li').find('i').removeClass('fi-plus').addClass('fi-minus');
-    dubx.saveOption(section, 'true');
+    options.saveOption(section, 'true');
     dubx.options[section] = 'true';
   });
 };
 
-dubx.closeAllMenus = function(){
-  dubx.sectionList.forEach(function(section,i,arr){
+var closeAllMenus = function(){
+  sectionList.forEach(function(section,i,arr){
     $('.'+section).slideUp();
     $('.'+section).prev('li').find('i').removeClass('fi-minus').addClass('fi-plus');
-    dubx.saveOption(section,'false');
+    options.saveOption(section,'false');
     dubx.options[section] = 'false';
   });
 };
 
-dubx.drawAll = function() {
+var drawAll = function() {
     var allClosed = true;
 
-    dubx.sectionList.forEach(function(section, i, arr){
+    sectionList.forEach(function(section, i, arr){
       if($('.'+section).css('display') === 'block'){
           allClosed = false;
       }
     });
 
     if(allClosed) {
-      dubx.openAllMenus();
+      openAllMenus();
     }
     else {
-      dubx.closeAllMenus();
+      closeAllMenus();
     }
 };
 
-dubx.slide = function() {
+var slide = function() {
   $('.for_content').slideToggle('fast');
 };
 
-dubx.menu = {
+var menu = {
   general: function(){
     return [
       '<li class="for_content_li" onclick="dubx.drawSection(this)">',
@@ -289,7 +291,7 @@ dubx.menu = {
 
 };
 
-dubx.makeMenu = function(){
+var makeMenu = function(){
     // add icon to the upper right corner
     var li = '<div class="for" onclick="dubx.slide();"><img src="'+dubx.srcRoot+'/params/params.svg" alt=""></div>';
     $('.header-right-navigation').append(li);
@@ -302,13 +304,13 @@ dubx.makeMenu = function(){
           '<span class="for_content_ver">DubX Settings</span>',
           '<span class="for_content_version" onclick="dubx.drawAll();" title="Collapse/Expand Menus">'+dubx.our_version+'</span>',
           '<ul class="for_content_ul">',
-            dubx.menu.general(),
-            dubx.menu.ui(),
-            dubx.menu.settings(),
-            dubx.menu.customize(),
-            dubx.menu.contact(),
-            dubx.menu.social(),
-            dubx.menu.extension(),
+            menu.general(),
+            menu.ui(),
+            menu.settings(),
+            menu.customize(),
+            menu.contact(),
+            menu.social(),
+            menu.extension(),
           '</ul>',
         '</div>'
     ].join('');
@@ -317,3 +319,7 @@ dubx.makeMenu = function(){
     $('.for_content').perfectScrollbar();
 
 };
+
+module.exports = {
+  makeMenu: makeMenu
+}
