@@ -7,28 +7,40 @@
  * @param  {String} confirm     a way to customize the text of the confirm button
  * @param  {Number} maxlength   for the textarea maxlength attribute
  */
-var input = function(title,content,placeholder,confirm,maxlength) {
-    var textarea = '', confirmButton = '';
-    if (placeholder) {
-        var mx = maxlength || 999;
-        textarea = '<textarea class="input" type="text" placeholder="'+placeholder+'" maxlength="'+ mx +'">'+content+'</textarea>';
+var create = function(infoObj) {
+    var defaults = {
+        title: null,
+        content: null,
+        placeholder: null,
+        confirmButtonClass: null,
+        maxlength: null,
+        confirmCallback: null
+    };
+    var opts = $.extend(true, {}, this.defaults, infoObj);
+    
+    var textarea = '';
+    var confirmButton = '';
+
+    if (opts.placeholder) {
+        var mx = opts.maxlength || 999;
+        textarea = '<textarea class="input" type="text" placeholder="'+opts.placeholder+'" maxlength="'+ mx +'">'+opts.content+'</textarea>';
     }
-    if (confirm) {
-        confirmButton = '<div class="'+confirm+' confirm"><p>Okay</p></div>';
+    if (opts.confirmButtonClass) {
+        confirmButton = '<div class="'+opts.confirmButtonClass+' confirm"><p>Okay</p></div>';
     }
     
-    var onErr = [
+    var dubxModal = [
         '<div class="onErr">',
             '<div class="container">',
                 '<div class="title">',
-                    '<h1>'+title+'</h1>',
+                    '<h1>'+opts.title+'</h1>',
                 '</div>',
                 '<div class="content">',
-                    '<p>'+content+'</p>',
+                    '<p>'+opts.content+'</p>',
                     textarea,
                 '</div>',
                 '<div class="control">',
-                    '<div class="cancel" onclick="dubx.closeErr();">',
+                    '<div class="cancel dubx-js-cancel">',
                         '<p>Cancel</p>',
                     '</div>',
                     confirmButton,
@@ -36,15 +48,26 @@ var input = function(title,content,placeholder,confirm,maxlength) {
             '</div>',
         '</div>'
     ].join('');
-    $('body').prepend(onErr);
+    $('body').append(dubxModal);
+
+    // add one time cancel click
+    $('.dubx-js-cancel').one("click",function(){
+        $('.onErr').remove();
+    });
+    
+    // add one time confirm action click
+    if (typeof opts.confirmCallback === 'function'){
+        $('.'+opts.confirmButtonClass).one("click", opts.confirmCallback);
+    }
+    
 };
 
 
-var closeErr = function() {
+var close = function() {
     $('.onErr').remove();
 };
 
 module.exports = {
-    input: input,
-    closeErr : closeErr
-}
+    create: create,
+    close : close
+};

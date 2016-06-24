@@ -4,7 +4,7 @@
  * Options will be saved as JSON made from the dubx.options object under one location
  */
 
-dubx.oldSettings = {
+var oldSettings = {
   general : [
     'autovote',
     'split_chat',
@@ -44,10 +44,11 @@ dubx.oldSettings = {
 };
 
 
-dubx.convertSettings = function(){
+var convertSettings = function(){
 
   if ( localStorage.getItem( 'dubxUserSettings') !== null ) {
-    return;
+    // new settings already exist, nothing do here, load old settings and return it
+    return JSON.parse( localStorage.getItem( 'dubxUserSettings' ) );
   }
 
   var newSettings = {
@@ -56,35 +57,39 @@ dubx.convertSettings = function(){
     custom : {}
   };
 
-  dubx.oldSettings.general.forEach(function(el,i,r){
+  oldSettings.general.forEach(function(el,i,r){
     newSettings.general[el] = localStorage.getItem(el);
   });
 
-  dubx.oldSettings.menu.forEach(function(el,i,r){
+  oldSettings.menu.forEach(function(el,i,r){
     newSettings.menu[el] = localStorage.getItem(el);
   });
 
-  dubx.oldSettings.custom.forEach(function(el,i,r){
+  oldSettings.custom.forEach(function(el,i,r){
     newSettings.custom[el] = localStorage.getItem(el);
   });
 
-  dubx.settings = newSettings;
-
-  localStorage.setItem( 'dubxUserSettings', JSON.stringify(dubx.settings) );
-
+  localStorage.setItem( 'dubxUserSettings', JSON.stringify(newSettings) );
+  return newSettings;
 };
 
-dubx.delOldSettings = function(){
+var delOldSettings = function(){
 
-  dubx.oldSettings.general.forEach(function(el,i,r){
+  oldSettings.general.forEach(function(el,i,r){
     localStorage.removeItem(el);
   });
 
-  dubx.oldSettings.menu.forEach(function(el,i,r){
+  oldSettings.menu.forEach(function(el,i,r){
     localStorage.removeItem(el);
   });
 
-  dubx.oldSettings.custom.forEach(function(el,i,r){
+  oldSettings.custom.forEach(function(el,i,r){
     localStorage.removeItem(el);
   });
+};
+
+
+module.exports = {
+  convertSettings: convertSettings,
+  delOldSettings: delOldSettings
 };

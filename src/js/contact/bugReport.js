@@ -24,12 +24,22 @@ var report_content = function() {
 };
 
 var report_modal = function() {
-    modal.input('Bug Report:','','Please only report bugs for DubX, not Dubtrack. \nBe sure to give a detailed description of the bug, and a way to replicate it, if possible.','confirm-for36','999');
-    $('.confirm-for36').click(report_content);
-    $('.confirm-for36').click(modal.closeErr);
+    modal.create(
+        {
+            title: 'Bug Report:',
+            content: '',
+            placeholder:'Please only report bugs for DubX, not Dubtrack. \nBe sure to give a detailed description of the bug, and a way to replicate it, if possible.'
+            ,
+            confirmButtonClass: 'confirm-for36',
+            maxlength: '999',
+            confirmCallback: function(){
+                report_content();
+                modal.close();
+            }
+        }
+    );
 };
 
 module.exports = {
-    report_content: report_content,
     report_modal: report_modal
 };

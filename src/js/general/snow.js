@@ -1,8 +1,12 @@
-dubx.snow = function() {
+var options = require('../utils/options.js');
+
+/* global dubx  */
+var snow = function() {
+    var newOptionState;
+    var optionName = 'autovote';
+
     if (!dubx.options.let_snow) {
-        dubx.options.let_snow = true;
-        dubx.saveOption('snow','true');
-        dubx.on('.snow');
+        newOptionState = true;
         $(document).snowfall({
             round: true,
             shadow: true,
@@ -13,9 +17,12 @@ dubx.snow = function() {
             maxSpeed: 5
         });
     } else {
-        dubx.options.let_snow = false;
-        dubx.saveOption('snow','false');
-        dubx.off('.snow');
+        newOptionState= false;
         $(document).snowfall('clear');
     }
+
+    dubx.options.let_snow = newOptionState;
+    dubx.settings = options.toggleAndSave(optionName, newOptionState, dubx.settings);
 };
+
+module.exports = snow;

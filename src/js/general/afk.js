@@ -1,4 +1,8 @@
-dubx.afk_chat_respond = function(e) {
+var options = require('../utils/options.js');
+var modal = require('../utils/modal.js');
+/* global Dubtrack, dubx */
+
+var afk_chat_respond = function(e) {
     var content = e.message;
     var user = Dubtrack.session.get('username');
     if (content.indexOf('@'+user) >-1 && Dubtrack.session.id !== e.user.userInfo.userid) {
@@ -18,28 +22,41 @@ dubx.afk_chat_respond = function(e) {
     }
 };
 
-dubx.saveAfkMessage =function() {
+var saveAfkMessage =function() {
     var customAfkMessage = $('.input').val();
-    dubx.saveOption('customAfkMessage', customAfkMessage);
+    options.saveOption('customAfkMessage', customAfkMessage);
     $('.onErr').remove();
 };
 
-dubx.createAfkMessage =function() {
+var createAfkMessage =function() {
     var current = localStorage.getItem('customAfkMessage');
-    dubx.input('Custom AFK Message',current,'I\'m not here right now.','confirm-for315','255');
-    $('.confirm-for315').click(dubx.saveAfkMessage);
+    modal.create({
+        title: 'Custom AFK Message',
+        content: current,
+        placeholder: 'I\'m not here right now.',
+        confirmButtonClass: 'confirm-for315',
+        maxlength: '255',
+        confirmCallback: saveAfkMessage
+    });
 };
 
-dubx.afk = function(e) {
-    if(e.target.className === 'for_content_edit' || e.target.className === 'fi-pencil') return;
+var afk = function(e) {
+    if(e.target.className === 'for_content_edit' || e.target.className === 'fi-pencil') {return};
+
+    var newOptionState;
+    var optionName = 'afk';
 
     if (!dubx.options.let_afk) {
-        dubx.options.let_afk = true;
         Dubtrack.Events.bind("realtime:chat-message", this.afk_chat_respond);
-        dubx.on('.afk');
     } else {
-        dubx.options.let_afk = false;
         Dubtrack.Events.unbind("realtime:chat-message", this.afk_chat_respond);
-        dubx.off('.afk');
     }
+
+    dubx.options.let_afk = newOptionState;
+    dubx.settings = options.toggleAndSave(optionName, newOptionState, dubx.settings);
+};
+
+module.exports = {
+    afk: afk,
+    createAfkMessage: createAfkMessage
 };
