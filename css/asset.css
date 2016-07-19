@@ -192,7 +192,6 @@
 
 /* Custom CSS for ranks & special users */
 #chat .chat-container ul.chat-main li.user-551d295433cd73030089d184 .activity-row .text p a.username:hover:before,
-#chat .chat-container ul.chat-main li.user-53f7c199892b010200a98809 .activity-row .text p a.username:hover:before,
 #chat .chat-container ul.chat-main li.user-560892bf8e9cb60300550aa2 .activity-row .text p a.username:hover:before {
     content: "Admin & DubX" !important;
     font-weight: 700;
@@ -219,8 +218,7 @@
     color: #89BE6C !important;
     text-shadow: 0px 0px 1px rgba(0,0,0,.5);
 }
-#chat .chat-container ul.chat-main li.user-551d295433cd73030089d184 .activity-row .text p a.username:before,
-#chat .chat-container ul.chat-main li.user-53f7c199892b010200a98809 .activity-row .text p a.username:before {
+#chat .chat-container ul.chat-main li.user-551d295433cd73030089d184 .activity-row .text p a.username:before {
     content: "\f137  \f1af";
     font-family: "foundation-icons";
     font-style: normal;
@@ -234,9 +232,7 @@
     margin-right: 5px;
 }
 #chat .chat-container ul.chat-main li.user-551d295433cd73030089d184 .activity-row .text p a.username .user-role,
-#chat .chat-container ul.chat-main li.user-551d295433cd73030089d184 .activity-row .text p a.username .user-role-icon,
-#chat .chat-container ul.chat-main li.user-53f7c199892b010200a98809 .activity-row .text p a.username .user-role,
-#chat .chat-container ul.chat-main li.user-53f7c199892b010200a98809 .activity-row .text p a.username .user-role-icon {
+#chat .chat-container ul.chat-main li.user-551d295433cd73030089d184 .activity-row .text p a.username .user-role-icon {
     color: #89BE6C !important;
 }
 ul.avatar-list li.user-sinful p.dubs:before,
