@@ -1,3 +1,4 @@
+/* global Dubtrack */
 var modal = require('../utils/modal.js');
 
 var report_content = function() {

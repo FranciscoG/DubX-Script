@@ -33,8 +33,15 @@ var saveOption = function(optionName, value, settingObj) {
  * @return {undefined}         
  */
 var toggle = function(selector, state){
-  var status = state ? "check" : "x";
-  $(selector + ' .for_content_off i').replaceWith('<i class="fi-'+status+'"></i>');
+  var item = document.querySelector(selector + ' .for_content_off i');
+  
+  if (state === true) {
+    item.classList.remove('fi-x');
+    item.classList.add('fi-check');
+  } else {
+    item.classList.remove('fi-check');
+    item.classList.add('fi-x');
+  }
 };
 
 /**

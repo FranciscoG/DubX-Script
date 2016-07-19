@@ -291,6 +291,96 @@ var menu = {
 
 };
 
+/*********************************************/
+
+var menu = {
+  general: function(){
+    return [
+      '<li class="for_content_li" onclick="dubx.drawSection(this)">',
+          '<p class="for_content_c">',
+              'General',
+              '<i class="fi-minus"></i>',
+          '</p>',
+      '</li>',
+      '<ul id="dubxmenu-general" class="draw_general">',
+      '</ul>'
+    ].join('');
+  },
+  ui : function(){
+    return [
+      '<li class="for_content_li" onclick="dubx.drawSection(this)">',
+          '<p class="for_content_c">',
+              'User Interface',
+              '<i class="fi-minus"></i>',
+          '</p>',
+      '</li>',
+      '<ul id="dubxmenu-ui" class="draw_userinterface">',
+      '</ul>'
+    ].join('');
+  }, 
+  settings: function(){
+    return [
+      '<li class="for_content_li" onclick="dubx.drawSection(this)">',
+          '<p class="for_content_c">',
+              'Settings',
+              '<i class="fi-minus"></i>',
+          '</p>',
+      '</li>',
+      '<ul id="dubxmenu-settings" class="draw_settings">',
+      '</ul>'
+    ].join('');
+  },
+  customize: function(){
+    return [
+      '<li class="for_content_li" onclick="dubx.drawSection(this)">',
+          '<p class="for_content_c">',
+              'Customize',
+              '<i class="fi-minus"></i>',
+          '</p>',
+      '</li>',
+      '<ul id="dubxmenu-customize" class="draw_customize">',
+      '</ul>'
+    ].join('');
+  },
+  contact: function(){
+    return [
+      '<li class="for_content_li" onclick="dubx.drawSection(this)">',
+          '<p class="for_content_c">',
+              'Contact',
+              '<i class="fi-minus"></i>',
+          '</p>',
+      '</li>',
+      '<ul id="dubxmenu-contact" class="draw_contact">',
+      '</ul>'
+    ].join('');
+  },
+  social: function(){
+    return [
+      '<li class="for_content_li" onclick="dubx.drawSection(this)">',
+          '<p class="for_content_c">',
+              'Social',
+              '<i class="fi-minus"></i>',
+          '</p>',
+      '</li>',
+      '<ul id="dubxmenu-social" class="draw_social">',
+      '</ul>'
+    ].join('');
+  },
+  extension: function(){
+    return [
+      '<li class="for_content_li" onclick="dubx.drawSection(this)">',
+          '<p class="for_content_c">',
+              'Chrome Extension',
+              '<i class="fi-minus"></i>',
+          '</p>',
+      '</li>',
+      '<ul id="dubxmenu-extension" class="draw_chrome">',
+      '</ul>'
+    ].join('');
+  }
+
+};
+
 var makeMenu = function(){
     // add icon to the upper right corner
     var li = '<div class="for" onclick="dubx.slide();"><img src="'+dubx.srcRoot+'/params/params.svg" alt=""></div>';
@@ -317,9 +407,13 @@ var makeMenu = function(){
 
     $('body').prepend(html);
     $('.for_content').perfectScrollbar();
+};
 
+var appendToSection = function(section, menuItemHtml){
+  $('#dubxmenu-'+section).append(menuItemHtml);
 };
 
 module.exports = {
-  makeMenu: makeMenu
-}
+  makeMenu: makeMenu,
+  appendToSection: appendToSection
+};

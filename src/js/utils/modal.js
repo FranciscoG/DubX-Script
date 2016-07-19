@@ -1,7 +1,7 @@
 /**
  * input is a modal used to display messages and also capture data
  * 
- * @param  {String} title       title that shows at the top of the modeal
+ * @param  {String} title       title that shows at the top of the modal
  * @param  {String} content     A descriptive message on what the modal is for
  * @param  {String} placeholder placeholder for the textarea
  * @param  {String} confirm     a way to customize the text of the confirm button
@@ -9,8 +9,8 @@
  */
 var create = function(infoObj) {
     var defaults = {
-        title: null,
-        content: null,
+        title: '',
+        content: '',
         placeholder: null,
         confirmButtonClass: null,
         maxlength: null,
