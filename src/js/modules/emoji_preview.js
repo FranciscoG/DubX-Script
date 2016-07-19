@@ -1,7 +1,7 @@
 var myModule = {};
 
-myModule.id = "snow";
-myModule.moduleName = "Snow";
+myModule.id = "emoji_preview";
+myModule.moduleName = "Autocomplete Emoji";
 myModule.description = "Toggle snow.";
 myModule.optionState = false;
 myModule.category = "general";
@@ -18,18 +18,8 @@ myModule.go = function(e){
 
   if (!this.optionState) {
       newOptionState = true;
-      $(document).snowfall({
-          round: true,
-          shadow: true,
-          flakeCount: 50,
-          minSize: 1,
-          maxSize: 5,
-          minSpeed: 5,
-          maxSpeed: 5
-      });
   } else {
-      newOptionState= false;
-      $(document).snowfall('clear');
+      newOptionState = false;
   }
 
   this.optionState = newOptionState;

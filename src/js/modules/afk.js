@@ -1,19 +1,20 @@
 /* global Dubtrack, dubx */
 
 var modal = require('../utils/modal.js');
+var options = require('../utils/options.js');
 
 var myModule = {};
 
 myModule.id = "afk";
-myModule.moduleName = "AFK";
+myModule.moduleName = "AFK Autorespond";
 myModule.description = "Toggle Away from Keyboard and customize AFK message.";
 myModule.optionState = false;
 myModule.category = "general";
 myModule.menuHTML = [
-    '<li id="'+myModule.id+'" class="for_content_li for_content_feature afk">',
+    '<li id="'+myModule.id+'" class="for_content_li for_content_feature '+myModule.id+'">',
         '<p class="for_content_off"><i class="fi-x"></i></p>',
         '<p id="createAfkMessage" class="for_content_edit" style="display: inline-block;color: #878c8e;font-size: .85rem;font-weight: bold;float: right;"><i class="fi-pencil"></i></p>',
-        '<p class="for_content_p">AFK Autorespond</p>',
+        '<p class="for_content_p">'+myModule.moduleName+'<</p>',
     '</li>',
 ].join('');
 
@@ -56,23 +57,23 @@ var createAfkMessage =function() {
     });
 };
 
+myModule.init = function(){
+    $('#createAfkMessage').on('click', createAfkMessage);
+};
+
 myModule.go = function(e) {
-    if(e.target.className === 'for_content_edit' || e.target.className === 'fi-pencil') {return};
-
+    if(e.target.className === 'for_content_edit' || e.target.className === 'fi-pencil') {return;
+    }
     var newOptionState;
-    var optionName = 'afk';
 
-    if (!dubx.options.let_afk) {
+    if (!this.optionState) {
         Dubtrack.Events.bind("realtime:chat-message", this.afk_chat_respond);
     } else {
         Dubtrack.Events.unbind("realtime:chat-message", this.afk_chat_respond);
     }
 
-    dubx.options.let_afk = newOptionState;
-    dubx.settings = options.toggleAndSave(optionName, newOptionState, dubx.settings);
+    this.optionState = newOptionState;
+    this.toggleAndSave(this.id, newOptionState);
 };
 
-module.exports = {
-    afk: afk,
-    createAfkMessage: createAfkMessage
-};
+module.exports = myModule;

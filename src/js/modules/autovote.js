@@ -7,9 +7,9 @@ myModule.description = "Toggles support for auto upvoting for every song";
 myModule.optionState = false;
 myModule.category = "general";
 myModule.menuHTML = [
-  '<li id="'+myModule.id+'" class="for_content_li for_content_feature autovote">',
+  '<li id="'+myModule.id+'" class="for_content_li for_content_feature '+myModule.id+'">',
       '<p class="for_content_off"><i class="fi-x"></i></p>',
-      '<p class="for_content_p">Autovote</p>',
+      '<p class="for_content_p">'+myModule.moduleName+'</p>',
   '</li>'
 ].join('');
 
