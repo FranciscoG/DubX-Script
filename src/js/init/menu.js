@@ -355,16 +355,46 @@ var menu = {
     ].join('');
   },
   social: function(){
-    return [
-      '<li class="for_content_li" onclick="dubx.drawSection(this)">',
-          '<p class="for_content_c">',
-              'Social',
-              '<i class="fi-minus"></i>',
-          '</p>',
-      '</li>',
-      '<ul id="dubxmenu-social" class="draw_social">',
-      '</ul>'
-    ].join('');
+      return [
+        '<li class="for_content_li" onclick="dubx.drawSection(this)">',
+            '<p class="for_content_c">',
+                'Social',
+                '<i class="fi-minus"></i>',
+            '</p>',
+        '</li>',
+        '<ul class="draw_social">',
+            '<li class="for_content_li for_content_feature">',
+                '<a href="https://www.facebook.com/DubXScript" target="_blank" style="color: #878c8e;">',
+                    '<p class="for_content_off"><i class="fi-social-facebook"></i></p>',
+                    '<p class="for_content_p">Like Us on Facebook</p>',
+                '</a>',
+            '</li>',
+            '<li class="for_content_li for_content_feature">',
+                '<a href="https://twitter.com/DubXScript" target="_blank" style="color: #878c8e;">',
+                    '<p class="for_content_off"><i class="fi-social-twitter"></i></p>',
+                    '<p class="for_content_p">Follow Us on Twitter</p>',
+                '</a>',
+            '</li>',
+            '<li class="for_content_li for_content_feature">',
+                '<a href="https://github.com/sinfulBA/DubX-Script" target="_blank" style="color: #878c8e;">',
+                    '<p class="for_content_off"><i class="fi-social-github"></i></p>',
+                    '<p class="for_content_p">Fork Us on Github</p>',
+                '</a>',
+            '</li>',
+            '<li class="for_content_li for_content_feature">',
+                '<a href="https://dubx.net" target="_blank" style="color: #878c8e;">',
+                    '<p class="for_content_off"><i class="fi-link"></i></p>',
+                    '<p class="for_content_p">Our Website</p>',
+                '</a>',
+            '</li>',
+            '<li class="for_content_li for_content_feature">',
+                '<a href="https://dubx.net/donate.html" target="_blank" style="color: #878c8e;">',
+                    '<p class="for_content_off"><i class="fi-pricetag-multiple"></i></p>',
+                    '<p class="for_content_p">Donate</p>',
+                '</a>',
+            '</li>',
+        '</ul>'
+      ].join('');
   },
   extension: function(){
     return [
@@ -374,7 +404,13 @@ var menu = {
               '<i class="fi-minus"></i>',
           '</p>',
       '</li>',
-      '<ul id="dubxmenu-extension" class="draw_chrome">',
+      '<ul class="draw_chrome">',
+          '<li class="for_content_li for_content_feature">',
+              '<a href="https://chrome.google.com/webstore/detail/dubx/oceofndagjnpebjmknefoelcpcnpcedm/reviews" target="_blank" style="color: #878c8e;">',
+                  '<p class="for_content_off"><i class="fi-like"></i></p>',
+                  '<p class="for_content_p">Give Us a Rating</p>',
+              '</a>',
+          '</li>',
       '</ul>'
     ].join('');
   }
@@ -409,11 +445,21 @@ var makeMenu = function(){
     $('.for_content').perfectScrollbar();
 };
 
+var makeStandardMenuHTML = function(id, desc, cssClass, menuTitle){
+  return [
+    '<li id="'+id+'" title="'+desc+'" class="for_content_li for_content_feature '+cssClass+'">',
+        '<p class="for_content_off"><i class="fi-x"></i></p>',
+        '<p class="for_content_p">'+menuTitle+'</p>',
+    '</li>',
+  ].join('');
+};
+
 var appendToSection = function(section, menuItemHtml){
   $('#dubxmenu-'+section).append(menuItemHtml);
 };
 
 module.exports = {
   makeMenu: makeMenu,
-  appendToSection: appendToSection
+  appendToSection: appendToSection,
+  makeStandardMenuHTML: makeStandardMenuHTML
 };

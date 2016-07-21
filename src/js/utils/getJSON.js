@@ -1,6 +1,6 @@
 // jQuery's getJSON kept returning errors so making my own with promise-like
 // structure and added optional Event to fire when done so can hook in elsewhere
-dubx.getJSON = (function (url, optionalEvent) {
+var getJSON = (function (url, optionalEvent) {
     var doneEvent;
     function GetJ(_url, _cb){
         var xhr = new XMLHttpRequest();
@@ -18,3 +18,5 @@ dubx.getJSON = (function (url, optionalEvent) {
     };
     return { done: done };
 });
+
+module.exports = getJSON;

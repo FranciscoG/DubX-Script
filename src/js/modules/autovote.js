@@ -1,4 +1,6 @@
 /* global Dubtrack */
+var menu = require('../init/menu.js');
+
 var myModule = {};
 
 myModule.id = "autovote";
@@ -6,12 +8,7 @@ myModule.moduleName = "Autovote";
 myModule.description = "Toggles support for auto upvoting for every song";
 myModule.optionState = false;
 myModule.category = "general";
-myModule.menuHTML = [
-  '<li id="'+myModule.id+'" class="for_content_li for_content_feature '+myModule.id+'">',
-      '<p class="for_content_off"><i class="fi-x"></i></p>',
-      '<p class="for_content_p">'+myModule.moduleName+'</p>',
-  '</li>'
-].join('');
+myModule.menuHTML = menu.makeStandardMenuHTML(myModule.id, myModule.description, myModule.id, myModule.moduleName);
 
 // this function will be run on each click of the menu
 myModule.go = function(e){

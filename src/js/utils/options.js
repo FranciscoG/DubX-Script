@@ -1,29 +1,22 @@
+var settings = require("../init/settings.js");
 /**
- * Save an option to localStorage.  To keep it functional, you need to pass it
- * the current dubx.settings object and it will return the updated object
- * used the returned object to replace dubx.settings
- * example:
- * var options = require('../utils/options.js');
- * dubx.settings = options.saveOption('snow','true', dubx.settings);
+ * Save an option to localStorage. 
  * 
  * @param  {String} selector    the name of the option
  * @param  {String} value       'true' or 'false'
- * @param  {Object} settingObj  the dubx.settings object
- * @return {Object}             the updated dubx.settings obj
  */
-var saveOption = function(optionName, value, settingObj) {
+var saveOption = function(optionName, value) {
   localStorage.setItem(optionName,value);
 
   // new options
   if ( /^draw/i.test(optionName) ) {
-    settingObj.menu[optionName] = value;
+    settings.menu[optionName] = value;
   } else if (/(css|customAfkMessage)/i.test(optionName)) {
-    settingObj.custom[optionName] = value;
+    settings.custom[optionName] = value;
   } else {
-    settingObj.general[optionName] = value;
+    settings.general[optionName] = value;
   }
-  localStorage.setItem( 'dubxUserSettings', JSON.stringify(settingObj) );
-  return settingObj;
+  localStorage.setItem( 'dubxUserSettings', JSON.stringify(settings) );
 };
 
 /**
@@ -57,9 +50,9 @@ var off = function(selector) {
   toggle(selector, false);
 };
 
-var toggleAndSave = function(optionName, state, settingObj){
+var toggleAndSave = function(optionName, state){
   toggle("."+optionName, state);
-  return saveOption(optionName, state.toString(), settingObj);
+  return saveOption(optionName, state.toString());
 };
 
 module.exports = {

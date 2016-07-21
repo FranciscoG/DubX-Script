@@ -1,7 +1,13 @@
-/* global Dubtrack, dubx */
+/**
+ * AFK -  Away from Keyboard
+ * Toggles the afk auto response on/off
+ * including adding a custom message
+ */
 
+/* global Dubtrack, dubx */
 var modal = require('../utils/modal.js');
 var options = require('../utils/options.js');
+var menu = require('../init/menu.js');
 
 var myModule = {};
 
@@ -10,13 +16,8 @@ myModule.moduleName = "AFK Autorespond";
 myModule.description = "Toggle Away from Keyboard and customize AFK message.";
 myModule.optionState = false;
 myModule.category = "general";
-myModule.menuHTML = [
-    '<li id="'+myModule.id+'" class="for_content_li for_content_feature '+myModule.id+'">',
-        '<p class="for_content_off"><i class="fi-x"></i></p>',
-        '<p id="createAfkMessage" class="for_content_edit" style="display: inline-block;color: #878c8e;font-size: .85rem;font-weight: bold;float: right;"><i class="fi-pencil"></i></p>',
-        '<p class="for_content_p">'+myModule.moduleName+'<</p>',
-    '</li>',
-].join('');
+myModule.menuHTML = menu.makeStandardMenuHTML(myModule.id, myModule.description, myModule.id, myModule.moduleName);
+
 
 
 var afk_chat_respond = function(e) {

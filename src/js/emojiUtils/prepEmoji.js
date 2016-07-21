@@ -1,5 +1,8 @@
 /* global Dubtrack, emojify */
 
+var getJSON = require('../utils/getJSON.js');
+var settings = require("../init/settings.js");
+
 var prepEmoji = {};
 
 prepEmoji.emoji = {
@@ -21,11 +24,13 @@ prepEmoji.tasty = {
     emotes: {}
 };
 prepEmoji.shouldUpdateAPIs = function(apiName){
-    var self = this;
     var day = 86400000; // milliseconds in a day
 
     var today = Date.now();
     var lastSaved = parseInt(localStorage.getItem(apiName+'_api_timestamp'));
+    // Is the lastsaved not a number for some strange reason, then we should update
+    // are we past 5 days from last update? then we should update
+    // does the data not exist in localStorage, then we should update
     return isNaN(lastSaved) || today - lastSaved > day * 5 || !localStorage[apiName +'_api'];
 };
 /**************************************************************************
@@ -39,7 +44,7 @@ prepEmoji.loadTwitchEmotes = function(){
     // grab it from the twitch API
     if (self.shouldUpdateAPIs('twitch')) {
         console.log('Dubx','twitch','loading from api');
-        var twApi = new self.getJSON('//api.twitch.tv/kraken/chat/emoticon_images', 'twitch:loaded');
+        var twApi = new getJSON('//api.twitch.tv/kraken/chat/emoticon_images', 'twitch:loaded');
         twApi.done(function(data){
             localStorage.setItem('twitch_api_timestamp', Date.now().toString());
             localStorage.setItem('twitch_api', data);
@@ -63,7 +68,7 @@ prepEmoji.loadBTTVEmotes = function(){
     // grab it from the bttv API
     if (self.shouldUpdateAPIs('bttv')) {
         console.log('Dubx','bttv','loading from api');
-        var bttvApi = new self.getJSON('//api.betterttv.net/2/emotes', 'bttv:loaded');
+        var bttvApi = new getJSON('//api.betterttv.net/2/emotes', 'bttv:loaded');
         bttvApi.done(function(data){
             localStorage.setItem('bttv_api_timestamp', Date.now().toString());
             localStorage.setItem('bttv_api', data);
@@ -85,7 +90,7 @@ prepEmoji.loadTastyEmotes = function(){
     var savedData;
     console.log('Dubx','tasty','loading from api');
     // since we control this API we should always have it load from remote
-    var tastyApi = new self.getJSON(dubx.srcRoot + '/emotes/tastyemotes.json', 'tasty:loaded');
+    var tastyApi = new getJSON(settings.srcRoot + '/emotes/tastyemotes.json', 'tasty:loaded');
     tastyApi.done(function(data){
         localStorage.setItem('tasty_api', data);
         self.processTastyEmotes(JSON.parse(data));
