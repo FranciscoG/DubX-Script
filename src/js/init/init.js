@@ -12,7 +12,7 @@ dubx.init = function() {
   $.getScript('https://rawgit.com/loktar00/JQuery-Snowfall/master/src/snowfall.jquery.js');
 
   $('.player_sharing').append('<span class="icon-history eta_tooltip_t" onmouseover="dubx.eta();" onmouseout="dubx.hide_eta();"></span>');
-  $('.player_sharing').append('<span class="icon-mute snooze_btn" onclick="dubx.snooze();" onmouseover="dubx.snooze_tooltip();" onmouseout="dubx.hide_snooze_tooltip();"></span>');
+
   $('.icon-mute.snooze_btn:after').css({"content": "1", "vertical-align": "top", "font-size": "0.75rem", "font-weight": "700"});
 
   dubx.makeMenu();

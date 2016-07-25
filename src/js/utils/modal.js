@@ -55,13 +55,18 @@ var create = function(infoObj) {
         $('.onErr').remove();
     });
     
-    // add one time confirm action click
-    if (typeof opts.confirmCallback === 'function'){
-        $('.'+opts.confirmButtonClass).one("click", opts.confirmCallback);
-    }
+    $('.'+opts.confirmButtonClass).one("click", function(e){
+        confirmButton(opts.confirmCallback || null);
+    });
     
 };
 
+var confirmButton = function(optionalCB){
+    if (typeof optionalCB === 'function'){
+        optionalCB();
+        $('.onErr').remove();
+    }
+};
 
 var close = function() {
     $('.onErr').remove();

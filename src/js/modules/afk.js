@@ -47,11 +47,10 @@ var afk_chat_respond = function(e) {
 var saveAfkMessage =function() {
     var customAfkMessage = $('.input').val();
     options.saveOption('customAfkMessage', customAfkMessage);
-    $('.onErr').remove();
 };
 
 var createAfkMessage =function() {
-    var current = localStorage.getItem('customAfkMessage');
+    var current = settings.custom.customAfkMessage;
     modal.create({
         title: 'Custom AFK Message',
         content: current,

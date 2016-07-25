@@ -1,5 +1,20 @@
+/**
+ * Bug Report
+ */
+
 /* global Dubtrack */
+var menu = require('../init/menu.js');
+var settings = require("../init/settings.js");
 var modal = require('../utils/modal.js');
+
+var myModule = {};
+
+myModule.id = "report_modal";
+myModule.moduleName = "Bug Report";
+myModule.description = "Report any DUBX specific bugs, NOT dubtrack bugs.";
+myModule.optionState = false;
+myModule.category = "contact";
+myModule.menuHTML = menu.makeOtherMenuHTML('comments', myModule.id, myModule.description, '', myModule.moduleName);
 
 var report_content = function() {
     var content = $('.input').val();
@@ -24,23 +39,15 @@ var report_content = function() {
     $('.report').replaceWith('<li onclick="" class="for_content_li for_content_feature report"><p class="for_content_off"><i class="fi-check"></i></p><p class="for_content_p">Bug Report</p></li>');
 };
 
-var report_modal = function() {
-    modal.create(
-        {
-            title: 'Bug Report:',
-            content: '',
-            placeholder:'Please only report bugs for DubX, not Dubtrack. \nBe sure to give a detailed description of the bug, and a way to replicate it, if possible.'
-            ,
-            confirmButtonClass: 'confirm-for36',
-            maxlength: '999',
-            confirmCallback: function(){
-                report_content();
-                modal.close();
-            }
-        }
-    );
+myModule.go = function() {
+  modal.create({
+    title: 'Bug Report:',
+    content: '',
+    placeholder: "Please only report bugs for DubX, not Dubtrack. \nBe sure to give a detailed description of the bug, and a way to replicate it, if possible.",
+    confirmButtonClass: 'confirm-for36',
+    maxlength: '999',
+    confirmCallback: report_content
+  });
 };
 
-module.exports = {
-    report_modal: report_modal
-};
+module.exports = myModule;

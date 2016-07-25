@@ -15,6 +15,16 @@ module.exports = [
   require('hideBackground.js'),
   
   // Settings
+  require('spacebarMute.js'),
+  require('showTimestamps.js'),
+  require('warnOnNavigation.js'),
+
   // Customize
+  require('plugDjTheme.js'),
+  require('communityTheme.js'),
+  require('customCSS.js'),
+  require('customBackground.js'),
+
   // Contact
+  require('bugReport.js')
 ];

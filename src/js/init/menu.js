@@ -454,6 +454,15 @@ var makeStandardMenuHTML = function(id, desc, cssClass, menuTitle){
   ].join('');
 };
 
+var makeOtherMenuHTML = function(icon, id, desc, cssClass, menuTitle){
+  return [
+    '<li id="'+id+'" title="'+desc+'" class="for_content_li for_content_feature '+cssClass+'">',
+        '<p class="for_content_off"><i class="fi-'+icon+'"></i></p>',
+        '<p class="for_content_p">'+menuTitle+'</p>',
+    '</li>',
+  ].join('');
+};
+
 var appendToSection = function(section, menuItemHtml){
   $('#dubxmenu-'+section).append(menuItemHtml);
 };
@@ -461,5 +470,6 @@ var appendToSection = function(section, menuItemHtml){
 module.exports = {
   makeMenu: makeMenu,
   appendToSection: appendToSection,
-  makeStandardMenuHTML: makeStandardMenuHTML
+  makeStandardMenuHTML: makeStandardMenuHTML,
+  makeOtherMenuHTML: makeOtherMenuHTML
 };

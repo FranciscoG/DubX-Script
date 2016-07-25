@@ -26,7 +26,8 @@ var oldSettings = {
     'updub_chat',
     'grab_chat',
     'dubs_hover',
-    'snow'
+    'snow',
+    'medium'
   ],
   menu: [
     'draw_general',
