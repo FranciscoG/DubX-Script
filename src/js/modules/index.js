@@ -1,12 +1,19 @@
 // put this in order of appearance in the menu
 module.exports = [
   // General 
-  require('./snow.js'),
-  require('./autovote.js'),
-  require('./afk.js'),
-  require('./emotes.js'),
+  require('snow.js'),
+  require('autovote.js'),
+  require('afk.js'),
+  require('emotes.js'),
 
   // User Interface
+  require('fullscreen.js'),
+  require('splitchat.js'),
+  require('hideChat.js'),
+  require('hideVideo.js'),
+  require('hideAvatars.js'),
+  require('hideBackground.js'),
+  
   // Settings
   // Customize
   // Contact

@@ -19,6 +19,11 @@ var saveOption = function(optionName, value) {
   localStorage.setItem( 'dubxUserSettings', JSON.stringify(settings) );
 };
 
+var getAllOptions = function(){
+  var _stored = localStorage.dubxUserSettings;
+  return JSON.parse(_stored);
+};
+
 /**
  * Updates the on/off state of the option in the dubx menu
  * @param  {String} selector name of the selector to be updated

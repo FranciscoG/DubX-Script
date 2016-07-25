@@ -1,7 +1,6 @@
 /**
  * Settings
- * this will hold all the "global" (to dubx) settings
- * @type {Object}
+ * this will hold all the "global" (dubx) settings
  */
 module.exports = {
   // options and constants  

@@ -4,10 +4,11 @@
  * including adding a custom message
  */
 
-/* global Dubtrack, dubx */
+/* global Dubtrack */
 var modal = require('../utils/modal.js');
 var options = require('../utils/options.js');
 var menu = require('../init/menu.js');
+var settings = require("../init/settings.js");
 
 var myModule = {};
 
@@ -19,24 +20,27 @@ myModule.category = "general";
 myModule.menuHTML = menu.makeStandardMenuHTML(myModule.id, myModule.description, myModule.id, myModule.moduleName);
 
 
-
 var afk_chat_respond = function(e) {
     var content = e.message;
     var user = Dubtrack.session.get('username');
-    if (content.indexOf('@'+user) >-1 && Dubtrack.session.id !== e.user.userInfo.userid) {
-        if (dubx.options.let_active_afk) {
-            if (localStorage.getItem('customAfkMessage')) {
-                var customAfkMessage = localStorage.getItem('customAfkMessage');
-                $('#chat-txt-message').val('[AFK] '+customAfkMessage);
+    
+    if (content.indexOf('@'+user) > -1 && Dubtrack.session.id !== e.user.userInfo.userid) {
+    
+        if (this.optionState) {
+            if (settings.custom.customAfkMessage) {
+                $('#chat-txt-message').val('[AFK] '+ settings.custom.customAfkMessage);
             } else {
                 $('#chat-txt-message').val("[AFK] I'm not here right now.");
             }
             Dubtrack.room.chat.sendMessage();
-            dubx.options.let_active_afk = false;
+            this.optionState = false;
+
+            var self = this;
             setTimeout(function() {
-                dubx.options.let_active_afk = true;
+                self.optionState = true;
             }, 180000);
         }
+
     }
 };
 
@@ -68,9 +72,11 @@ myModule.go = function(e) {
     var newOptionState;
 
     if (!this.optionState) {
-        Dubtrack.Events.bind("realtime:chat-message", this.afk_chat_respond);
+        newOptionState = true;
+        Dubtrack.Events.bind("realtime:chat-message", afk_chat_respond);
     } else {
-        Dubtrack.Events.unbind("realtime:chat-message", this.afk_chat_respond);
+        newOptionState = false;
+        Dubtrack.Events.unbind("realtime:chat-message", afk_chat_respond);
     }
 
     this.optionState = newOptionState;

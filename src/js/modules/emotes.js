@@ -11,7 +11,7 @@ var dubx_emoji = require('../emojiUtils/prepEmoji.js');
 
 var myModule = {};
 
-myModule.id = "emotes";
+myModule.id = "twitch_emotes";
 myModule.moduleName = "Emotes";
 myModule.description = "Toggle Twitch Emotes support.";
 myModule.optionState = false;
