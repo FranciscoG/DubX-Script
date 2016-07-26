@@ -18,23 +18,23 @@ myModule.optionState = false;
 myModule.category = "general";
 myModule.menuHTML = menu.makeStandardMenuHTML(myModule.id, myModule.description, "twitch_emotes", myModule.moduleName);
 
+function makeImage(type, src, name, w, h){
+  return '<img class="emoji '+type+'-emote" '+
+    (w ? 'width="'+w+'" ' : '') +
+    (h ? 'height="'+h+'" ' : '') +
+     'title="'+name+'" alt="'+name+'" src="'+src+'" />';
+}
 
 /**********************************************************************
  * handles replacing twitch emotes in the chat box with the images
  */
 
-var replaceTextWithEmote = function(){
-    var self = dubx;
+myModule.replaceTextWithEmote = function(){
+    var self = dubx_emoji;
+
     var _regex = self.twitch.chatRegex;
 
     if (!self.twitchJSONSLoaded) { return; } // can't do anything until jsons are loaded
-
-    function makeImage(type, src, name, w, h){
-        return '<img class="emoji '+type+'-emote" '+
-            (w ? 'width="'+w+'" ' : '') +
-            (h ? 'height="'+h+'" ' : '') +
-             'title="'+name+'" alt="'+name+'" src="'+src+'" />';
-    }
 
     var $chatTarget = $('.chat-main .text').last();
     
@@ -45,15 +45,15 @@ var replaceTextWithEmote = function(){
     var emoted = $chatTarget.html().replace(_regex, function(matched, p1){
         var _id, _src, _desc, key = p1.toLowerCase();
 
-        if (typeof self.twitch.emotes[key] !== 'undefined'){
+        if ( self.twitch.emotes[key] ){
             _id = self.twitch.emotes[key];
             _src = self.twitch.template(_id);
             return makeImage("twitch", _src, key);
-        } else if (typeof self.bttv.emotes[key] !== 'undefined') {
+        } else if ( self.bttv.emotes[key] ) {
             _id = self.bttv.emotes[key];
             _src = self.bttv.template(_id);
             return makeImage("bttv", _src, key);
-        } else if (typeof self.tasty.emotes[key] !== 'undefined') {
+        } else if ( self.tasty.emotes[key] ) {
             _src = self.tasty.template(key);
             return makeImage("tasty", _src, key, self.tasty.emotes[key].width, self.tasty.emotes[key].height);
         } else {
@@ -63,23 +63,22 @@ var replaceTextWithEmote = function(){
     });
 
     $chatTarget.html(emoted);
-    // TODO : Convert existing :emotes: in chat on plugin load
 };
 
 /**************************************************************************
  * Turn on/off the twitch emoji in chat
  */
 myModule.go = function(){
-    document.body.addEventListener('twitch:loaded', this.loadBTTVEmotes);
-    document.body.addEventListener('bttv:loaded', this.loadTastyEmotes);
+    document.body.addEventListener('twitch:loaded', dubx_emoji.loadBTTVEmotes);
+    document.body.addEventListener('bttv:loaded', dubx_emoji.loadTastyEmotes);
     
     var newOptionState;
     var optionName = 'twitch_emotes';
 
     if (!myModule.optionState) {
         
-        if (!dubx.twitchJSONSLoaded) {
-            loadTwitchEmotes();
+        if (!dubx_emoji.twitchJSONSLoaded) {
+            dubx_emoji.loadTwitchEmotes();
         } else {
             this.replaceTextWithEmote();
         }
