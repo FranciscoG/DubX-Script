@@ -55,17 +55,19 @@ var create = function(infoObj) {
         $('.onErr').remove();
     });
     
-    $('.'+opts.confirmButtonClass).one("click", function(e){
-        confirmButton(opts.confirmCallback || null);
-    });
+    if (opts.confirmButtonClass) {
+      $('.'+opts.confirmButtonClass).one("click", function(e){
+          confirmButton(opts.confirmCallback || null);
+      });
+    }
     
 };
 
 var confirmButton = function(optionalCB){
     if (typeof optionalCB === 'function'){
         optionalCB();
-        $('.onErr').remove();
     }
+    $('.onErr').remove();
 };
 
 var close = function() {
