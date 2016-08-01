@@ -1,6 +1,6 @@
 /**
- * Hide Avatars
- * Toggle hiding user avatars in the chat box.
+ * Dubs in Chat
+ * Show down o
  */
 
 /* global Dubtrack */
@@ -9,9 +9,9 @@ var css = require('../utils/css.js');
 
 var myModule = {};
 
-myModule.id = "hide_avatars";
-myModule.moduleName = "Hide Avatars";
-myModule.description = "Toggle hiding user avatars in the chat box.";
+myModule.id = "video_window";
+myModule.moduleName = "Hide Chat";
+myModule.description = "Toggle hiding of the chat box.";
 myModule.optionState = false;
 myModule.category = "ui";
 myModule.menuHTML = menu.makeStandardMenuHTML(myModule.id, myModule.description, myModule.id, myModule.moduleName);
@@ -20,12 +20,12 @@ myModule.menuHTML = menu.makeStandardMenuHTML(myModule.id, myModule.description,
 myModule.go = function() {
   var newOptionState;
 
-  if(!this.optionState) {
-    newOptionState= true;
-    css.load('hide_avatars_link','/css/options/hide_avatars.css');
+  if (!this.optionState) {
+    newOptionState = true;
+    css.load('video_window_link','/css/options/video_window.css');
   } else {
-    newOptionState= false;
-    $('.hide_avatars_link').remove();
+    newOptionState = false;
+    $('.video_window_link').remove();
   }
 
   this.optionState = newOptionState;

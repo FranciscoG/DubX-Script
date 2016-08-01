@@ -43,5 +43,7 @@ module.exports = {
       upDubs: [],
       downDubs: [],
       grabs: []
-    }
+    },
+    menu : {},
+    custom: {}
 };

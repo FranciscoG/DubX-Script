@@ -4,8 +4,8 @@
  */
 
 /* global Dubtrack */
-var menu = require('../init/menu.js');
-var settings = require("../init/settings.js");
+var menu = require('../lib/menu.js');
+var css = require('../utils/css.js');
 
 var myModule = {};
 
@@ -22,8 +22,7 @@ myModule.go = function() {
 
   if (!this.optionState) {
     newOptionState = true;
-
-    $('head').append('<link class="show_timestamps_link" rel="stylesheet" type="text/css" href="'+settings.srcRoot+'/css/options/show_timestamps.css">');
+    css.load("show_timestamps_link", "/css/options/show_timestamps.css");
   } else {
     newOptionState = false;
     $('.show_timestamps_link').remove();

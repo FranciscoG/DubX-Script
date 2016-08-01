@@ -1,4 +1,4 @@
-var settings = require("../init/settings.js");
+var settings = require("../lib/settings.js");
 /**
  * Save an option to localStorage. 
  * 
@@ -14,8 +14,13 @@ var saveOption = function(optionName, value) {
   } else if (/(css|customAfkMessage)/i.test(optionName)) {
     settings.custom[optionName] = value;
   } else {
-    settings.general[optionName] = value;
+    settings.options[optionName] = value;
   }
+  localStorage.setItem( 'dubxUserSettings', JSON.stringify(settings) );
+};
+
+var saveMenuOption = function(optionName, value){
+  settings.menu[optionName] = value;
   localStorage.setItem( 'dubxUserSettings', JSON.stringify(settings) );
 };
 
@@ -64,5 +69,6 @@ module.exports = {
   on: on,
   off: off,
   toggle: toggle,
-  toggleAndSave: toggleAndSave
+  toggleAndSave: toggleAndSave,
+  saveMenuOption: saveMenuOption
 };

@@ -4,8 +4,9 @@
  */
 
 /* global Dubtrack */
-var menu = require('../init/menu.js');
-var settings = require("../init/settings.js");
+var menu = require('../lib/menu.js');
+var css = require('../utils/css.js');
+var settings = require("../lib/settings.js");
 var modal = require('../utils/modal.js');
 var options = require('../utils/options.js');
 
@@ -20,7 +21,7 @@ myModule.menuHTML = menu.makeOtherMenuHTML('unlink', myModule.id, myModule.descr
 
 myModule.init = function(){
   if (settings.custom.css !== null) {
-    $('head').append('<link class="css_import" href="'+settings.custom.css+'" rel="stylesheet" type="text/css">');
+    css.loadExternal('css_import',settings.custom.css);
   }
 };
 
@@ -28,8 +29,10 @@ var css_import = function() {
     $('.css_import').remove();
     var css_to_import = $('.input').val();
     options.saveOption('css',css_to_import);
+    
     if (css_to_import && css_to_import !== '') {
         $('head').append('<link class="css_import" href="'+css_to_import+'" rel="stylesheet" type="text/css">');
+        css.loadExternal('css_import',css_to_import);
     }
 };
 

@@ -4,7 +4,7 @@
  * @param  {variable}   waitingFor Your global function, variable, etc
  * @param  {Function} cb         Callback function
  */
-dubx.whenAvailable = function(waitingFor, cb) {
+module.exports = function(waitingFor, cb) {
     var interval = 100; // ms
     var currInterval = 0;
     var limit = 50; // how many intervals

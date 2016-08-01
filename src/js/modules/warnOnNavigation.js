@@ -4,8 +4,8 @@
  */
 
 /* global Dubtrack */
-var menu = require('../init/menu.js');
-var settings = require("../init/settings.js");
+var menu = require('../lib/menu.js');
+var settings = require("../lib/settings.js");
 
 var myModule = {};
 

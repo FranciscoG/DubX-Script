@@ -1,7 +1,7 @@
 /* global Dubtrack, emojify */
 
 var getJSON = require('../utils/getJSON.js');
-var settings = require("../init/settings.js");
+var settings = require("../lib/settings.js");
 
 var prepEmoji = {};
 

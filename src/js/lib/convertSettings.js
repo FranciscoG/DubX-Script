@@ -53,13 +53,13 @@ var convertSettings = function(){
   }
 
   var newSettings = {
-    general : {},
+    options : {},
     menu : {},
     custom : {}
   };
 
   oldSettings.general.forEach(function(el,i,r){
-    newSettings.general[el] = localStorage.getItem(el);
+    newSettings.options[el] = localStorage.getItem(el);
   });
 
   oldSettings.menu.forEach(function(el,i,r){
@@ -91,6 +91,6 @@ var delOldSettings = function(){
 
 
 module.exports = {
-  convertSettings: convertSettings,
+  go: convertSettings,
   delOldSettings: delOldSettings
 };

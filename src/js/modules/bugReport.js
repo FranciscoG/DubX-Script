@@ -3,8 +3,8 @@
  */
 
 /* global Dubtrack */
-var menu = require('../init/menu.js');
-var settings = require("../init/settings.js");
+var menu = require('../lib/menu.js');
+var settings = require("../lib/settings.js");
 var modal = require('../utils/modal.js');
 
 var myModule = {};
@@ -36,7 +36,7 @@ var report_content = function() {
         data: 'payload={"username": "Incoming Bug Report", "text": "'+woosh+'", "icon_emoji": ":bug:"}',
         crossDomain: true
     });
-    $('.report').replaceWith('<li onclick="" class="for_content_li for_content_feature report"><p class="for_content_off"><i class="fi-check"></i></p><p class="for_content_p">Bug Report</p></li>');
+    $('.report').replaceWith('<li class="for_content_li for_content_feature report"><p class="for_content_off"><i class="fi-check"></i></p><p class="for_content_p">Bug Report</p></li>');
 };
 
 myModule.go = function() {

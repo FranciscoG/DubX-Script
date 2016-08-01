@@ -1,5 +1,5 @@
 var options = require('../utils/options.js');
-var menu = require('../init/menu.js');
+var menu = require('../lib/menu.js');
 var modules = require('../modules/index.js');
 var storedSettings = options.getAllOptions();
 
@@ -17,10 +17,14 @@ var loadAllModulesTo = function(globalObject){
         globalObject[mod.id].toggleAndSave = options.toggleAndSave;
         
         // add event listener
-        $('body').on('click', '#'+mod.id, mod.go);
+        if (mod.go){
+          $('body').on('click', '#'+mod.id, mod.go.bind(mod) );
+        }
 
         // if module has a definied init function, run that first
-        if (mod.init) { mod.init(); }
+        if (mod.init) { 
+          mod.init.bind(mod); 
+        }
 
         // add the menu item to the appropriate category section
         if (mod.menuHTML && mod.category) {
@@ -28,14 +32,13 @@ var loadAllModulesTo = function(globalObject){
         }
 
         // check localStorage for saved settings and update modules optionState
-        if (typeof storedSettings.general[mod.id] !== 'undefined') {
-            mod.optionState = storedSettings.general[mod.id];
-        
-            // run module's go function if setting was true or 'true'
-            // !! converts String:'true' to Bool:true
-            if ( !!storedSettings.general[mod.id] && mod.go ) {
-                mod.go();
-            }
+        if (typeof storedSettings.options[mod.id] !== 'undefined') {
+          mod.optionState = storedSettings.options[mod.id];
+
+          // run module's go function if setting was true
+          if ( storedSettings.options[mod.id] === 'true' && mod.go ) {
+          mod.go.bind(mod);
+          }
         }
     
     });

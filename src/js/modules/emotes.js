@@ -5,7 +5,7 @@
 
 /* global Dubtrack, emojify */
 var options = require('../utils/options.js');
-var menu = require('../init/menu.js');
+var menu = require('../lib/menu.js');
 var dubx_emoji = require('../emojiUtils/prepEmoji.js');
 
 

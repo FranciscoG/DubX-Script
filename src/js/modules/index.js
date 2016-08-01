@@ -26,5 +26,9 @@ module.exports = [
   require('customBackground.js'),
 
   // Contact
-  require('bugReport.js')
+  require('bugReport.js'),
+
+  // non-menu modules
+  require('snooze.js'),
+  require('eta.js')
 ];

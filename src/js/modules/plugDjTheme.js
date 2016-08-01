@@ -4,8 +4,8 @@
  */
 
 /* global Dubtrack */
-var menu = require('../init/menu.js');
-var settings = require("../init/settings.js");
+var menu = require('../lib/menu.js');
+var css = require('../utils/css.js');
 
 var myModule = {};
 
@@ -22,8 +22,7 @@ myModule.go = function() {
 
   if (!this.optionState) {
     newOptionState = true;
-
-    $('head').append('<link class="nicole_css" href="'+settings.srcRoot+'/themes/PlugTheme.css" rel="stylesheet" type="text/css">');
+    css.load("nicole_css", "/themes/PlugTheme.css");
   } else {
     newOptionState = false;
     $('.nicole_css').remove();

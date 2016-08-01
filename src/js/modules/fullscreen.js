@@ -3,7 +3,7 @@
  * Toggle fullscreen video mode
  */
 
-var menu = require('../init/menu.js');
+var menu = require('../lib/menu.js');
 
 var myModule = {};
 

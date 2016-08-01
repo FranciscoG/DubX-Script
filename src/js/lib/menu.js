@@ -1,67 +1,4 @@
-var options = require('../utils/options.js');
-
-/* global Dubtrack */
-var sectionList = ['draw_general','draw_userinterface','draw_settings','draw_customize','draw_contact','draw_social','draw_chrome'];
-
-var drawSection = function(el) {
-    $(el).next('ul').slideToggle('fast');
-    var sectionClass = $(el).next('ul').attr('class');
-
-    var clicked = $(el).find('.for_content_c i');
-
-    if(clicked.hasClass('fi-minus')){
-        clicked.removeClass('fi-minus').addClass('fi-plus');
-        options.saveOption(sectionClass,'false');
-        dubx.options[sectionClass] = 'false';
-    }
-    else{
-        clicked.removeClass('fi-plus').addClass('fi-minus');
-        options.saveOption(sectionClass,'true');
-        dubx.options[sectionClass] = 'true';
-    }
-
-};
-
-var openAllMenus = function(){
-  sectionList.forEach(function(section,i,arr){
-    $('.'+section).slideDown('fast');
-    $('.'+section).prev('li').find('i').removeClass('fi-plus').addClass('fi-minus');
-    options.saveOption(section, 'true');
-    dubx.options[section] = 'true';
-  });
-};
-
-var closeAllMenus = function(){
-  sectionList.forEach(function(section,i,arr){
-    $('.'+section).slideUp();
-    $('.'+section).prev('li').find('i').removeClass('fi-minus').addClass('fi-plus');
-    options.saveOption(section,'false');
-    dubx.options[section] = 'false';
-  });
-};
-
-var drawAll = function() {
-    var allClosed = true;
-
-    sectionList.forEach(function(section, i, arr){
-      if($('.'+section).css('display') === 'block'){
-          allClosed = false;
-      }
-    });
-
-    if(allClosed) {
-      openAllMenus();
-    }
-    else {
-      closeAllMenus();
-    }
-};
-
-var slide = function() {
-  $('.for_content').slideToggle('fast');
-};
-
-var menu = {
+var OLDmenu = {
   general: function(){
     return [
       '<li class="for_content_li" onclick="dubx.drawSection(this)">',
@@ -227,208 +164,225 @@ var menu = {
           '</li>',
       '</ul>'
     ].join('');
-  },
-  social: function(){
-    return [
-      '<li class="for_content_li" onclick="dubx.drawSection(this)">',
-          '<p class="for_content_c">',
-              'Social',
-              '<i class="fi-minus"></i>',
-          '</p>',
-      '</li>',
-      '<ul class="draw_social">',
-          '<li class="for_content_li for_content_feature">',
-              '<a href="https://www.facebook.com/DubXScript" target="_blank" style="color: #878c8e;">',
-                  '<p class="for_content_off"><i class="fi-social-facebook"></i></p>',
-                  '<p class="for_content_p">Like Us on Facebook</p>',
-              '</a>',
-          '</li>',
-          '<li class="for_content_li for_content_feature">',
-              '<a href="https://twitter.com/DubXScript" target="_blank" style="color: #878c8e;">',
-                  '<p class="for_content_off"><i class="fi-social-twitter"></i></p>',
-                  '<p class="for_content_p">Follow Us on Twitter</p>',
-              '</a>',
-          '</li>',
-          '<li class="for_content_li for_content_feature">',
-              '<a href="https://github.com/sinfulBA/DubX-Script" target="_blank" style="color: #878c8e;">',
-                  '<p class="for_content_off"><i class="fi-social-github"></i></p>',
-                  '<p class="for_content_p">Fork Us on Github</p>',
-              '</a>',
-          '</li>',
-          '<li class="for_content_li for_content_feature">',
-              '<a href="https://dubx.net" target="_blank" style="color: #878c8e;">',
-                  '<p class="for_content_off"><i class="fi-link"></i></p>',
-                  '<p class="for_content_p">Our Website</p>',
-              '</a>',
-          '</li>',
-          '<li class="for_content_li for_content_feature">',
-              '<a href="https://dubx.net/donate.html" target="_blank" style="color: #878c8e;">',
-                  '<p class="for_content_off"><i class="fi-pricetag-multiple"></i></p>',
-                  '<p class="for_content_p">Donate</p>',
-              '</a>',
-          '</li>',
-      '</ul>'
-    ].join('');
-  },
-  extension: function(){
-    return [
-      '<li class="for_content_li" onclick="dubx.drawSection(this)">',
-          '<p class="for_content_c">',
-              'Chrome Extension',
-              '<i class="fi-minus"></i>',
-          '</p>',
-      '</li>',
-      '<ul class="draw_chrome">',
-          '<li class="for_content_li for_content_feature">',
-              '<a href="https://chrome.google.com/webstore/detail/dubx/oceofndagjnpebjmknefoelcpcnpcedm/reviews" target="_blank" style="color: #878c8e;">',
-                  '<p class="for_content_off"><i class="fi-like"></i></p>',
-                  '<p class="for_content_p">Give Us a Rating</p>',
-              '</a>',
-          '</li>',
-      '</ul>'
-    ].join('');
   }
 
 };
 
 /*********************************************/
 
+var options = require('../utils/options.js');
+var settings = require('settings.js');
+var css = require('../utils/css.js');
+/* global Dubtrack */
+
+
+var openSection = function($sectionEl){
+  var sectionName = $sectionEl.data('dubx-subnav');
+  // open the section
+  $sectionEl.slideDown('fast');
+  // replace the icon
+  $sectionEl.find('.dubx-menu-section-title i').removeClass('fi-plus').addClass('fi-minus');
+  // save the option
+  options.saveMenuOption(sectionName,'true');
+};
+
+var closeSection = function($sectionEl){
+  var sectionName = $sectionEl.data('dubx-subnav');
+  // open the section
+  $sectionEl.slideUp('fast');
+  // replace the icon
+  $sectionEl.find('.dubx-menu-section-title i').removeClass('fi-minus').addClass('fi-plus');
+  // save the option
+  options.saveMenuOption(sectionName,'false');
+};
+
+var toggleDubxSection = function(e) {
+    var $targetSection = $(this).find('.dubx-menu-subsection');
+    var clicked = $(this).find('.dubx-menu-section-title i');
+    if( clicked.hasClass('fi-minus') ){
+      closeSection($targetSection);
+    } else{
+      openSection($targetSection);
+    }
+};
+
+
+var openAllMenus = function(){
+  var $targetSection, sectionName;
+  $('.dubx-menu-section').each(function(i,section){
+    $targetSection = $(this).find('.dubx-menu-subsection');
+    openSection($targetSection);
+  });
+};
+
+var closeAllMenus = function(){
+  var $targetSection, sectionName;
+  $('.dubx-menu-section').each(function(i,section){
+    $targetSection = $(this).find('.dubx-menu-subsection');
+    closeSection($targetSection);
+  });
+};
+
+var toggleAllSections = function() {
+    var allClosed = true;
+    var $targetSection;
+
+    $('.dubx-menu-section').each(function(i, section){
+      $targetSection = $(this).find('.dubx-menu-subsection');
+      if( $targetSection.css('display') === 'block'){
+        allClosed = false;
+      }
+    });
+
+    if ( allClosed ) {
+      openAllMenus();
+    } else {
+      closeAllMenus();
+    }
+};
+
 var menu = {
   general: function(){
     return [
-      '<li class="for_content_li" onclick="dubx.drawSection(this)">',
-          '<p class="for_content_c">',
+      '<li class="for_content_li dubx-menu-section">',
+          '<p class="for_content_c dubx-menu-section-title">',
               'General',
               '<i class="fi-minus"></i>',
           '</p>',
+          '<ul id="dubxmenu-general" data-dubx-subnav="general" class="draw_general dubx-menu-subsection">',
+          '</ul>',
       '</li>',
-      '<ul id="dubxmenu-general" class="draw_general">',
-      '</ul>'
     ].join('');
   },
   ui : function(){
     return [
-      '<li class="for_content_li" onclick="dubx.drawSection(this)">',
-          '<p class="for_content_c">',
+      '<li class="for_content_li dubx-menu-section">',
+          '<p class="for_content_c dubx-menu-section-title">',
               'User Interface',
               '<i class="fi-minus"></i>',
           '</p>',
+          '<ul id="dubxmenu-ui" data-dubx-subnav="userinterface" class="draw_userinterface dubx-menu-subsection">',
+          '</ul>',
       '</li>',
-      '<ul id="dubxmenu-ui" class="draw_userinterface">',
-      '</ul>'
     ].join('');
   }, 
   settings: function(){
     return [
-      '<li class="for_content_li" onclick="dubx.drawSection(this)">',
-          '<p class="for_content_c">',
+      '<li class="for_content_li dubx-menu-section">',
+          '<p class="for_content_c dubx-menu-section-title">',
               'Settings',
               '<i class="fi-minus"></i>',
           '</p>',
       '</li>',
-      '<ul id="dubxmenu-settings" class="draw_settings">',
+      '<ul id="dubxmenu-settings" data-dubx-subnav="settings" class="draw_settings dubx-menu-subsection">',
       '</ul>'
     ].join('');
   },
   customize: function(){
     return [
-      '<li class="for_content_li" onclick="dubx.drawSection(this)">',
-          '<p class="for_content_c">',
+      '<li class="for_content_li dubx-menu-section">',
+          '<p class="for_content_c dubx-menu-section-title">',
               'Customize',
               '<i class="fi-minus"></i>',
           '</p>',
-      '</li>',
-      '<ul id="dubxmenu-customize" class="draw_customize">',
-      '</ul>'
+          '<ul id="dubxmenu-customize" data-dubx-subnav="customize" class="draw_customize dubx-menu-subsection">',
+          '</ul>',
+      '</li>'
     ].join('');
   },
   contact: function(){
     return [
-      '<li class="for_content_li" onclick="dubx.drawSection(this)">',
-          '<p class="for_content_c">',
+      '<li class="for_content_li dubx-menu-section">',
+          '<p class="for_content_c dubx-menu-section-title">',
               'Contact',
               '<i class="fi-minus"></i>',
           '</p>',
-      '</li>',
-      '<ul id="dubxmenu-contact" class="draw_contact">',
-      '</ul>'
+          '<ul id="dubxmenu-contact" data-dubx-subnav="contact" class="draw_contact dubx-menu-subsection">',
+          '</ul>',
+      '</li>'
     ].join('');
   },
   social: function(){
       return [
-        '<li class="for_content_li" onclick="dubx.drawSection(this)">',
-            '<p class="for_content_c">',
+        '<li class="for_content_li dubx-menu-section">',
+            '<p class="for_content_c dubx-menu-section-title">',
                 'Social',
                 '<i class="fi-minus"></i>',
             '</p>',
-        '</li>',
-        '<ul class="draw_social">',
-            '<li class="for_content_li for_content_feature">',
-                '<a href="https://www.facebook.com/DubXScript" target="_blank" style="color: #878c8e;">',
-                    '<p class="for_content_off"><i class="fi-social-facebook"></i></p>',
-                    '<p class="for_content_p">Like Us on Facebook</p>',
-                '</a>',
-            '</li>',
-            '<li class="for_content_li for_content_feature">',
-                '<a href="https://twitter.com/DubXScript" target="_blank" style="color: #878c8e;">',
-                    '<p class="for_content_off"><i class="fi-social-twitter"></i></p>',
-                    '<p class="for_content_p">Follow Us on Twitter</p>',
-                '</a>',
-            '</li>',
-            '<li class="for_content_li for_content_feature">',
-                '<a href="https://github.com/sinfulBA/DubX-Script" target="_blank" style="color: #878c8e;">',
-                    '<p class="for_content_off"><i class="fi-social-github"></i></p>',
-                    '<p class="for_content_p">Fork Us on Github</p>',
-                '</a>',
-            '</li>',
-            '<li class="for_content_li for_content_feature">',
-                '<a href="https://dubx.net" target="_blank" style="color: #878c8e;">',
-                    '<p class="for_content_off"><i class="fi-link"></i></p>',
-                    '<p class="for_content_p">Our Website</p>',
-                '</a>',
-            '</li>',
-            '<li class="for_content_li for_content_feature">',
-                '<a href="https://dubx.net/donate.html" target="_blank" style="color: #878c8e;">',
-                    '<p class="for_content_off"><i class="fi-pricetag-multiple"></i></p>',
-                    '<p class="for_content_p">Donate</p>',
-                '</a>',
-            '</li>',
-        '</ul>'
+            '<ul id="dubxmenu-social" data-dubx-subnav="social" class="draw_social dubx-menu-subsection">',
+                '<li class="for_content_li for_content_feature">',
+                    '<a href="https://www.facebook.com/DubXScript" target="_blank" style="color: #878c8e;">',
+                        '<p class="for_content_off"><i class="fi-social-facebook"></i></p>',
+                        '<p class="for_content_p">Like Us on Facebook</p>',
+                    '</a>',
+                '</li>',
+                '<li class="for_content_li for_content_feature">',
+                    '<a href="https://twitter.com/DubXScript" target="_blank" style="color: #878c8e;">',
+                        '<p class="for_content_off"><i class="fi-social-twitter"></i></p>',
+                        '<p class="for_content_p">Follow Us on Twitter</p>',
+                    '</a>',
+                '</li>',
+                '<li class="for_content_li for_content_feature">',
+                    '<a href="https://github.com/sinfulBA/DubX-Script" target="_blank" style="color: #878c8e;">',
+                        '<p class="for_content_off"><i class="fi-social-github"></i></p>',
+                        '<p class="for_content_p">Fork Us on Github</p>',
+                    '</a>',
+                '</li>',
+                '<li class="for_content_li for_content_feature">',
+                    '<a href="https://dubx.net" target="_blank" style="color: #878c8e;">',
+                        '<p class="for_content_off"><i class="fi-link"></i></p>',
+                        '<p class="for_content_p">Our Website</p>',
+                    '</a>',
+                '</li>',
+                '<li class="for_content_li for_content_feature">',
+                    '<a href="https://dubx.net/donate.html" target="_blank" style="color: #878c8e;">',
+                        '<p class="for_content_off"><i class="fi-pricetag-multiple"></i></p>',
+                        '<p class="for_content_p">Donate</p>',
+                    '</a>',
+                '</li>',
+            '</ul>',
+        '</li>'
       ].join('');
   },
   extension: function(){
     return [
-      '<li class="for_content_li" onclick="dubx.drawSection(this)">',
-          '<p class="for_content_c">',
+      '<li class="for_content_li dubx-menu-section">',
+          '<p class="for_content_c dubx-menu-section-title">',
               'Chrome Extension',
               '<i class="fi-minus"></i>',
           '</p>',
-      '</li>',
-      '<ul class="draw_chrome">',
-          '<li class="for_content_li for_content_feature">',
-              '<a href="https://chrome.google.com/webstore/detail/dubx/oceofndagjnpebjmknefoelcpcnpcedm/reviews" target="_blank" style="color: #878c8e;">',
-                  '<p class="for_content_off"><i class="fi-like"></i></p>',
-                  '<p class="for_content_p">Give Us a Rating</p>',
-              '</a>',
-          '</li>',
-      '</ul>'
+          '<ul id="dubxmenu-extension" data-dubx-subnav="chrome" class="draw_chrome dubx-menu-subsection">',
+              '<li class="for_content_li for_content_feature">',
+                  '<a href="https://chrome.google.com/webstore/detail/dubx/oceofndagjnpebjmknefoelcpcnpcedm/reviews" target="_blank" style="color: #878c8e;">',
+                      '<p class="for_content_off"><i class="fi-like"></i></p>',
+                      '<p class="for_content_p">Give Us a Rating</p>',
+                  '</a>',
+              '</li>',
+          '</ul>',
+      '</li>'
     ].join('');
   }
 
 };
 
 var makeMenu = function(){
+    css.loadExternal('https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css');
+    css.load(null, '/css/asset.css');
+
     // add icon to the upper right corner
-    var li = '<div class="for" onclick="dubx.slide();"><img src="'+dubx.srcRoot+'/params/params.svg" alt=""></div>';
-    $('.header-right-navigation').append(li);
+    var menuIcon = '<div class="for dubx-menu"><img src="'+settings.srcRoot+'/params/params.svg" alt=""></div>';
+    $('.header-right-navigation').append(menuIcon);
 
-    $('head').append('<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css">');
-    $('head').append('<link rel="stylesheet" type="text/css" href="'+dubx.srcRoot+'/css/asset.css">');
+    // hide/show the who menu when you click on the icon in the top right
+    $('body').on('click', '.dubx-menu', function(e){
+      $('.dubx-menu-content').slideToggle('fast');
+    });
 
+    // make the menu
     var html = [
-        '<div class="for_content" style="display:none;">',
-          '<span class="for_content_ver">DubX Settings</span>',
-          '<span class="for_content_version" onclick="dubx.drawAll();" title="Collapse/Expand Menus">'+dubx.our_version+'</span>',
+        '<div class="for_content dubx-menu-content" style="display:none;">',
+          '<span class="for_content_ver dubx-menu-title">DubX Settings</span>',
+          '<span class="for_content_version dubx-version" title="Collapse/Expand Menus">'+settings.our_version+'</span>',
           '<ul class="for_content_ul">',
             menu.general(),
             menu.ui(),
@@ -441,9 +395,31 @@ var makeMenu = function(){
         '</div>'
     ].join('');
 
+    // add it to the DOM
     $('body').prepend(html);
-    $('.for_content').perfectScrollbar();
+    // use the perfectScrollBar plugin to make it look nice
+    $('.dubx-menu-content').perfectScrollbar();
+
+    // add event listeners that open/close all/each the menu section
+    $('body').on('click', '.dubx-menu-section', toggleDubxSection);
+    $('body').on('click', '.dubx-version', toggleAllSections);
+
+    // load menu saved open/close sections settings and apply
+    var $targetSection, sectionName;
+    $('.dubx-menu-section').each(function(i,section){
+      $targetSection = $(this).find('.dubx-menu-subsection');
+      var sectionName = $targetSection.data('dubx-subnav');
+
+      if (settings.menu[sectionName] === 'false') {
+        closeSection($targetSection);
+      } else {
+        options.saveMenuOption(sectionName,'true');
+      }
+
+    });
 };
+
+
 
 var makeStandardMenuHTML = function(id, desc, cssClass, menuTitle){
   return [

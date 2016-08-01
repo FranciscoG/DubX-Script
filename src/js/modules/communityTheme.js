@@ -4,8 +4,8 @@
  */
 
 /* global Dubtrack */
-var menu = require('../init/menu.js');
-var settings = require("../init/settings.js");
+var menu = require('../lib/menu.js');
+var css = require('../utils/css.js');
 
 var myModule = {};
 
@@ -34,7 +34,7 @@ myModule.go = function() {
         if(!url) {return;}
 
         var append = url[0].split('@dubx=');
-        $('head').append('<link class="css_world" href="'+append[1]+'" rel="stylesheet" type="text/css">');
+        css.loadExternal('css_world', append[1]);
     });
 
   } else {
