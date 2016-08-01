@@ -27,9 +27,9 @@
     This license is governed by the Laws of Norway. Disputes shall be settled by Oslo City Court.
 */
 
-var modal = require('utils/modal.js');
-var init = require('lib/init.js');
-var css = require('utils/css.js');
+var modal = require('./utils/modal.js');
+var init = require('./lib/init.js');
+var css = require('./utils/css.js');
 
 /* global Dubtrack, dubxLoaded */
 window.dubxLoaded = false;

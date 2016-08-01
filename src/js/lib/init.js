@@ -1,9 +1,9 @@
 /* global Dubtrack */
-var convertSettings = require('convertSettings.js');
-var modules = require('loadModules.js');
+var convertSettings = require('./convertSettings.js');
+var modules = require('./loadModules.js');
 var modal = require('../utils/modal.js');
 var css = require('../utils/css.js');
-var menu = require('menu.js');
+var menu = require('./menu.js');
 
 /*
   The following are elements that are always done on load
@@ -36,8 +36,6 @@ module.exports = function(){
   // dubx.previewListInit();
 
   // dubx.userAutoComplete();
-
-
 
   // Ref 5:
   $('.chat-main').on('DOMNodeInserted', function(e) {

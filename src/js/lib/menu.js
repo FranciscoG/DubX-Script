@@ -171,7 +171,7 @@ var OLDmenu = {
 /*********************************************/
 
 var options = require('../utils/options.js');
-var settings = require('settings.js');
+var settings = require('./settings.js');
 var css = require('../utils/css.js');
 /* global Dubtrack */
 
