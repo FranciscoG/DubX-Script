@@ -2014,17 +2014,13 @@ var create = function(infoObj) {
     
     if (opts.confirmButtonClass) {
       $('.'+opts.confirmButtonClass).one("click", function(e){
-          confirmButton(opts.confirmCallback || null);
+        if (typeof opts.confirmCallback === 'function'){
+            opts.confirmCallback();
+        }
+        $('.onErr').remove();
       });
     }
     
-};
-
-var confirmButton = function(optionalCB){
-    if (typeof optionalCB === 'function'){
-        optionalCB();
-    }
-    $('.onErr').remove();
 };
 
 var close = function() {
@@ -2064,7 +2060,11 @@ var saveMenuOption = function(optionName, value){
 
 var getAllOptions = function(){
   var _stored = localStorage.dubxUserSettings;
-  return JSON.parse(_stored);
+  if (_stored) {
+    return JSON.parse(_stored);
+  } else {
+    return settings;
+  }
 };
 
 /**
@@ -2108,6 +2108,7 @@ module.exports = {
   off: off,
   toggle: toggle,
   toggleAndSave: toggleAndSave,
-  saveMenuOption: saveMenuOption
+  saveMenuOption: saveMenuOption,
+  getAllOptions: getAllOptions
 };
 },{"../lib/settings.js":7}]},{},[1]);

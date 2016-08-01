@@ -26,7 +26,11 @@ var saveMenuOption = function(optionName, value){
 
 var getAllOptions = function(){
   var _stored = localStorage.dubxUserSettings;
-  return JSON.parse(_stored);
+  if (_stored) {
+    return JSON.parse(_stored);
+  } else {
+    return settings;
+  }
 };
 
 /**
@@ -70,5 +74,6 @@ module.exports = {
   off: off,
   toggle: toggle,
   toggleAndSave: toggleAndSave,
-  saveMenuOption: saveMenuOption
+  saveMenuOption: saveMenuOption,
+  getAllOptions: getAllOptions
 };

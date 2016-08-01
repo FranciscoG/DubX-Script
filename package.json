@@ -5,20 +5,22 @@
   "main": "beta.js",
   "scripts": {
     "bundle": "browserify src/js/beta.js > beta.js",
-    "watch" : "watchify src/js/beta.js -o beta.js -v"
+    "watch": "watchify src/js/beta.js -o beta.js -v"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sinfulBA/DubX-Script.git"
   },
   "author": "",
-  "license": "THE Q PUBLIC LICENSE version 1.0",
+  "license": "QPL-1.0",
   "bugs": {
     "url": "https://github.com/sinfulBA/DubX-Script/issues"
   },
   "homepage": "https://github.com/sinfulBA/DubX-Script#readme",
   "devDependencies": {
     "browserify": "^13.0.1",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2",
     "watchify": "^3.7.0"
   }
 }
