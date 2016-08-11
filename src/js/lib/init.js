@@ -12,7 +12,7 @@ var menu = require('./menu.js');
 module.exports = function(){
   $('.isUser').text(Dubtrack.session.get('username'));
 
-  css.load(null, '/css/options/dubinfo.css');
+  css.load('/css/options/dubinfo.css');
 
   convertSettings.go();
   convertSettings.delOldSettings();

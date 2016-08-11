@@ -22,7 +22,7 @@ myModule.go = function() {
 
   if (!this.optionState) {
     newOptionState = true;
-    css.load("show_timestamps_link", "/css/options/show_timestamps.css");
+    css.load( "/css/options/show_timestamps.css", "show_timestamps_link");
   } else {
     newOptionState = false;
     $('.show_timestamps_link').remove();

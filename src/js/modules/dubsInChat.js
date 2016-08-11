@@ -22,7 +22,7 @@ myModule.go = function() {
 
   if (!this.optionState) {
     newOptionState = true;
-    css.load('video_window_link','/css/options/video_window.css');
+    css.load('/css/options/video_window.css', 'video_window_link');
   } else {
     newOptionState = false;
     $('.video_window_link').remove();

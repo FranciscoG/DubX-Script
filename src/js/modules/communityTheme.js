@@ -34,7 +34,7 @@ myModule.go = function() {
         if(!url) {return;}
 
         var append = url[0].split('@dubx=');
-        css.loadExternal('css_world', append[1]);
+        css.loadExternal(append[1], 'css_world');
     });
 
   } else {

@@ -21,7 +21,7 @@ myModule.menuHTML = menu.makeOtherMenuHTML('unlink', myModule.id, myModule.descr
 
 myModule.init = function(){
   if (settings.custom.css !== null) {
-    css.loadExternal('css_import',settings.custom.css);
+    css.loadExternal(settings.custom.css, 'css_import');
   }
 };
 
@@ -32,7 +32,7 @@ var css_import = function() {
     
     if (css_to_import && css_to_import !== '') {
         $('head').append('<link class="css_import" href="'+css_to_import+'" rel="stylesheet" type="text/css">');
-        css.loadExternal('css_import',css_to_import);
+        css.loadExternal(css_to_import, 'css_import');
     }
 };
 

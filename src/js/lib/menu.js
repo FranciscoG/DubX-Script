@@ -367,7 +367,7 @@ var menu = {
 
 var makeMenu = function(){
     css.loadExternal('https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css');
-    css.load(null, '/css/asset.css');
+    css.load('/css/asset.css');
 
     // add icon to the upper right corner
     var menuIcon = '<div class="for dubx-menu"><img src="'+settings.srcRoot+'/params/params.svg" alt=""></div>';

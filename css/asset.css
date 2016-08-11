@@ -205,6 +205,7 @@
 #chat .chat-container ul.chat-main li.user-560a30833e735703002efb74 .activity-row .text p a.username:hover:before,
 #chat .chat-container ul.chat-main li.user-5618cf0f465bce1800d389fa .activity-row .text p a.username:hover:before,
 #chat .chat-container ul.chat-main li.user-55ffae6a1564a403003f5132 .activity-row .text p a.username:hover:before,
+#chat .chat-container ul.chat-main li.user-5609636de5851903009b91a8 .activity-row .text p a.username:hover:before,
 #chat .chat-container ul.chat-main li.user-560af26e9d6ab30300404673 .activity-row .text p a.username:hover:before {
     content: "DubX" !important;
     font-weight: 700;
@@ -353,6 +354,7 @@ ul.avatar-list .user-kris:after, ul.avatar-list .user-al3366:after, ul.avatar-li
 #chat .chat-container ul.chat-main li.user-560a30833e735703002efb74 .activity-row .text p a.username,
 #chat .chat-container ul.chat-main li.user-5618cf0f465bce1800d389fa .activity-row .text p a.username,
 #chat .chat-container ul.chat-main li.user-55ffae6a1564a403003f5132 .activity-row .text p a.username,
+#chat .chat-container ul.chat-main li.user-5609636de5851903009b91a8 .activity-row .text p a.username,
 #chat .chat-container ul.chat-main li.user-560af26e9d6ab30300404673 .activity-row .text p a.username {
     color: #E8C248 !important;
     text-shadow: 0px 0px 1px rgba(0,0,0,.5);
@@ -365,6 +367,8 @@ ul.avatar-list .user-kris:after, ul.avatar-list .user-al3366:after, ul.avatar-li
 #chat .chat-container ul.chat-main li.user-5618cf0f465bce1800d389fa .activity-row .text p a.username .user-role-icon,
 #chat .chat-container ul.chat-main li.user-55ffae6a1564a403003f5132 .activity-row .text p a.username .user-role,
 #chat .chat-container ul.chat-main li.user-55ffae6a1564a403003f5132 .activity-row .text p a.username .user-role-icon,
+#chat .chat-container ul.chat-main li.user-5609636de5851903009b91a8 .activity-row .text p a.username .user-role,
+#chat .chat-container ul.chat-main li.user-5609636de5851903009b91a8 .activity-row .text p a.username .user-role-icon,
 #chat .chat-container ul.chat-main li.user-560af26e9d6ab30300404673 .activity-row .text p a.username .user-role,
 #chat .chat-container ul.chat-main li.user-560af26e9d6ab30300404673 .activity-row .text p a.username .user-role-icon, {
     color: #E8C248 !important;
@@ -379,16 +383,21 @@ ul.avatar-list .user-kris:after, ul.avatar-list .user-al3366:after, ul.avatar-li
 #chat .chat-container ul.chat-main li.user-55ffae6a1564a403003f5132 .activity-row .text p a.username:before {
     content: "\f1b3" !important;
 }
+#chat .chat-container ul.chat-main li.user-5609636de5851903009b91a8 .activity-row .text p a.username:before {
+    content: "\f1b3" !important;
+}
 #chat .chat-container ul.chat-main li.user-5618cf0f465bce1800d389fa .activity-row .text p a.username:before {
     content: "\f159" !important;
 }
 #chat .chat-container ul.chat-main li.user-560af26e9d6ab30300404673 .activity-row .text p a.username:before {
     content: "\f1ae" !important;
 }
+
 #chat .chat-container ul.chat-main li.user-5607c12b8c2ecf0300b4233b .activity-row .text p a.username:before,
 #chat .chat-container ul.chat-main li.user-560a30833e735703002efb74 .activity-row .text p a.username:before,
 #chat .chat-container ul.chat-main li.user-55ffae6a1564a403003f5132 .activity-row .text p a.username:before,
 #chat .chat-container ul.chat-main li.user-5618cf0f465bce1800d389fa .activity-row .text p a.username:before,
+#chat .chat-container ul.chat-main li.user-5609636de5851903009b91a8 .activity-row .text p a.username:before,
 #chat .chat-container ul.chat-main li.user-560af26e9d6ab30300404673 .activity-row .text p a.username:before {
     font-family: "foundation-icons";
     font-style: normal;
@@ -406,16 +415,43 @@ ul.avatar-list li.user-fi p.dubs:before,
 ul.avatar-list li.user-jinkx p.dubs:before,
 ul.avatar-list li.user-surreal p.dubs:before,
 ul.avatar-list li.user-pikachu p.dubs:before,
+ul.avatar-list li.user-rainzy p.dubs:before,
 ul.avatar-list li.user-law p.dubs:before {
     content: "DubX VIP  -  ";
     font-weight: 700 !important;
     color: #E8C248 !important;
 }
-ul.avatar-list .user-fi:after, ul.avatar-list .user-jinkx:after, ul.avatar-list .user-surreal:after, ul.avatar-list .user-pikachu:after, ul.avatar-list .user-law:after,
-.user-fi, .user-fi p.username, .user-jinkx, .user-jinkx p.username, .user-surreal, .user-surreal p.username, .user-pikachu, .user-pikachu p.username, .user-law, .user-law p.username,
-.user-fi p.username .user-role,.user-fi p.username .user-role-icon, .user-jinkx p.username .user-role,.user-jinkx p.username .user-role-icon, 
-.user-surreal p.username .user-role,.user-surreal p.username .user-role-icon, .user-pikachu p.username .user-role,.user-pikachu p.username .user-role-icon, 
-.user-law p.username .user-role,.user-law p.username .user-role-icon, {
+ul.avatar-list .user-fi:after,
+ul.avatar-list .user-jinkx:after,
+ul.avatar-list .user-surreal:after,
+ul.avatar-list .user-pikachu:after,
+ul.avatar-list .user-rainzy:after,
+ul.avatar-list .user-law:after,
+.user-fi,
+.user-fi p.username,
+.user-jinkx,
+.user-jinkx p.username,
+.user-surreal,
+.user-surreal p.username,
+.user-pikachu,
+.user-pikachu p.username,
+.user-rainzy,
+.user-rainzy p.username,
+.user-law,
+.user-law p.username,
+.user-fi p.username .user-role,
+.user-fi p.username .user-role-icon,
+.user-jinkx p.username .user-role,
+.user-jinkx p.username .user-role-icon,
+.user-surreal p.username .user-role,
+.user-surreal p.username .user-role-icon,
+.user-pikachu p.username .user-role,
+.user-pikachu p.username .user-role-icon,
+.user-rainzy p.username .user-role,
+.user-rainzy p.username .user-role-icon,
+.user-law p.username .user-role,
+.user-law p.username .user-role-icon,
+{
     color: #E8C248 !important;
 }
 #main_avatar_room #main-user-list-room #avatar-list .user-fi p.username, #main_avatar_room #main-user-list-room #avatar-list .user-fi p.username:after, 
@@ -426,6 +462,8 @@ ul.avatar-list .user-fi:after, ul.avatar-list .user-jinkx:after, ul.avatar-list 
 #main_avatar_room #main-user-list-room #avatar-list .user-surreal .user-role-icon, #main_avatar_room #main-user-list-room #avatar-list .user-surreal .user-role,
 #main_avatar_room #main-user-list-room #avatar-list .user-pikachu p.username, #main_avatar_room #main-user-list-room #avatar-list .user-pikachu p.username:after,
 #main_avatar_room #main-user-list-room #avatar-list .user-pikachu .user-role-icon, #main_avatar_room #main-user-list-room #avatar-list .user-pikachu .user-role,
+#main_avatar_room #main-user-list-room #avatar-list .user-rainzy p.username, #main_avatar_room #main-user-list-room #avatar-list .user-rainzy p.username:after,
+#main_avatar_room #main-user-list-room #avatar-list .user-rainzy .user-role-icon, #main_avatar_room #main-user-list-room #avatar-list .user-rainzy .user-role,
 #main_avatar_room #main-user-list-room #avatar-list .user-law p.username, #main_avatar_room #main-user-list-room #avatar-list .user-law p.username:after,
 #main_avatar_room #main-user-list-room #avatar-list .user-law .user-role-icon, #main_avatar_room #main-user-list-room #avatar-list .user-law .user-role {
     color: #E8C248 !important;
@@ -502,4 +540,5 @@ ul.avatar-list li.admin p {
 5618cf0f465bce1800d389fa Surreal
 551d295433cd73030089d184 swordling
 52c8254ca7b7260200000001 yofred
+5609636de5851903009b91a8 RainZy
 */

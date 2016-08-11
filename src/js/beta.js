@@ -39,7 +39,7 @@ if (!dubxLoaded && Dubtrack.session.id) {
     init();
 
 } else {
-    css.load(null, '/css/asset.css');
+    css.load('/css/asset.css');
     var errorMsg;
     if (!Dubtrack.session.id) {
         errorMsg = 'You\'re not logged in. Please login to use DUBX.';

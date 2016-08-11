@@ -22,7 +22,7 @@ myModule.go = function() {
 
   if(!this.optionState) {
     newOptionState= true;
-    css.load("chat_window_link", '/css/options/chat_window.css');
+    css.load('/css/options/chat_window.css', "chat_window_link");
   } else {
     newOptionState= false;
     $('.chat_window_link').remove();

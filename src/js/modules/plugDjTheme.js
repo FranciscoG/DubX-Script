@@ -22,7 +22,7 @@ myModule.go = function() {
 
   if (!this.optionState) {
     newOptionState = true;
-    css.load("nicole_css", "/themes/PlugTheme.css");
+    css.load("/themes/PlugTheme.css", "nicole_css");
   } else {
     newOptionState = false;
     $('.nicole_css').remove();

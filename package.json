@@ -4,8 +4,8 @@
   "description": "- A simple script/extension for Dubtrack.fm",
   "main": "beta.js",
   "scripts": {
-    "bundle": "browserify src/js/beta.js > beta.js",
-    "watch": "watchify src/js/beta.js -o beta.js -v"
+    "bundle": "browserify src/js/beta.js > beta-test.js",
+    "watch": "watchify src/js/beta.js -o beta-test.js -v"
   },
   "repository": {
     "type": "git",

@@ -22,7 +22,7 @@ myModule.go = function() {
 
   if(!this.optionState) {
     newOptionState= true;
-    css.load('hide_avatars_link','/css/options/hide_avatars.css');
+    css.load('/css/options/hide_avatars.css', 'hide_avatars_link');
   } else {
     newOptionState= false;
     $('.hide_avatars_link').remove();
