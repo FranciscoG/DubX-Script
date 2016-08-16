@@ -17,12 +17,12 @@ var loadAllModulesTo = function(globalObject){
         globalObject[mod.id].toggleAndSave = options.toggleAndSave;
         
         // add event listener
-        if (mod.go){
+        if (typeof mod.go === 'function'){
           $('body').on('click', '#'+mod.id, mod.go.bind(mod) );
         }
 
         // if module has a definied init function, run that first
-        if (mod.init) { 
+        if (typeof mod.init === 'function') { 
           mod.init.bind(mod); 
         }
 
@@ -36,8 +36,8 @@ var loadAllModulesTo = function(globalObject){
           mod.optionState = storedSettings.options[mod.id];
 
           // run module's go function if setting was true
-          if ( storedSettings.options[mod.id] === 'true' && mod.go ) {
-          mod.go.bind(mod);
+          if ( storedSettings.options[mod.id] === 'true' && typeof mod.go === 'function' ) {
+            mod.go.call(mod, "onLoad");
           }
         }
     

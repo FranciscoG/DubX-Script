@@ -62,7 +62,7 @@ var createAfkMessage =function() {
 };
 
 myModule.init = function(){
-    $('#createAfkMessage').on('click', createAfkMessage);
+    $('body').on('click', '#createAfkMessage', createAfkMessage);
 };
 
 myModule.go = function(e) {
@@ -83,3 +83,11 @@ myModule.go = function(e) {
 };
 
 module.exports = myModule;
+
+/*
+'<li onclick="dubx.afk(event);" class="for_content_li for_content_feature afk">',
+    '<p class="for_content_off"><i class="fi-x"></i></p>',
+    '<p onclick="dubx.createAfkMessage();" class="for_content_edit" style="display: inline-block;color: #878c8e;font-size: .85rem;font-weight: bold;float: right;"><i class="fi-pencil"></i></p>',
+    '<p class="for_content_p">AFK Autorespond</p>',
+'</li>',
+ */

@@ -18,28 +18,41 @@ myModule.optionState = false;
 myModule.category = "customize";
 myModule.menuHTML = menu.makeOtherMenuHTML('unlink', myModule.id, myModule.description, '', myModule.moduleName);
 
-myModule.init = function(){
-  if (settings.general.medium !== null) {
-      $('body').append('<div class="medium" style="width: 100vw;height: 100vh;z-index: -999998;position: fixed; background: url('+settings.general.medium+');background-size: cover;top: 0;"></div>');
-  }
+var makeBGdiv = function(url){
+    return '<div class="medium" style="width: 100vw;height: 100vh;z-index: -999998;position: fixed; background-image: url('+url+');background-size: cover;top: 0;"></div>';
 };
+
 
 var saveCustomBG = function() {
     var content = $('.input').val();
-    options.saveOption('medium',content);
-    $('.medium').remove();
-    $('body').append('<div class="medium" style="width: 100vw;height: 100vh;z-index: -999998;position: fixed; background: url('+content+');background-size: cover;top: 0;"></div>');
+    if (content === '' || content === null || typeof content === 'undefined') {
+        $('.medium').remove();
+    } else {
+        if ( !$('.medium').length) {
+            $('body').append(makeBGdiv(content));
+        } else {
+            $('.medium').css('background-image',' url('+content+')');
+        }
+    }
+   options.saveOption('medium',content);
+
 };
 
-myModule.go = function() {
-    modal.create({
-        title: 'Link an image file:',
-        content: 'It is recommended a .jpg file is used',
-        placeholder: 'https://example.com/example.jpg',
-        confirmButtonClass: 'confirm-for314',
-        maxlength: '999',
-        confirmCallback: saveCustomBG
-    });
+
+myModule.go = function(source) {
+    if (source === "onLoad") {
+        $('body').append(makeBGdiv(settings.general.medium));
+    } else {
+        modal.create({
+            title: 'Link an image file:',
+            content: 'We recommend using a .jpg file. Leave blank to remove the current background image',
+            placeholder: 'https://example.com/example.jpg',
+            confirmButtonClass: 'confirm-for314',
+            maxlength: '999',
+            confirmCallback: saveCustomBG
+        });
+    }
+    
 };
 
 module.exports = myModule;
