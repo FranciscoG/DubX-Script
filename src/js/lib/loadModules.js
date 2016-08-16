@@ -36,7 +36,7 @@ var loadAllModulesTo = function(globalObject){
           mod.optionState = storedSettings.options[mod.id];
 
           // run module's go function if setting was true
-          if ( storedSettings.options[mod.id] === 'true' && typeof mod.go === 'function' ) {
+          if ( (storedSettings.options[mod.id] === 'true' || storedSettings.options[mod.id] === true) && typeof mod.go === 'function' ) {
             mod.go.call(mod, "onLoad");
           }
         }

@@ -17,7 +17,12 @@ myModule.moduleName = "AFK Autorespond";
 myModule.description = "Toggle Away from Keyboard and customize AFK message.";
 myModule.optionState = false;
 myModule.category = "general";
-myModule.menuHTML = menu.makeStandardMenuHTML(myModule.id, myModule.description, myModule.id, myModule.moduleName);
+myModule.menuHTML = [
+    '<li id="'+myModule.id+'" class="for_content_li for_content_feature afk" type="'+myModule.description+'">',
+        '<p class="for_content_off"><i class="fi-x"></i></p>',
+        '<p id="createAfkMessage" class="for_content_edit" style="display: inline-block;color: #878c8e;font-size: .85rem;font-weight: bold;float: right;"><i class="fi-pencil"></i></p>',
+        '<p class="for_content_p">'+myModule.moduleName+'</p>',
+    '</li>'].join();
 
 
 var afk_chat_respond = function(e) {
@@ -49,7 +54,7 @@ var saveAfkMessage =function() {
     options.saveOption('customAfkMessage', customAfkMessage);
 };
 
-var createAfkMessage =function() {
+var createAfkMessage = function() {
     var current = settings.custom.customAfkMessage;
     modal.create({
         title: 'Custom AFK Message',
@@ -66,7 +71,8 @@ myModule.init = function(){
 };
 
 myModule.go = function(e) {
-    if(e.target.className === 'for_content_edit' || e.target.className === 'fi-pencil') {return;
+    if(typeof e === 'object' && e.target.className === 'for_content_edit' || e.target.className === 'fi-pencil') {
+        return;
     }
     var newOptionState;
 
@@ -83,11 +89,3 @@ myModule.go = function(e) {
 };
 
 module.exports = myModule;
-
-/*
-'<li onclick="dubx.afk(event);" class="for_content_li for_content_feature afk">',
-    '<p class="for_content_off"><i class="fi-x"></i></p>',
-    '<p onclick="dubx.createAfkMessage();" class="for_content_edit" style="display: inline-block;color: #878c8e;font-size: .85rem;font-weight: bold;float: right;"><i class="fi-pencil"></i></p>',
-    '<p class="for_content_p">AFK Autorespond</p>',
-'</li>',
- */

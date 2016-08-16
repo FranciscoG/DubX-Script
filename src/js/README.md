@@ -3,7 +3,7 @@
 :warning: *this doc is a work in progress* :warning:
 
 My TODO:
-* update afk.js menu item because forgot something    
+* ~~update afk.js menu item because forgot something~~    
 * finish the remaining general items    
 * test test test
 * es6 conversion, babeljs, etc  (not super important now)
@@ -41,9 +41,10 @@ Here's an example of a basic **methods**:
 
 There are only 2 methods that the `src/js/lib/loadModules.js` looks for when loading a modules.
 
-myModule`.init()` - this is where you put anything that needs to be executed as soon as the module is loaded
-
-myModule`.go()` - This is your main execute function for your module. When a user clicks on the menu item, this is the function that is run.
+|  method  | desc  |
+|:---|:---|
+| `.init()` | this is where you put anything that needs to be executed as soon as the module is loaded.  This will only ever run once |
+| `.go()` | This is your main execute function for your module. When a user clicks on the menu item, this is the function that is run.<br>When .go() is run, it will be passed one argument.  That argument is either an event object or a string.<br>`.go(event)` - when .go is the result of a click event from the menu.<br>`.go("onLoad")` - when .go is run from the loadModules.js because of a user's saved option |
 
 don't forget to export at the end!
 

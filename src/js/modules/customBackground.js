@@ -18,30 +18,32 @@ myModule.optionState = false;
 myModule.category = "customize";
 myModule.menuHTML = menu.makeOtherMenuHTML('unlink', myModule.id, myModule.description, '', myModule.moduleName);
 
-var makeBGdiv = function(url){
-    return '<div class="medium" style="width: 100vw;height: 100vh;z-index: -999998;position: fixed; background-image: url('+url+');background-size: cover;top: 0;"></div>';
+myModule.makeBGdiv = function(url){
+    return '<div class="medium" style="width: 100%; height: 100%; z-index: -999998; position: fixed; background-image: url('+url+'); background-size: cover; top: 0; left: 0;"></div>';
 };
 
 
-var saveCustomBG = function() {
+myModule.saveCustomBG = function() {
     var content = $('.input').val();
     if (content === '' || content === null || typeof content === 'undefined') {
         $('.medium').remove();
+        this.optionState = false;
+        options.saveOption('medium',content);
+        return;
+    }
+
+    if ( !$('.medium').length) {
+        $('body').append(this.makeBGdiv(content));
     } else {
-        if ( !$('.medium').length) {
-            $('body').append(makeBGdiv(content));
-        } else {
-            $('.medium').css('background-image',' url('+content+')');
-        }
+        $('.medium').css('background-image',' url('+content+')');
     }
    options.saveOption('medium',content);
-
 };
 
 
 myModule.go = function(source) {
     if (source === "onLoad") {
-        $('body').append(makeBGdiv(settings.general.medium));
+        $('body').append(this.makeBGdiv(settings.general.medium));
     } else {
         modal.create({
             title: 'Link an image file:',
@@ -49,7 +51,7 @@ myModule.go = function(source) {
             placeholder: 'https://example.com/example.jpg',
             confirmButtonClass: 'confirm-for314',
             maxlength: '999',
-            confirmCallback: saveCustomBG
+            confirmCallback: this.saveCustomBG
         });
     }
     
