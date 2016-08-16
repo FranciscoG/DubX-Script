@@ -71,7 +71,7 @@ myModule.init = function(){
 };
 
 myModule.go = function(e) {
-    if(typeof e === 'object' && e.target.className === 'for_content_edit' || e.target.className === 'fi-pencil') {
+    if(typeof e === 'object' && (e.target.className === 'for_content_edit' || e.target.className === 'fi-pencil')) {
         return;
     }
     var newOptionState;
