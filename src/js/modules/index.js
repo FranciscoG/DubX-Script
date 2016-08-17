@@ -5,6 +5,14 @@ module.exports = [
   require('./autovote.js'),
   require('./afk.js'),
   require('./emotes.js'),
+  // autocomplete emoji
+  // autocomplete mentions
+  // cusomt mention triggers
+  // notifications on mentions
+  require('./showDubsOnHover.js'),
+  // Downdubs in chat (mod only)
+  // Updubs in chat
+  require('./grabsInChat.js'),
 
   // User Interface
   require('./fullscreen.js'),

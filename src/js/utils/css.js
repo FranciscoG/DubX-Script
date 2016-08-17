@@ -2,8 +2,7 @@ var settings = require("../lib/settings.js");
 
 /**
  * Loads a CSS file into <head>
- * Assumes all CSS files lives at  root/...
- * @param {string} cssFile    the css file location starting after /root/css
+ * @param {string} cssFile    the css file location
  * @param {string} className  class name for element
  *
  * example:  css.load("/options/show_timestamps.css", "show_timestamps_link");
