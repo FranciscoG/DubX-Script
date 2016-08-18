@@ -30,32 +30,30 @@ function makeImage(type, src, name, w, h){
  */
 
 myModule.replaceTextWithEmote = function(){
-    var self = dubx_emoji;
+    var _regex = dubx_emoji.twitch.chatRegex;
 
-    var _regex = self.twitch.chatRegex;
-
-    if (!self.twitchJSONSLoaded) { return; } // can't do anything until jsons are loaded
+    if (!dubx_emoji.twitchJSONSLoaded) { return; } // can't do anything until jsons are loaded
 
     var $chatTarget = $('.chat-main .text').last();
     
     if (!$chatTarget.html()) { return; } // nothing to do
 
-    if (self.bttvJSONSLoaded) { _regex = self.bttv.chatRegex; }
+    if (dubx_emoji.bttvJSONSLoaded) { _regex = dubx_emoji.bttv.chatRegex; }
 
     var emoted = $chatTarget.html().replace(_regex, function(matched, p1){
         var _id, _src, _desc, key = p1.toLowerCase();
 
-        if ( self.twitch.emotes[key] ){
-            _id = self.twitch.emotes[key];
-            _src = self.twitch.template(_id);
+        if ( dubx_emoji.twitch.emotes[key] ){
+            _id = dubx_emoji.twitch.emotes[key];
+            _src = dubx_emoji.twitch.template(_id);
             return makeImage("twitch", _src, key);
-        } else if ( self.bttv.emotes[key] ) {
-            _id = self.bttv.emotes[key];
-            _src = self.bttv.template(_id);
+        } else if ( dubx_emoji.bttv.emotes[key] ) {
+            _id = dubx_emoji.bttv.emotes[key];
+            _src = dubx_emoji.bttv.template(_id);
             return makeImage("bttv", _src, key);
-        } else if ( self.tasty.emotes[key] ) {
-            _src = self.tasty.template(key);
-            return makeImage("tasty", _src, key, self.tasty.emotes[key].width, self.tasty.emotes[key].height);
+        } else if ( dubx_emoji.tasty.emotes[key] ) {
+            _src = dubx_emoji.tasty.template(key);
+            return makeImage("tasty", _src, key, dubx_emoji.tasty.emotes[key].width, dubx_emoji.tasty.emotes[key].height);
         } else {
             return matched;
         }
