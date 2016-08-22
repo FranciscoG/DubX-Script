@@ -317,7 +317,6 @@ ul.avatar-list .user-mbsurfer:after,
     color: #409fff !important;
 }
 #chat .chat-container ul.chat-main li.user-55ff52375335f703008b0d38 .activity-row .text p a.username:before,
-#chat .chat-container ul.chat-main li.user-56030f67813abe030055f4a4 .activity-row .text p a.username:before,
 #chat .chat-container ul.chat-main li.user-56008425621a9e0300317238 .activity-row .text p a.username:before {
     content: "\f1ee" !important;
     font-family: "foundation-icons";
