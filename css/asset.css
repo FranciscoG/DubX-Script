@@ -539,4 +539,53 @@ ul.avatar-list li.admin p {
 551d295433cd73030089d184 swordling
 52c8254ca7b7260200000001 yofred
 5609636de5851903009b91a8 RainZy
+56d545a245f02ad6041a4317 Never_Pause
 */
+
+
+/**
+ * VIP Styles for User:
+ * 56d545a245f02ad6041a4317 never_pause
+ * icon:  Paw  "\f192"
+ */
+
+/* And here is where we add User Specific Foundation Icon font*/
+#chat .chat-container ul.chat-main li.user-56d545a245f02ad6041a4317 .activity-row .text p a.username:before {
+    content: "\f192" !important; /* <-- This is the Paw icon */
+}
+
+#chat .chat-container ul.chat-main li.user-56d545a245f02ad6041a4317 .activity-row .text p a.username:hover:before {
+    content: "DubX VIP" !important;
+    font-weight: 700;
+    font-family: proxima-nova,sans-serif;
+    font-size: 10px;
+}
+
+#chat .chat-container ul.chat-main li.user-56d545a245f02ad6041a4317 .activity-row .text p a.username {
+    color: #E8C248 !important;
+    text-shadow: 0px 0px 1px rgba(0,0,0,.5);
+}
+
+#chat .chat-container ul.chat-main li.user-56d545a245f02ad6041a4317 .activity-row .text p a.username:before {
+    font-family: "foundation-icons";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    text-decoration: inherit;
+    margin-right: 5px;
+}
+
+/* VIP stuff in Avatar List */
+#avatar-list .user-never_pause .dubs:before {
+    content: "DubX VIP  -  ";
+    font-weight: 700 !important;
+    color: #E8C248 !important;
+}
+
+#avatar-list .user-never_pause {
+    color: #E8C248 !important;
+}
