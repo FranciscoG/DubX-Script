@@ -52,7 +52,7 @@
 // includes for roles
 //
 
-// Add styles to the user avalar list tab in the chat window
+// Add styles to the user avatar list tab in the chat window
 @mixin rolesAvatars($role, $USER_NAME, $clr:"") {
   
   @if $clr != "" {

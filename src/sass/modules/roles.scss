@@ -1,14 +1,3 @@
-/* might use this one day */
-.dubx .never-hide {
-  display: block !important;
-  visibility: visible !important;
-}
-
-/* Make the volume controller visible all the time */
-.dubx #main_player .player_sharing .player-controller-container .volume-controller-container {
-  display: block;
-}
-
 /* Dubtracks adds Admin class to its own admins */
 #avatar-list li.admin {
   color: roleColor("admin");

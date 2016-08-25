@@ -1,8 +1,4 @@
-
-// colors
-
 // user role colors
-
 $roles : (
   team  : #409fff,
   admin : #FF7E00,
@@ -11,6 +7,7 @@ $roles : (
   owner : #89BE6C
 );
 
+// icons in the chat box
 $icons : (
   team  : "f1ee",
   admin : "f137",
@@ -19,6 +16,7 @@ $icons : (
   owner : ("f137", "f1af")
 );
 
+// what it says when you hover in Chat
 $roleChatHover : (
   team  : "DubX",
   admin : "Admin",
@@ -27,6 +25,7 @@ $roleChatHover : (
   owner : "DubX"
 );
 
+// text added to users in Avatar List
 $roleAvatarListText : (
   team  : "DubX TEAM  -  ",
   admin : "Admin",

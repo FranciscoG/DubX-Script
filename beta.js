@@ -1086,7 +1086,6 @@ if (!hello_run && Dubtrack.session.id) {
             }
         },
         previewListInit: function(){
-            $('head').prepend('<link rel="stylesheet" type="text/css" href="'+hello.gitRoot+'/css/options/autocomplete.css">');
             var acUL = document.createElement('ul');
             acUL.id = "autocomplete-preview";
             $('.pusher-chat-widget-input').prepend(acUL);
@@ -1297,10 +1296,6 @@ if (!hello_run && Dubtrack.session.id) {
                 };
                 setTimeout(n.close.bind(n), 5000);
             }
-        },
-
-        dubinfoInit: function(){
-            $('head').prepend('<link rel="stylesheet" type="text/css" href="'+hello.gitRoot+'/css/options/dubinfo.css">');
         },
         downdubChat: function(){
             if(!options.let_downdub_chat_notifications){
@@ -1982,7 +1977,6 @@ if (!hello_run && Dubtrack.session.id) {
     hello.personalize();
     hello.previewListInit();
     hello.userAutoComplete();
-    hello.dubinfoInit();
 
     //Ref 4:
     if (localStorage.getItem('autovote') === 'true') {
