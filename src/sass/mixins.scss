@@ -17,19 +17,19 @@
 // ROLES
 // 
 
-@mixin addRole($role, $USER_NAME, $USER_ID) {
-  @include rolesAvatars($role, $USER_NAME);
-  @include rolesChat($role, $USER_ID);
+@mixin addRole($role, $USER_NAME, $USER_ID, $icon:"", $overrideColor:"") {
+  @include rolesAvatars($role, $USER_NAME, $overrideColor);
+  @include rolesChat($role, $USER_ID, $icon, $overrideColor);
 }
 
 // makes a user an admin
-@mixin makeAdmin($USER_ID) {
-  @include rolesChat("admin", $USER_ID);
+@mixin makeAdmin($USER_ID, $icon:"", $overrideColor:"") {
+  @include rolesChat("admin", $USER_ID, $icon, $overrideColor);
 }
 
-@mixin makeVIP($USER_NAME, $USER_ID, $icon:"f1ae") {
-  @include rolesAvatars("vip", $USER_NAME);
-  @include rolesChat("vip", $USER_ID, $icon);
+@mixin makeVIP($USER_NAME, $USER_ID, $icon:"f1ae", $overrideColor:"") {
+  @include rolesAvatars("vip", $USER_NAME, $overrideColor);
+  @include rolesChat("vip", $USER_ID, $icon, $overrideColor);
 }
 
 //******************************************
@@ -37,29 +37,42 @@
 //
 
 // Add styles to the user avalar list tab in the chat window
-@mixin rolesAvatars($role, $USER_NAME) {
+@mixin rolesAvatars($role, $USER_NAME, $clr:"") {
+  
+  @if $clr != "" {
+    $clr : $overrideColor;
+  } @else {
+    $clr : roleColor($role);
+  }
+
   #avatar-list .user-#{$USER_NAME} .dubs:before {
       content: map-get($roleAvatarListText, $role);
       font-weight: 700 !important;
-      color: roleColor($role) !important;
+      color: $clr !important;
   }
 
   #avatar-list .user-#{$USER_NAME} {
-      color: roleColor($role) !important;
+      color: $clr !important;
   }
 }
 
 // this mixin only deals with adding the color and hover text with icon
 // in the chat window for user roles. 
-@mixin rolesChat($role, $USER_ID, $icon:"") {
+@mixin rolesChat($role, $USER_ID, $icon:"", $clr:"") {
   
+  @if $clr != "" {
+    $clr : $clr;
+  } @else {
+    $clr : roleColor($role);
+  }
+
   #chat .chat-containt ul.chat-main li.user-#{$USER_ID} .activity-row .text p a.username {
-    color: roleColor($role);
+    color: $clr;
     text-shadow: 0px 0px 1px rgba(0,0,0,.5);
 
     .user-role,
     .user-role-icon {
-        color: roleColor($role) !important;
+        color: $clr !important;
     }
 
     @if $icon != "" {
