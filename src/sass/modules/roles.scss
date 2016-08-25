@@ -1,28 +1,28 @@
 /* might use this one day */
 .dubx .never-hide {
-    display: block !important;
-    visibility: visible !important;
+  display: block !important;
+  visibility: visible !important;
 }
 
 /* Make the volume controller visible all the time */
 .dubx #main_player .player_sharing .player-controller-container .volume-controller-container {
-    display: block;
+  display: block;
 }
 
 /* Dubtracks adds Admin class to its own admins */
 #avatar-list li.admin {
-    color: map-get($roles, "admin");
+  color: roleColor("admin");
 }
 #avatar-list li.user-al3366 p.dubs:before {
-    content: "DubX Team  -  ";
-    font-weight: 700 !important;
-    color: map-get($roles, "team");
+  content: "DubX Team  -  ";
+  font-weight: 700 !important;
+  color: roleColor("team");
 }
 #avatar-list li.admin:after {
-    color: map-get($roles, "admin");
+  color: roleColor("admin");
 }
 #avatar-list li.admin p {
-    color: map-get($roles, "admin");
+  color: roleColor("admin");
 }
 
 // DubX Team
@@ -43,7 +43,7 @@
 @include makeVIP("pikachu", "55ffae6a1564a403003f5132", "f1b3"); // icon: skull and crossbones
 @include makeVIP("law", "560af26e9d6ab30300404673"); 
 @include makeVIP("Surreal", "5618cf0f465bce1800d389fa", "f159");  // icon: heart
-@include makeVIP("JinKx", "560a30833e735703002efb74", "f106");  // icon: heart
+@include makeVIP("JinKx", "560a30833e735703002efb74", "f106");  // icon: anchor
 
 // DubX Owners
 @include makeOwner("sinful", "53f7c199892b010200a98809");
@@ -51,16 +51,3 @@
 
 // Dubtrack Admins who also work on Dubx
 @include makeAdminDubx("mbsurfer","560892bf8e9cb60300550aa2");
-
-@include makeAdminDubx("dTest3xf12", "56a68a6daa267464004f1247");
-
-
-ul.avatar-list li.user-al3366 p.dubs:before {
-    content: "DubX Team  -  ";
-    font-weight: 700 !important;
-    color: #409fff;
-}
-
-
-
-
