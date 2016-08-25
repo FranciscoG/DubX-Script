@@ -2070,7 +2070,7 @@ if (!hello_run && Dubtrack.session.id) {
         hello.show_timestamps();
     }
     if (localStorage.getItem('video_window') === 'true') {
-        hello.video_window();
+        hello.toggleBasicOption("dubx-video-only","video_window");
     }
     if (localStorage.getItem('css_world') === 'true') {
         hello.css_for_the_world();
