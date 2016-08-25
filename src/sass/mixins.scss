@@ -27,9 +27,25 @@
   @include rolesChat("admin", $USER_ID, $icon, $overrideColor);
 }
 
-@mixin makeVIP($USER_NAME, $USER_ID, $icon:"f1ae", $overrideColor:"") {
+@mixin makeVIP($USER_NAME, $USER_ID, $icon: "", $overrideColor:"") {
   @include rolesAvatars("vip", $USER_NAME, $overrideColor);
   @include rolesChat("vip", $USER_ID, $icon, $overrideColor);
+}
+
+@mixin makeOwner($USER_NAME, $USER_ID, $icon: "", $overrideColor:""){
+  @include rolesAvatars("owner", $USER_NAME, $overrideColor);
+  @include rolesChat("owner", $USER_ID, $icon, $overrideColor);
+
+  #avatar-list .user-#{to-lower-case($USER_NAME)} p.dubs:hover:before {
+      content: "DubX Owner  -  ";
+      font-weight: 700 !important;
+      color: #89BE6C !important;
+  }
+}
+
+@mixin makeAdminDubx($USER_NAME, $USER_ID, $icon: "", $overrideColor:""){
+  @include rolesAvatars("admin_dubx", $USER_NAME, $overrideColor);
+  @include rolesChat("admin_dubx", $USER_ID, $icon, $overrideColor);
 }
 
 //******************************************
@@ -40,19 +56,19 @@
 @mixin rolesAvatars($role, $USER_NAME, $clr:"") {
   
   @if $clr != "" {
-    $clr : $overrideColor;
+    $clr : $clr;
   } @else {
     $clr : roleColor($role);
   }
 
-  #avatar-list .user-#{$USER_NAME} .dubs:before {
+  #avatar-list .user-#{to-lower-case($USER_NAME)} .dubs:before {
       content: map-get($roleAvatarListText, $role);
       font-weight: 700 !important;
-      color: $clr !important;
+      color: #{$clr} !important;
   }
 
-  #avatar-list .user-#{$USER_NAME} {
-      color: $clr !important;
+  #avatar-list .user-#{to-lower-case($USER_NAME)} {
+      color: #{$clr} !important;
   }
 }
 
@@ -66,23 +82,25 @@
     $clr : roleColor($role);
   }
 
-  #chat .chat-containt ul.chat-main li.user-#{$USER_ID} .activity-row .text p a.username {
-    color: $clr;
+  @if $icon != "" {
+    $icon : $icon;
+  } @else {
+    $icon : map-get($icons, $role);
+  }
+
+  #chat .chat-container ul.chat-main li.user-#{$USER_ID} .activity-row .text p a.username {
+    &:before {
+       @if $role == "admin_dubx" or $role == "owner"{
+          content: doubleUnicode(nth($icon,1), nth($icon,2)) !important;
+        } @else {
+          content: unicode($icon) !important;
+        }
+    }
+
+    color: #{$clr} !important;
     text-shadow: 0px 0px 1px rgba(0,0,0,.5);
 
-    .user-role,
-    .user-role-icon {
-        color: $clr !important;
-    }
-
-    @if $icon != "" {
-      $icon : $icon;
-    } @else {
-      $icon : map-get($icons, $role);
-    }
-
     &:before {
-        content: unicode($icon) !important;
         font-family: "foundation-icons";
         font-style: normal;
         font-weight: normal;
