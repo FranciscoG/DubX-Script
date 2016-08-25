@@ -75,7 +75,7 @@ if (!hello_run && Dubtrack.session.id) {
 
     //Ref 2: Options
     var hello = {
-        gitRoot: 'https://rawgit.com/sinfulBA/DubX-Script/master',
+        gitRoot: 'https://rawgit.com/FranciscoG/DubX-Script/sassy',
         //Ref 2.1: Initialize
         personalize: function() {
             $('.isUser').text(Dubtrack.session.get('username'));
@@ -166,7 +166,7 @@ if (!hello_run && Dubtrack.session.id) {
                                 '<p class="for_content_off"><i class="fi-x"></i></p>',
                                 '<p class="for_content_p">Split Chat</p>',
                             '</li>',
-                            '<li onclick="hello.video_window();" class="for_content_li for_content_feature video_window">',
+                            '<li onclick="hello.toggleBasicOption("dubx-video-only","video_window");" class="for_content_li for_content_feature video_window">',
                                 '<p class="for_content_off"><i class="fi-x"></i></p>',
                                 '<p class="for_content_p">Hide Chat</p>',
                             '</li>',
@@ -751,6 +751,27 @@ if (!hello_run && Dubtrack.session.id) {
                 $('body').removeClass('dubx-video-only');
                 hello.option('video_window','false');
                 hello.off('.video_window');
+            }
+        },
+        /**
+         * Use for options that basically just add/remove a single classname to body
+         * Note:  This assumes that in the menu item has the same classname as the optionName
+         * @param  {String} className  the css class that will be added to the body
+         * @param  {String} optionName the name of the option
+         */
+        toggleBasicOption: function(className, optionName){
+            var opt = 'let_'+optionName;
+            var menuSelector = "."+optionName;
+            if(!options[opt]) {
+                options[opt] = true;
+                $('body').addClass(className);
+                hello.option(optionName,'true');
+                hello.on(menuSelector);
+            } else {
+                options[opt] = false;
+                $('body').removeClass(className);
+                hello.option(optionName,'false');
+                hello.off(menuSelector);
             }
         },
         // jQuery's getJSON kept returning errors so making my own with promise-like

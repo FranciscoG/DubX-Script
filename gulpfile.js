@@ -6,7 +6,7 @@ var sass = require('gulp-sass');
 gulp.task('sass', function () {
   return gulp.src('src/sass/asset.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('src/dist'));
+    .pipe(gulp.dest('css'));
 });
  
 gulp.task('watch', function () {
