@@ -629,12 +629,12 @@ if (!hello_run && Dubtrack.session.id) {
         chat_window: function() {
             if(!options.let_chat_window) {
                 options.let_chat_window = true;
-                $('head').append('<link class="chat_window_link" rel="stylesheet" type="text/css" href="'+hello.gitRoot+'/css/options/chat_window.css">');
+                $('body').addClass('dubx-chat-only');
                 hello.option('chat_window','true');
                 hello.on('.chat_window');
             } else {
                 options.let_chat_window = false;
-                $('.chat_window_link').remove();
+                $('body').removeClass('dubx-chat-only');
                 hello.option('chat_window','false');
                 hello.off('.chat_window');
             }
@@ -687,12 +687,12 @@ if (!hello_run && Dubtrack.session.id) {
         hide_avatars: function() {
             if(!options.let_hide_avatars) {
                 options.let_hide_avatars = true;
-                $('head').append('<link class="hide_avatars_link" rel="stylesheet" type="text/css" href="'+hello.gitRoot+'/css/options/hide_avatars.css">');
+                $('body').addClass('dubx-hide-avatars');
                 hello.option('hide_avatars','true');
                 hello.on('.hide_avatars');
             } else {
                 options.let_hide_avatars = false;
-                $('.hide_avatars_link').remove();
+                $('body').removeClass('dubx-hide-avatars');
                 hello.option('hide_avatars','false');
                 hello.off('.hide_avatars');
             }
@@ -730,12 +730,12 @@ if (!hello_run && Dubtrack.session.id) {
         show_timestamps: function() {
             if(!options.let_show_timestamps) {
                 options.let_show_timestamps = true;
-                $('head').append('<link class="show_timestamps_link" rel="stylesheet" type="text/css" href="'+hello.gitRoot+'/css/options/show_timestamps.css">');
+                $('body').addClass('dubx-show-timestamp');
                 hello.option('show_timestamps','true');
                 hello.on('.show_timestamps');
             } else {
                 options.let_show_timestamps = false;
-                $('.show_timestamps_link').remove();
+                $('body').removeClass('dubx-show-timestamp');
                 hello.option('show_timestamps','false');
                 hello.off('.show_timestamps');
             }
@@ -743,12 +743,12 @@ if (!hello_run && Dubtrack.session.id) {
         video_window: function() {
             if(!options.let_video_window) {
                 options.let_video_window = true;
-                $('head').append('<link class="video_window_link" rel="stylesheet" type="text/css" href="'+hello.gitRoot+'/css/options/video_window.css">');
+                $('body').addClass('dubx-video-only');
                 hello.option('video_window','true');
                 hello.on('.video_window');
             } else {
                 options.let_video_window = false;
-                $('.video_window_link').remove();
+                $('body').removeClass('dubx-video-only');
                 hello.option('video_window','false');
                 hello.off('.video_window');
             }

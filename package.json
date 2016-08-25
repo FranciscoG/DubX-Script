@@ -1,0 +1,26 @@
+{
+  "name": "dubx-script",
+  "version": "3.5.0",
+  "description": "- A simple script/extension for Dubtrack.fm",
+  "main": "beta.js",
+  "scripts": {
+    "bundle": "browserify src/js/beta.js > beta-test.js",
+    "watch": "watchify src/js/beta.js -o beta-test.js -v"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sinfulBA/DubX-Script.git"
+  },
+  "author": "",
+  "license": "QPL-1.0",
+  "bugs": {
+    "url": "https://github.com/sinfulBA/DubX-Script/issues"
+  },
+  "homepage": "https://github.com/sinfulBA/DubX-Script#readme",
+  "devDependencies": {
+    "browserify": "^13.0.1",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2",
+    "watchify": "^3.7.0"
+  }
+}
