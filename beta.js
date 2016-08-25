@@ -162,7 +162,7 @@ if (!hello_run && Dubtrack.session.id) {
                                 '<p class="for_content_off"><i class="fi-arrows-out"></i></p>',
                                 '<p class="for_content_p">Fullscreen Video</p>',
                             '</li>',
-                            '<li onclick="hello.split_chat();" class="for_content_li for_content_feature split_chat">',
+                            '<li onclick="hello.toggleBasic(\'dubx-split-chat\',\'split_chat\');" class="for_content_li for_content_feature split_chat">',
                                 '<p class="for_content_off"><i class="fi-x"></i></p>',
                                 '<p class="for_content_p">Split Chat</p>',
                             '</li>',
@@ -326,14 +326,15 @@ if (!hello_run && Dubtrack.session.id) {
         },
         drawAll: function() {
             var allClosed = true;
-            for(var i = 0; i < hello.sectionList.length; i++) {
+            var i;
+            for(i = 0; i < hello.sectionList.length; i++) {
                 if($('.'+hello.sectionList[i]).css('display') === 'block'){
                     allClosed = false;
                 }
             }
 
             if(allClosed) {
-                for(var i = 0; i < hello.sectionList.length; i++) {
+                for(i = 0; i < hello.sectionList.length; i++) {
                     $('.'+hello.sectionList[i]).slideDown('fast');
                     $('.'+hello.sectionList[i]).prev('li').find('i').removeClass('fi-plus').addClass('fi-minus');
                     hello.option(hello.sectionList[i], 'true');
@@ -341,7 +342,7 @@ if (!hello_run && Dubtrack.session.id) {
                 }
             }
             else {
-                for(var i = 0; i < hello.sectionList.length; i++) {
+                for(i = 0; i < hello.sectionList.length; i++) {
                     $('.'+hello.sectionList[i]).slideUp();
                     $('.'+hello.sectionList[i]).prev('li').find('i').removeClass('fi-minus').addClass('fi-plus');
                     hello.option(hello.sectionList[i],'false');
@@ -446,19 +447,6 @@ if (!hello_run && Dubtrack.session.id) {
                 hello.option('autovote','false');
                 hello.off('.autovote');
                 Dubtrack.Events.unbind("realtime:room_playlist-update", hello.voteCheck);
-            }
-        },
-        split_chat: function() {
-            if (!options.let_split_chat) {
-                options.let_split_chat = true;
-                $('.chat-main').addClass('splitChat');
-                hello.option('split_chat', 'true');
-                hello.on('.split_chat');
-            } else {
-                options.let_split_chat = false;
-                $('.chat-main').removeClass('splitChat');
-                hello.option('split_chat','false');
-                hello.off('.split_chat');
             }
         },
         eta: function() {
@@ -1431,15 +1419,16 @@ if (!hello_run && Dubtrack.session.id) {
             $.getJSON("https://api.dubtrack.fm/room/" + Dubtrack.room.model.id + "/playlist/active/dubs", function(response){
                 response.data.upDubs.forEach(function(e){
                     //Dub already casted (usually from autodub)
-                    if($.grep(hello.dubs.upDubs, function(el){ return el.userid == e.userid; }).length > 0){
+                    if($.grep(hello.dubs.upDubs, function(el){ return el.userid === e.userid; }).length > 0){
                         return;
                     }
 
                     var username;
                     if(!Dubtrack.room.users.collection.findWhere({userid: e.userid}) || !Dubtrack.room.users.collection.findWhere({userid: e.userid}).attributes) {
                         $.getJSON("https://api.dubtrack.fm/user/" + e.userid, function(response){
-                            if(response && response.userinfo)
+                            if(response && response.userinfo) {
                                 username = response.userinfo.username;
+                            }
                         });
                     }
                     else{
@@ -1451,7 +1440,7 @@ if (!hello_run && Dubtrack.session.id) {
                     hello.dubs.upDubs.push({
                         userid: e.userid,
                         username: username
-                    })
+                    });
                 });
                 //TODO: Uncomment this when we can hit the api for all grabs of current playing song
                 /*response.data.grabs.forEach(function(e){
@@ -1497,7 +1486,7 @@ if (!hello_run && Dubtrack.session.id) {
                         hello.dubs.downDubs.push({
                             userid: e.userid,
                             username: Dubtrack.room.users.collection.findWhere({userid: e.userid}).attributes._user.username
-                        })
+                        });
                     });
                 }
             });
@@ -1590,7 +1579,7 @@ if (!hello_run && Dubtrack.session.id) {
                                             '<img src="https://api.dubtrack.fm/user/' + val.userid + '/image">' +
                                         '</div>' +
                                         '<span class="dubinfo-text">@' + val.username + '</span>' +
-                                    '</li>'
+                                    '</li>';
                         });
                         html += '</ul>';                     
                     }
@@ -1664,7 +1653,7 @@ if (!hello_run && Dubtrack.session.id) {
                                                 '<img src="https://api.dubtrack.fm/user/' + val.userid + '/image">' +
                                             '</div>' +
                                             '<span class="dubinfo-text">@' + val.username + '</span>' +
-                                        '</li>'
+                                        '</li>';
                             });
                             html += '</ul>';                     
                         }
@@ -1743,7 +1732,7 @@ if (!hello_run && Dubtrack.session.id) {
                                             '<img src="https://api.dubtrack.fm/user/' + val.userid + '/image">' +
                                         '</div>' +
                                         '<span class="dubinfo-text">@' + val.username + '</span>' +
-                                    '</li>'
+                                    '</li>';
                         });
                         html += '</ul>';                     
                     }
@@ -1815,7 +1804,7 @@ if (!hello_run && Dubtrack.session.id) {
         },
         dubUserLeaveWatcher: function(e){
             //Remove user from dub list
-            if($.grep(hello.dubs.upDubs, function(el){ return el.userid == e.user._id; }).length > 0){
+            if($.grep(hello.dubs.upDubs, function(el){ return el.userid === e.user._id; }).length > 0){
                 $.each(hello.dubs.upDubs, function(i){
                     if(hello.dubs.upDubs[i].userid === e.user._id) {
                         hello.dubs.upDubs.splice(i,1);
@@ -1823,7 +1812,7 @@ if (!hello_run && Dubtrack.session.id) {
                     }
                 });
             }
-            if($.grep(hello.dubs.downDubs, function(el){ return el.userid == e.user._id; }).length > 0){
+            if($.grep(hello.dubs.downDubs, function(el){ return el.userid === e.user._id; }).length > 0){
                 $.each(hello.dubs.downDubs, function(i){
                     if(hello.dubs.downDubs[i].userid === e.user._id) {
                         hello.dubs.downDubs.splice(i,1);
@@ -1831,7 +1820,7 @@ if (!hello_run && Dubtrack.session.id) {
                     }
                 });
             }
-            if($.grep(hello.dubs.grabs, function(el){ return el.userid == e.user._id; }).length > 0){
+            if($.grep(hello.dubs.grabs, function(el){ return el.userid === e.user._id; }).length > 0){
                 $.each(hello.dubs.grabs, function(i){
                     if(hello.dubs.grabs[i].userid === e.user._id) {
                         hello.dubs.grabs.splice(i,1);
@@ -1842,7 +1831,7 @@ if (!hello_run && Dubtrack.session.id) {
         },
         grabWatcher: function(e){
             //If grab already casted
-            if($.grep(hello.dubs.grabs, function(el){ return el.userid == e.user._id; }).length <= 0){
+            if($.grep(hello.dubs.grabs, function(el){ return el.userid === e.user._id; }).length <= 0){
                 hello.dubs.grabs.push({
                     userid: e.user._id,
                     username: e.user.username
@@ -1852,7 +1841,7 @@ if (!hello_run && Dubtrack.session.id) {
         dubWatcher: function(e){
             if(e.dubtype === 'updub'){
                 //If dub already casted
-                if($.grep(hello.dubs.upDubs, function(el){ return el.userid == e.user._id; }).length <= 0){
+                if($.grep(hello.dubs.upDubs, function(el){ return el.userid === e.user._id; }).length <= 0){
                     hello.dubs.upDubs.push({
                         userid: e.user._id,
                         username: e.user.username
@@ -1860,7 +1849,7 @@ if (!hello_run && Dubtrack.session.id) {
                 }
 
                 //Remove user from other dubtype if exists
-                if($.grep(hello.dubs.downDubs, function(el){ return el.userid == e.user._id; }).length > 0){
+                if($.grep(hello.dubs.downDubs, function(el){ return el.userid === e.user._id; }).length > 0){
                     $.each(hello.dubs.downDubs, function(i){
                         if(hello.dubs.downDubs[i].userid === e.user._id) {
                             hello.dubs.downDubs.splice(i,1);
@@ -1871,7 +1860,7 @@ if (!hello_run && Dubtrack.session.id) {
             }
             else if(e.dubtype === 'downdub'){
                 //If dub already casted
-                if($.grep(hello.dubs.downDubs, function(el){ return el.userid == e.user._id; }).length <= 0 && hello.userIsAtLeastMod(Dubtrack.session.id)){
+                if($.grep(hello.dubs.downDubs, function(el){ return el.userid === e.user._id; }).length <= 0 && hello.userIsAtLeastMod(Dubtrack.session.id)){
                     hello.dubs.downDubs.push({
                         userid: e.user._id,
                         username: e.user.username
@@ -1879,7 +1868,7 @@ if (!hello_run && Dubtrack.session.id) {
                 }
 
                 //Remove user from other dubtype if exists
-                if($.grep(hello.dubs.upDubs, function(el){ return el.userid == e.user._id; }).length > 0){
+                if($.grep(hello.dubs.upDubs, function(el){ return el.userid === e.user._id; }).length > 0){
                     $.each(hello.dubs.upDubs, function(i){
                         if(hello.dubs.upDubs[i].userid === e.user._id) {
                             hello.dubs.upDubs.splice(i,1);
@@ -2000,7 +1989,7 @@ if (!hello_run && Dubtrack.session.id) {
         hello.autovote();
     }
     if (localStorage.getItem('split_chat') === 'true') {
-        hello.split_chat();
+        hello.toggleBasic('dubx-split-chat','split_chat');
     }
     if (localStorage.getItem('medium_disable') === 'true') {
         hello.medium_disable();
@@ -2116,10 +2105,10 @@ if (!hello_run && Dubtrack.session.id) {
         onErr('You\'re not logged in. Please login to use DUBX.');
     } else {
         onErr('Oh noes! We\'ve encountered a runtime error');
-    };
+    }
     function closeErr() {
         $('.onErr').remove();
-    };
+    }
     $('.cancel').click(closeErr);
     $('.confirm-err').click(closeErr);
 }

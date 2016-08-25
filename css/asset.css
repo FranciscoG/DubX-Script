@@ -166,16 +166,6 @@
   font-size: 0.75rem;
   font-weight: 700; }
 
-.chat-main.splitChat li:nth-child(2n),
-.split {
-  background: linear-gradient(to right, rgba(155, 157, 160, 0.1) 0%, transparent 100%);
-  box-shadow: -16px 0px 0px 0px rgba(155, 157, 160, 0.1);
-  width: 100%; }
-
-.chat-main.splitChat li:nth-child(2n) .chatDelete,
-.splitfix {
-  right: 1.7em !important; }
-
 #chat .chat-container .chat-messages .chat-main li .stream-item-content .image_row,
 #chat .chat-container .chat-messages .chat-main li .chatDelete {
   top: 0.6rem; }
@@ -183,7 +173,10 @@
 #chat .chat-container .chat-messages .chat-main li .activity-row {
   padding-top: 0.6rem; }
 
-#chat .chat-container .chat-messages .chat-main li.chat-system-loading, #chat .chat-container .chat-messages .chat-main li.system, #chat .chat-container .chat-messages .chat-main li.system-error, #chat .chat-container .chat-messages .chat-main li.chat-me-command-joined {
+#chat .chat-container .chat-messages .chat-main li.chat-system-loading,
+#chat .chat-container .chat-messages .chat-main li.system,
+#chat .chat-container .chat-messages .chat-main li.system-error,
+#chat .chat-container .chat-messages .chat-main li.chat-me-command-joined {
   padding-top: 1rem;
   padding: 5px; }
 
@@ -638,6 +631,21 @@ ul.avatar-list li.admin p {
 551d295433cd73030089d184 swordling
 52c8254ca7b7260200000001 yofred
 */
+.dubx-split-chat .chat-main li:nth-child(2n) {
+  background: linear-gradient(to right, rgba(155, 157, 160, 0.1) 0%, transparent 100%);
+  box-shadow: -16px 0px 0px 0px rgba(155, 157, 160, 0.1);
+  width: 100%; }
+  .dubx-split-chat .chat-main li:nth-child(2n) .chatDelete {
+    right: 1.7em !important; }
+
+.split {
+  background: linear-gradient(to right, rgba(155, 157, 160, 0.1) 0%, transparent 100%);
+  box-shadow: -16px 0px 0px 0px rgba(155, 157, 160, 0.1);
+  width: 100%; }
+
+.splitfix {
+  right: 1.7em !important; }
+
 /****************************************************
  * Emoji and emote section
  * twitch logo white: http://i.imgur.com/FhzONPQ.png
