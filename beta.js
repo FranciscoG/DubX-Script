@@ -166,15 +166,15 @@ if (!hello_run && Dubtrack.session.id) {
                                 '<p class="for_content_off"><i class="fi-x"></i></p>',
                                 '<p class="for_content_p">Split Chat</p>',
                             '</li>',
-                            '<li onclick="hello.toggleBasicOption("dubx-video-only","video_window");" class="for_content_li for_content_feature video_window">',
+                            '<li onclick="hello.toggleBasic(\'dubx-video-only\',\'video_window\');" class="for_content_li for_content_feature video_window">',
                                 '<p class="for_content_off"><i class="fi-x"></i></p>',
                                 '<p class="for_content_p">Hide Chat</p>',
                             '</li>',
-                            '<li onclick="hello.chat_window();" class="for_content_li for_content_feature chat_window">',
+                            '<li onclick="hello.toggleBasic(\'dubx-chat-only\',\'chat_window\');" class="for_content_li for_content_feature chat_window">',
                                 '<p class="for_content_off"><i class="fi-x"></i></p>',
                                 '<p class="for_content_p">Hide Video</p>',
                             '</li>',
-                            '<li onclick="hello.hide_avatars();" class="for_content_li for_content_feature hide_avatars">',
+                            '<li onclick="hello.toggleBasic(\'dubx-hide-avatars\',\'hide_avatars\');" class="for_content_li for_content_feature hide_avatars">',
                                 '<p class="for_content_off"><i class="fi-x"></i></p>',
                                 '<p class="for_content_p">Hide Avatars</p>',
                             '</li>',
@@ -194,7 +194,7 @@ if (!hello_run && Dubtrack.session.id) {
                                 '<p class="for_content_off"><i class="fi-x"></i></p>',
                                 '<p class="for_content_p">Spacebar Mute</p>',
                             '</li>',
-                            '<li onclick="hello.show_timestamps();" class="for_content_li for_content_feature show_timestamps">',
+                            '<li onclick="hello.toggleBasic(\'dubx-show-timestamp\',\'show_timestamps\');" class="for_content_li for_content_feature show_timestamps">',
                                 '<p class="for_content_off"><i class="fi-x"></i></p>',
                                 '<p class="for_content_p">Show Timestamps</p>',
                             '</li>',
@@ -626,19 +626,6 @@ if (!hello_run && Dubtrack.session.id) {
             hello.option('custom_mentions', customMentions);
             $('.onErr').remove();
         },
-        chat_window: function() {
-            if(!options.let_chat_window) {
-                options.let_chat_window = true;
-                $('body').addClass('dubx-chat-only');
-                hello.option('chat_window','true');
-                hello.on('.chat_window');
-            } else {
-                options.let_chat_window = false;
-                $('body').removeClass('dubx-chat-only');
-                hello.option('chat_window','false');
-                hello.off('.chat_window');
-            }
-        },
         css_modal: function() {
             var current = localStorage.getItem('css') || "";
             hello.input('CSS',current,'https://example.com/example.css','confirm-for313','999');
@@ -684,19 +671,6 @@ if (!hello_run && Dubtrack.session.id) {
                 hello.off('.css');
             }
         },
-        hide_avatars: function() {
-            if(!options.let_hide_avatars) {
-                options.let_hide_avatars = true;
-                $('body').addClass('dubx-hide-avatars');
-                hello.option('hide_avatars','true');
-                hello.on('.hide_avatars');
-            } else {
-                options.let_hide_avatars = false;
-                $('body').removeClass('dubx-hide-avatars');
-                hello.option('hide_avatars','false');
-                hello.off('.hide_avatars');
-            }
-        },
         nicole: function() {
             if (!options.let_nicole) {
                 options.let_nicole = true;
@@ -727,39 +701,13 @@ if (!hello_run && Dubtrack.session.id) {
                 $('body').append('<div class="medium" style="width: 100vw;height: 100vh;z-index: -999998;position: fixed; background: url('+content+');background-size: cover;top: 0;"></div>');
             }
         },
-        show_timestamps: function() {
-            if(!options.let_show_timestamps) {
-                options.let_show_timestamps = true;
-                $('body').addClass('dubx-show-timestamp');
-                hello.option('show_timestamps','true');
-                hello.on('.show_timestamps');
-            } else {
-                options.let_show_timestamps = false;
-                $('body').removeClass('dubx-show-timestamp');
-                hello.option('show_timestamps','false');
-                hello.off('.show_timestamps');
-            }
-        },
-        video_window: function() {
-            if(!options.let_video_window) {
-                options.let_video_window = true;
-                $('body').addClass('dubx-video-only');
-                hello.option('video_window','true');
-                hello.on('.video_window');
-            } else {
-                options.let_video_window = false;
-                $('body').removeClass('dubx-video-only');
-                hello.option('video_window','false');
-                hello.off('.video_window');
-            }
-        },
         /**
          * Use for options that basically just add/remove a single classname to body
          * Note:  This assumes that in the menu item has the same classname as the optionName
          * @param  {String} className  the css class that will be added to the body
          * @param  {String} optionName the name of the option
          */
-        toggleBasicOption: function(className, optionName){
+        toggleBasic: function(className, optionName){
             var opt = 'let_'+optionName;
             var menuSelector = "."+optionName;
             if(!options[opt]) {
@@ -2061,16 +2009,16 @@ if (!hello_run && Dubtrack.session.id) {
         hello.warn_redirect();
     }
     if (localStorage.getItem('chat_window') === 'true') {
-        hello.chat_window();
+        hello.toggleBasic("dubx-chat-only","chat_window");
     }
     if (localStorage.getItem('hide_avatars') === 'true') {
-        hello.hide_avatars();
+        hello.toggleBasic('dubx-hide-avatars','hide_avatars');
     }
     if (localStorage.getItem('show_timestamps') === 'true') {
-        hello.show_timestamps();
+        hello.toggleBasic('dubx-show-timestamp','show_timestamps');
     }
     if (localStorage.getItem('video_window') === 'true') {
-        hello.toggleBasicOption("dubx-video-only","video_window");
+        hello.toggleBasic("dubx-video-only","video_window");
     }
     if (localStorage.getItem('css_world') === 'true') {
         hello.css_for_the_world();
