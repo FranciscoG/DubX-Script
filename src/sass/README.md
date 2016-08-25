@@ -2,7 +2,7 @@
 ### SASS info
 
 
-*Roles*
+####Roles
 
 There are 5 types of stylings for users
 
@@ -31,10 +31,11 @@ To add stylings for one of these roles you can use one of these mixins
 @include makeAdminDubx("USER_NAME","USER_ID");
 ```
 
-Each of these functions can also take 2 extra arguments to override the icon and color that is set in variables.scss.  
+Each of these mixins can also take 2 extra arguments to override the icon and color that are set in `variables.scss`.    
 
 Example:
 
 ```sass
+// do NOT include the "\" when including a custom icon
 @include makeVIP("USER_NAME", "USER_ID", "f192", "#00aeff");
 ```
