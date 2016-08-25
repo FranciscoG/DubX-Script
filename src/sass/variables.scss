@@ -1,4 +1,36 @@
 
 // colors
 
-// something else
+// user role colors
+
+$roles : (
+  team  : #409fff,
+  admin : #FF7E00,
+  vip   : #E8C248,
+  admin_dubx : #89BE6C,
+  owner : #89BE6C
+);
+
+$icons : (
+  team  : "f1ee",
+  admin : "f137",
+  vip   : "f1ae",
+  admin_dubx : "f137  \f1ee",
+  owner : "f137  \f1af"
+);
+
+$roleChatHover : (
+  team  : "DubX",
+  admin : "",
+  vip   : "DubX VIP",
+  admin_dubx : "Admin & DubX",
+  owner : ""
+);
+
+$roleAvatarListText : (
+  team  : "DubX TEAM  -  ",
+  admin : "Admin",
+  vip   : "DubX VIP  -  ",
+  admin_dubx : "Admin & DubX",
+  owner : "DubX Owner  -  "
+);

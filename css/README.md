@@ -31,6 +31,7 @@ Icon:
     color: #409fff !important;
 }
 
+/* Dubx Team Styles in chat window */
 #chat .chat-container ul.chat-main li.user-{USER_ID} .activity-row .text p a.username:hover:before {
     content: "DubX" !important;
     font-weight: 700;
