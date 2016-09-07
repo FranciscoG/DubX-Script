@@ -31,22 +31,21 @@ Icon:
     color: #409fff !important;
 }
 
-/* Dubx Team Styles in chat window */
-#chat .chat-container ul.chat-main li.user-{USER_ID} .activity-row .text p a.username:hover:before {
+#chat .chat-container ul.chat-main li.user-{USER_ID} .stream-item-content .activity-row .username:hover:before {
     content: "DubX" !important;
     font-weight: 700;
     font-family: proxima-nova,sans-serif;
     font-size: 10px;
 }
-#chat .chat-container ul.chat-main li.user-{USER_ID} .activity-row .text p a.username {
+#chat .chat-container ul.chat-main li.user-{USER_ID} .stream-item-content .activity-row .username {
     color: #409fff;
     text-shadow: 0px 0px 1px rgba(0,0,0,.5);
 }
-#chat .chat-container ul.chat-main li.user-{USER_ID} .activity-row .text p a.username .user-role,
-#chat .chat-container ul.chat-main li.user-{USER_ID} .activity-row .text p a.username .user-role-icon {
+#chat .chat-container ul.chat-main li.user-{USER_ID} .stream-item-content .activity-row .username .user-role,
+#chat .chat-container ul.chat-main li.user-{USER_ID} .stream-item-content .activity-row .username .user-role-icon {
     color: #409fff !important;
 }
-#chat .chat-container ul.chat-main li.user-{USER_ID} .activity-row .text p a.username:before {
+#chat .chat-container ul.chat-main li.user-{USER_ID} .stream-item-content .activity-row .username:before {
     content: "\f1ee" !important;
     font-family: "foundation-icons";
     font-style: normal;
@@ -68,19 +67,19 @@ Icon:
 ![Crown](http://i.imgur.com/eqAv215.png)
 
 ```css
-#chat .chat-container ul.chat-main li.user-{USER_ID} .activity-row .text p a.username:hover:before {
+#chat .chat-container ul.chat-main li.user-{USER_ID} .stream-item-content .activity-row .username:hover:before {
     content: "Admin";
     font-weight: 700;
     font-family: proxima-nova,sans-serif;
     font-size: 10px;
 }
 
-#chat .chat-container ul.chat-main li.user-{USER_ID} .activity-row .text p a.username {
+#chat .chat-container ul.chat-main li.user-{USER_ID} .stream-item-content .activity-row .username {
     color: #FF7E00;
     text-shadow: 0px 0px 1px rgba(0,0,0,.5);
 }
 
-#chat .chat-container ul.chat-main li.user-{USER_ID} .activity-row .text p a.username:before {
+#chat .chat-container ul.chat-main li.user-{USER_ID} .stream-item-content .activity-row .username:before {
     content: "\f137";
     font-family: "foundation-icons";
     font-style: normal;
@@ -111,19 +110,19 @@ Icon: VIP users typically get the "Sherriff-Badge" icon but we also allow some V
 }
 
 /* VIP stuff in CHAT */
-#chat .chat-container ul.chat-main li.user-{USER_ID} .activity-row .text p a.username:hover:before {
+#chat .chat-container ul.chat-main li.user-{USER_ID} .stream-item-content .activity-row .username:hover:before {
     content: "DubX VIP" !important;
     font-weight: 700;
     font-family: proxima-nova,sans-serif;
     font-size: 10px;
 }
 
-#chat .chat-container ul.chat-main li.user-{USER_ID} .activity-row .text p a.username {
+#chat .chat-container ul.chat-main li.user-{USER_ID} .stream-item-content .activity-row .username {
     color: #E8C248 !important;
     text-shadow: 0px 0px 1px rgba(0,0,0,.5);
 }
 
-#chat .chat-container ul.chat-main li.user-{USER_ID} .activity-row .text p a.username:before {
+#chat .chat-container ul.chat-main li.user-{USER_ID} .stream-item-content .activity-row .username:before {
     font-family: "foundation-icons";
     font-style: normal;
     font-weight: normal;
@@ -136,11 +135,16 @@ Icon: VIP users typically get the "Sherriff-Badge" icon but we also allow some V
     margin-right: 5px;
 }
 
+
 /* VIP stuff in Avatar List */
 #avatar-list .user-{USER_NAME} {
     color: #E8C248 !important;
 }
+/* And here is where we add User Specific Foundation Icon font*/
+#chat .chat-container ul.chat-main li.user-{USER_ID} .stream-item-content .activity-row .username:before {
+    content: "\f192" !important; /* <-- This is the Paw icon */
 
+}
 #avatar-list .user-{USER_NAME} .dubs:before {
     content: "DubX VIP  -  ";
     font-weight: 700 !important;

@@ -10,7 +10,6 @@ Our Team
  - [sinful](https://github.com/sinfulBA) __(Owner/Developer)__
  - [Swordling](https://github.com/swordling) __(Owner/Developer)__
  - [Kris](https://github.com/PossiblyKris) __(Helper/Developer)__
- - [Al3366](https://github.com/Al3366) __(Helper/Extension Manager)__
  - [Ciscog](https://github.com/FranciscoG) __(Helper/Developer)__
  - [mbsurfer](https://github.com/coryshaw1) __(Helper/Developer)__
 

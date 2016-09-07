@@ -14,9 +14,26 @@
   color: roleColor("admin");
 }
 
+// DubX Owners
+@include makeOwner("sinful", "53f7c199892b010200a98809");
+@include makeOwner("swordling", "551d295433cd73030089d184");
+
 // DubX Team
 @include addRole("team", "ciscog", "56008425621a9e0300317238");
 @include addRole("team", "Kris", "55ff52375335f703008b0d38");
+
+// Dubtrack Admins who also work on Dubx
+@include makeAdminDubx("mbsurfer","560892bf8e9cb60300550aa2");
+
+// VIP section, velvet rope 
+// no icon means they get the standard sherriff-badge
+// @include makeVIP("never_pause", "56d545a245f02ad6041a4317", "f192", "#00aeff"); // icon: paw 
+// @include makeVIP("rainzy", "5609636de5851903009b91a8", "f1b3"); // icon: skull and crossbones
+// @include makeVIP("pikachu", "55ffae6a1564a403003f5132", "f1b3"); // icon: skull and crossbones
+@include makeVIP("law", "560af26e9d6ab30300404673"); 
+// @include makeVIP("Surreal", "5618cf0f465bce1800d389fa", "f159");  // icon: heart
+// @include makeVIP("JinKx", "560a30833e735703002efb74", "f106");  // icon: anchor
+
 
 // Dubtrack Admins
 @include makeAdmin("52c8ef6037e22b0200000005"); // IamBubbles
@@ -25,21 +42,8 @@
 @include makeAdmin("52c8254ca7b7260200000001"); //  yofred
 @include makeAdmin("52c821781e2b1fd945000001"); //  nAmbokInator
 
-// VIP section, velvet rope 
-// no icon means they get the standard sherriff-badge
-@include makeVIP("never_pause", "56d545a245f02ad6041a4317", "f192", "#00aeff"); // icon: paw 
-@include makeVIP("rainzy", "5609636de5851903009b91a8", "f1b3"); // icon: skull and crossbones
-@include makeVIP("pikachu", "55ffae6a1564a403003f5132", "f1b3"); // icon: skull and crossbones
-@include makeVIP("law", "560af26e9d6ab30300404673"); 
-@include makeVIP("Surreal", "5618cf0f465bce1800d389fa", "f159");  // icon: heart
-@include makeVIP("JinKx", "560a30833e735703002efb74", "f106");  // icon: anchor
 
-// DubX Owners
-@include makeOwner("sinful", "53f7c199892b010200a98809");
-@include makeOwner("swordling", "551d295433cd73030089d184");
 
-// Dubtrack Admins who also work on Dubx
-@include makeAdminDubx("mbsurfer","560892bf8e9cb60300550aa2");
 
 // for testing:
 // dTest3xf12

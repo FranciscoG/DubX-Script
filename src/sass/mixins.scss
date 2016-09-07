@@ -88,7 +88,7 @@
     $icon : map-get($icons, $role);
   }
 
-  #chat .chat-container ul.chat-main li.user-#{$USER_ID} .activity-row .text p a.username {
+  #chat .chat-container ul.chat-main li.user-#{$USER_ID} .stream-item-content .activity-row .text p a.username {
     &:before {
        @if $role == "admin_dubx" or $role == "owner"{
           content: doubleUnicode(nth($icon,1), nth($icon,2)) !important;
