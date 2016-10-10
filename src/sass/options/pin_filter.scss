@@ -1,0 +1,22 @@
+.dubx-pin-filter {
+
+  $pad : 56px;
+
+  #results_video_api {
+    position: relative;
+    padding-top: $pad;
+    overflow:hidden;
+  }
+
+  .playlist_info {
+    position: absolute;
+    height: $pad;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  
+}
