@@ -741,3 +741,17 @@
   position: relative !important;
   float: inherit !important;
   padding-right: 200px !important; }
+
+.dubx-pin-filter #results_video_api {
+  position: relative;
+  padding-top: 56px;
+  overflow: hidden; }
+
+.dubx-pin-filter .playlist_info {
+  position: absolute;
+  height: 56px;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0; }
