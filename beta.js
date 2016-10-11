@@ -811,9 +811,6 @@ if (!hello_run && Dubtrack.session.id) {
         emoji : {
             // example of the new emojione url
             // https://www.dubtrack.fm/assets/emoji/emojione/1f44d.svg?v=2.2.6.1
-            // is the same as:
-            // emojione.imagePathSVG + "1f44d.svg?v=2.2.6.1"
-            //template: function(id) { return emojione.imagePathSVG + encodeURI(id)+'.png'; },
             template: function(id) {
                 console.log(id);
                 if (!/^:/.test(id)) {
@@ -1214,7 +1211,7 @@ if (!hello_run && Dubtrack.session.id) {
                     if (typeof hello.tasty.emotes[_key] !== 'undefined') {
                         listArray.push(self.createPreviewObj("tasty", _key, val));
                     }
-                    if (hello.emojiNames.indexOf(_key) > 0) {
+                    if (hello.emojiNames.indexOf(_key) >= 0) {
                         listArray.push(self.createPreviewObj("emoji", val, val));
                     }
                 });
@@ -1236,7 +1233,7 @@ if (!hello_run && Dubtrack.session.id) {
         //Override all keydown events of Dubtrack's chat
         chatInputKeydownFunc: function(e){
             //Manually send the keycode to chat if it is tab (9), enter (13), up arrow (38), or down arrow (40) for their autocomplete
-            if (!options.let_autocomplete_mentions && _.includes([9, 13, 38, 40], e.keyCode) && $('.ac-show').length == 0) {
+            if (!options.let_autocomplete_mentions && _.includes([9, 13, 38, 40], e.keyCode) && $('.ac-show').length === 0) {
                 return Dubtrack.room.chat.ncKeyDown({'which': e.keyCode});
             }
         },
