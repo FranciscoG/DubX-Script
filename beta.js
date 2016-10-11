@@ -934,15 +934,16 @@ if (!hello_run && Dubtrack.session.id) {
                     return;
                 }
 
-                if (hello.emojiNames.indexOf(_key) > 0) {
-                    return; // do nothing so we don't override emoji
+                if (hello.emojiNames.indexOf(_key) >= 0) {
+                    // do not override a regular emoji
+                    // append the work 'twitch' to it
+                    self.twitch.emotes[_key + '_twitch'] = el.id;
+                    return;
                 }
 
-                if (!self.twitch.emotes[_key]){
+                if (!self.twitch.emotes[_key] || el.emoticon_set === null){
                     // if emote doesn't exist, add it
-                    self.twitch.emotes[_key] = el.id;
-                } else if (el.emoticon_set === null) {
-                    // override if it's a global emote (null set = global emote)
+                    // OR override if it's a global emote (null set = global emote)
                     self.twitch.emotes[_key] = el.id;
                 }
 
@@ -959,8 +960,11 @@ if (!hello_run && Dubtrack.session.id) {
                     return; // don't want any emotes with smileys and stuff
                 }
 
-                if (hello.emojiNames.indexOf(_key) > 0) {
-                    return; // do nothing so we don't override emoji
+                if (hello.emojiNames.indexOf(_key) >= 0) {
+                    // don't want to override emojione emojis so we
+                    // append the word bttv to them
+                    self.bttv.emotes[_key + '_bttv'] = el.id;
+                    return;
                 }
 
                 if (el.code.indexOf('(') >= 0) {
@@ -976,8 +980,24 @@ if (!hello_run && Dubtrack.session.id) {
         processTastyEmotes: function(data) {
             var self = hello;
             self.tasty.emotes = data.emotes;
+
+            var tastyEmotesKeys = Object.keys(self.tasty.emotes);
+            tastyEmotesKeys = tastyEmotesKeys.map(function(el){
+                var _key = el.toLowerCase();
+                if (hello.emojiNames.indexOf(_key) >= 0) {
+                    // don't want to override emojione emojis so we
+                    var newKey = _key + '_tasty';
+                    // delete old key
+                    delete self.tasty.emotes[_key];
+                    // add new key
+                    self.tasty.emotes[newKey] = el;
+                    return newKey;
+                } else {
+                    return el;
+                }
+            });
             self.tastyJSONLoaded = true;
-            self.emojiEmotes = self.emojiEmotes.concat(Object.keys(self.tasty.emotes));
+            self.emojiEmotes = self.emojiEmotes.concat(tastyEmotesKeys);
         },
         /**************************************************************************
          * handles replacing twitch emotes in the chat box with the images
