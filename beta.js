@@ -990,7 +990,7 @@ if (!hello_run && Dubtrack.session.id) {
                     // delete old key
                     delete self.tasty.emotes[_key];
                     // add new key
-                    self.tasty.emotes[newKey] = el;
+                    self.tasty.emotes[newKey] = data.emotes[el];
                     return newKey;
                 } else {
                     return el;
