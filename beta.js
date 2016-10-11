@@ -769,7 +769,7 @@ if (!hello_run && Dubtrack.session.id) {
                     }
                 }
 
-                xhr.send()
+                xhr.send();
                 xhr.onload = function() {
                     var resp = xhr.responseText;
                     if (typeof _cb === 'function') { _cb(resp); }
@@ -838,6 +838,9 @@ if (!hello_run && Dubtrack.session.id) {
             var today = Date.now();
             var lastSaved = parseInt(localStorage.getItem(apiName+'_api_timestamp'));
             return isNaN(lastSaved) || today - lastSaved > day * 5 || !localStorage[apiName +'_api'];
+        },
+        makeEmojiArray: function(){
+            this.emojiNames = Object.keys(emojione.emojioneList);
         },
         /**************************************************************************
          * Loads the twitch emotes from the api.
@@ -926,7 +929,7 @@ if (!hello_run && Dubtrack.session.id) {
                     return;
                 }
 
-                if (_.has(emojione.emojioneList, _key)) {
+                if (self.emojiNames.indexOf(_key) > 0) {
                     return; // do nothing so we don't override emoji
                 }
 
@@ -940,7 +943,7 @@ if (!hello_run && Dubtrack.session.id) {
 
             });
             self.twitchJSONSLoaded = true;
-            self.emojiEmotes = emojione.emojioneList.concat(Object.keys(self.twitch.emotes));
+            self.emojiEmotes = self.emojiNames.concat(Object.keys(self.twitch.emotes));
         },
         processBTTVEmotes: function(data){
             var self = hello;
@@ -951,7 +954,7 @@ if (!hello_run && Dubtrack.session.id) {
                     return; // don't want any emotes with smileys and stuff
                 }
 
-                if (_.has(emojione.emojioneList, _key)) {
+                if (self.emojiNames.indexOf(_key) > 0) {
                     return; // do nothing so we don't override emoji
                 }
 
@@ -991,8 +994,9 @@ if (!hello_run && Dubtrack.session.id) {
             var $chatTarget = $('.chat-main .text p').last();
 
             //fix grey text problem
-            if($chatTarget.hasClass('sending'))
+            if($chatTarget.hasClass('sending')) {
                 $chatTarget.removeClass('sending');
+            }
             
             if (!$chatTarget.html()) { return; } // nothing to do
 
@@ -1204,7 +1208,7 @@ if (!hello_run && Dubtrack.session.id) {
                     if (typeof hello.tasty.emotes[_key] !== 'undefined') {
                         listArray.push(self.createPreviewObj("tasty", _key, val));
                     }
-                    if (_.has(emojione.emojioneList, _key)) {
+                    if (self.emojiNames.indexOf(_key) > 0) {
                         listArray.push(self.createPreviewObj("emoji", val, val));
                     }
                 });
@@ -1214,7 +1218,7 @@ if (!hello_run && Dubtrack.session.id) {
             filterEmoji : function(str){
                 var finalStr = str.replace(/([+()])/,"\\$1");
                 var re = new RegExp('^' + finalStr, "i");
-                var arrayToUse = emojione.emojioneList;
+                var arrayToUse = hello.emojiNames;
                 if (options.let_twitch_emotes) {
                     arrayToUse = hello.emojiEmotes; // merged array
                 }
