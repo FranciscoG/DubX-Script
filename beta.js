@@ -1225,9 +1225,11 @@ if (!hello_run && Dubtrack.session.id) {
                 if (options.let_twitch_emotes) {
                     arrayToUse = hello.emojiEmotes; // merged array
                 }
-                return arrayToUse.filter(function(val){
+                var filtered = arrayToUse.filter(function(val){
                     return re.test(val);
                 });
+                console.log(filtered);
+                return filtered;
             }
         },
         //Override all keydown events of Dubtrack's chat
@@ -2030,7 +2032,6 @@ if (!hello_run && Dubtrack.session.id) {
             var filtered = hello.roomUsers.filter(function(val){
                 return re.test(val.text);
             });
-            console.log(filtered);
             return filtered;
         },
         updateUsersArray: function(){
