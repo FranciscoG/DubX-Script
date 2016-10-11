@@ -25,7 +25,7 @@
     The Software and this license document are provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
     Choice of Law
     This license is governed by the Laws of Norway. Disputes shall be settled by Oslo City Court.
-*/ /* global Dubtrack, emojify */
+*/ /* global Dubtrack, emojione */
 var hello_run;
 if (!hello_run && Dubtrack.session.id) {
     hello_run = true;
@@ -807,7 +807,14 @@ if (!hello_run && Dubtrack.session.id) {
             window.setTimeout(check, interval);
         },
         emoji : {
-            template: function(id) { return emojify.defaultConfig.img_dir+'/'+encodeURI(id)+'.png'; },
+            // example of the new emojione url
+            // https://www.dubtrack.fm/assets/emoji/emojione/1f44d.svg?v=2.2.6.1
+            // is the same as:
+            // emojione.imagePathSVG + "1f44d.svg?v=2.2.6.1"
+            //template: function(id) { return emojione.imagePathSVG + encodeURI(id)+'.png'; },
+            template: function(id) { 
+                return emojione.shortnameToImage(id).replace(/(.+src=")((?!").+)(".*)/, '$2'); 
+            }
         },
         twitch : {
             template: function(id) { return "//static-cdn.jtvnw.net/emoticons/v1/" + id + "/3.0"; },
@@ -919,7 +926,7 @@ if (!hello_run && Dubtrack.session.id) {
                     return;
                 }
 
-                if (emojify.emojiNames.indexOf(_key) >= 0) {
+                if (emojione.emojioneList.indexOf(_key) >= 0) {
                     return; // do nothing so we don't override emoji
                 }
 
@@ -933,7 +940,7 @@ if (!hello_run && Dubtrack.session.id) {
 
             });
             self.twitchJSONSLoaded = true;
-            self.emojiEmotes = emojify.emojiNames.concat(Object.keys(self.twitch.emotes));
+            self.emojiEmotes = emojione.emojioneList.concat(Object.keys(self.twitch.emotes));
         },
         processBTTVEmotes: function(data){
             var self = hello;
@@ -944,7 +951,7 @@ if (!hello_run && Dubtrack.session.id) {
                     return; // don't want any emotes with smileys and stuff
                 }
 
-                if (emojify.emojiNames.indexOf(_key) >= 0) {
+                if (emojione.emojioneList.indexOf(_key) >= 0) {
                     return; // do nothing so we don't override emoji
                 }
 
@@ -1197,7 +1204,7 @@ if (!hello_run && Dubtrack.session.id) {
                     if (typeof hello.tasty.emotes[_key] !== 'undefined') {
                         listArray.push(self.createPreviewObj("tasty", _key, val));
                     }
-                    if (emojify.emojiNames.indexOf(_key) >= 0) {
+                    if (emojione.emojioneList.indexOf(_key) >= 0) {
                         listArray.push(self.createPreviewObj("emoji", val, val));
                     }
                 });
@@ -1207,7 +1214,7 @@ if (!hello_run && Dubtrack.session.id) {
             filterEmoji : function(str){
                 var finalStr = str.replace(/([+()])/,"\\$1");
                 var re = new RegExp('^' + finalStr, "i");
-                var arrayToUse = emojify.emojiNames;
+                var arrayToUse = emojione.emojioneList;
                 if (options.let_twitch_emotes) {
                     arrayToUse = hello.emojiEmotes; // merged array
                 }
