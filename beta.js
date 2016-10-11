@@ -843,7 +843,10 @@ if (!hello_run && Dubtrack.session.id) {
             return isNaN(lastSaved) || today - lastSaved > day * 5 || !localStorage[apiName +'_api'];
         },
         makeEmojiArray: function(){
-            hello.emojiNames = Object.keys(emojione.emojioneList);
+            var emokiKeys = Object.keys(emojione.emojioneList);
+            hello.emojiNames = emokiKeys.map(function(val){
+                return  val.replace(/^:(.*):$/g,'$1');
+            });
         },
         /**************************************************************************
          * Loads the twitch emotes from the api.
