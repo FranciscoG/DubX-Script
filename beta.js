@@ -812,7 +812,6 @@ if (!hello_run && Dubtrack.session.id) {
             // example of the new emojione url
             // https://www.dubtrack.fm/assets/emoji/emojione/1f44d.svg?v=2.2.6.1
             template: function(id) {
-                console.log(id);
                 if (!/^:/.test(id)) {
                     id = ":"+id+":";
                 }
@@ -1218,7 +1217,6 @@ if (!hello_run && Dubtrack.session.id) {
                         listArray.push(self.createPreviewObj("emoji", val, val));
                     }
                 });
-                console.log('addToPreviewList',listArray);
                 hello.previewList(listArray);
             },
             filterEmoji : function(str){
@@ -1231,7 +1229,6 @@ if (!hello_run && Dubtrack.session.id) {
                 var filtered = arrayToUse.filter(function(val){
                     return re.test(val);
                 });
-                console.log(filtered);
                 return filtered;
             }
         },
