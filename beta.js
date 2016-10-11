@@ -931,7 +931,7 @@ if (!hello_run && Dubtrack.session.id) {
                     return;
                 }
 
-                if (self.emojiNames.indexOf(_key) > 0) {
+                if (hello.emojiNames.indexOf(_key) > 0) {
                     return; // do nothing so we don't override emoji
                 }
 
@@ -945,7 +945,7 @@ if (!hello_run && Dubtrack.session.id) {
 
             });
             self.twitchJSONSLoaded = true;
-            self.emojiEmotes = self.emojiNames.concat(Object.keys(self.twitch.emotes));
+            self.emojiEmotes = hello.emojiNames.concat(Object.keys(self.twitch.emotes));
         },
         processBTTVEmotes: function(data){
             var self = hello;
@@ -956,7 +956,7 @@ if (!hello_run && Dubtrack.session.id) {
                     return; // don't want any emotes with smileys and stuff
                 }
 
-                if (self.emojiNames.indexOf(_key) > 0) {
+                if (hello.emojiNames.indexOf(_key) > 0) {
                     return; // do nothing so we don't override emoji
                 }
 
@@ -1210,7 +1210,7 @@ if (!hello_run && Dubtrack.session.id) {
                     if (typeof hello.tasty.emotes[_key] !== 'undefined') {
                         listArray.push(self.createPreviewObj("tasty", _key, val));
                     }
-                    if (self.emojiNames.indexOf(_key) > 0) {
+                    if (hello.emojiNames.indexOf(_key) > 0) {
                         listArray.push(self.createPreviewObj("emoji", val, val));
                     }
                 });
