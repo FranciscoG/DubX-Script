@@ -982,18 +982,19 @@ if (!hello_run && Dubtrack.session.id) {
             self.tasty.emotes = data.emotes;
 
             var tastyEmotesKeys = Object.keys(self.tasty.emotes);
-            tastyEmotesKeys = tastyEmotesKeys.map(function(el){
-                var _key = el.toLowerCase();
-                if (hello.emojiNames.indexOf(_key) >= 0) {
-                    // don't want to override emojione emojis so we
-                    var newKey = _key + '_tasty';
-                    // delete old key
-                    delete self.tasty.emotes[_key];
+            tastyEmotesKeys = tastyEmotesKeys.map(function(key){
+                var keyLC = key.toLowerCase();
+                if (hello.emojiNames.indexOf(keyLC) >= 0 || hello.emojiNames.indexOf(key) >= 0) {
+                    // don't want to override emojione emojis
+                    var newKey = keyLC + '_tasty';
                     // add new key
-                    self.tasty.emotes[newKey] = data.emotes[el];
+                    self.tasty.emotes[newKey] = self.tasty.emotes[key];
+                    // delete old key
+                    delete self.tasty.emotes[key];
+                    delete self.tasty.emotes[keyLC];
                     return newKey;
                 } else {
-                    return el;
+                    return key;
                 }
             });
             self.tastyJSONLoaded = true;
