@@ -2089,6 +2089,7 @@ if (!hello_run && Dubtrack.session.id) {
     hello.previewListInit();
     hello.userAutoComplete();
     hello.dubinfoInit();
+    hello.makeEmojiArray();
 
     //Ref 4:
     if (localStorage.getItem('autovote') === 'true') {
