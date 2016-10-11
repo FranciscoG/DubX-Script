@@ -1215,7 +1215,7 @@ if (!hello_run && Dubtrack.session.id) {
                         listArray.push(self.createPreviewObj("emoji", val, val));
                     }
                 });
-
+                console.log('addToPreviewList',listArray);
                 hello.previewList(listArray);
             },
             filterEmoji : function(str){
@@ -2027,9 +2027,11 @@ if (!hello_run && Dubtrack.session.id) {
         },
         filterUsers :function(str){
             var re = new RegExp('^@' + str, "i");
-            return hello.roomUsers.filter(function(val){
+            var filtered = hello.roomUsers.filter(function(val){
                 return re.test(val.text);
             });
+            console.log(filtered);
+            return filtered;
         },
         updateUsersArray: function(){
             var self = hello;
