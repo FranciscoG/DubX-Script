@@ -814,7 +814,11 @@ if (!hello_run && Dubtrack.session.id) {
             // is the same as:
             // emojione.imagePathSVG + "1f44d.svg?v=2.2.6.1"
             //template: function(id) { return emojione.imagePathSVG + encodeURI(id)+'.png'; },
-            template: function(id) { 
+            template: function(id) {
+                console.log(id);
+                if (!/^:/.test(id)) {
+                    id = ":"+id+":";
+                }
                 return emojione.shortnameToImage(id).replace(/(.+src=")((?!").+)(".*)/, '$2'); 
             }
         },
