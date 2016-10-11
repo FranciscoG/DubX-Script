@@ -2110,7 +2110,6 @@ if (!hello_run && Dubtrack.session.id) {
           }
         },
         eventUtils: {
-            currentVol: 50,
             snoozed: false
         }
     };
