@@ -25,7 +25,7 @@
     The Software and this license document are provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
     Choice of Law
     This license is governed by the Laws of Norway. Disputes shall be settled by Oslo City Court.
-*/ /* global Dubtrack, emojione */
+*/ /* global Dubtrack, emojione, _ */
 var hello_run;
 if (!hello_run && Dubtrack.session.id) {
     hello_run = true;
@@ -926,7 +926,7 @@ if (!hello_run && Dubtrack.session.id) {
                     return;
                 }
 
-                if (emojione.emojioneList.indexOf(_key) >= 0) {
+                if (_.has(emojione.emojioneList, _key)) {
                     return; // do nothing so we don't override emoji
                 }
 
@@ -951,7 +951,7 @@ if (!hello_run && Dubtrack.session.id) {
                     return; // don't want any emotes with smileys and stuff
                 }
 
-                if (emojione.emojioneList.indexOf(_key) >= 0) {
+                if (_.has(emojione.emojioneList, _key)) {
                     return; // do nothing so we don't override emoji
                 }
 
@@ -1204,7 +1204,7 @@ if (!hello_run && Dubtrack.session.id) {
                     if (typeof hello.tasty.emotes[_key] !== 'undefined') {
                         listArray.push(self.createPreviewObj("tasty", _key, val));
                     }
-                    if (emojione.emojioneList.indexOf(_key) >= 0) {
+                    if (_.has(emojione.emojioneList, _key)) {
                         listArray.push(self.createPreviewObj("emoji", val, val));
                     }
                 });
