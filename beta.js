@@ -304,6 +304,8 @@ if (!hello_run && Dubtrack.session.id) {
                 downDubs: [],
                 grabs: []
             };
+
+            hello.makeEmojiArray();
         },
         sectionList: ['draw_general','draw_userinterface','draw_settings','draw_customize','draw_contact','draw_social','draw_chrome'],
         drawSection: function(el) {
@@ -840,7 +842,7 @@ if (!hello_run && Dubtrack.session.id) {
             return isNaN(lastSaved) || today - lastSaved > day * 5 || !localStorage[apiName +'_api'];
         },
         makeEmojiArray: function(){
-            this.emojiNames = Object.keys(emojione.emojioneList);
+            hello.emojiNames = Object.keys(emojione.emojioneList);
         },
         /**************************************************************************
          * Loads the twitch emotes from the api.
@@ -2089,7 +2091,6 @@ if (!hello_run && Dubtrack.session.id) {
     hello.previewListInit();
     hello.userAutoComplete();
     hello.dubinfoInit();
-    hello.makeEmojiArray();
 
     //Ref 4:
     if (localStorage.getItem('autovote') === 'true') {
