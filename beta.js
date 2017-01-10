@@ -25,7 +25,7 @@
     The Software and this license document are provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
     Choice of Law
     This license is governed by the Laws of Norway. Disputes shall be settled by Oslo City Court.
-*/ /* global Dubtrack, emojione, _ */
+*/ /* global Dubtrack, emojione, emojify, _ */
 var hello_run;
 if (!hello_run && Dubtrack.session.id) {
     hello_run = true;
@@ -809,14 +809,8 @@ if (!hello_run && Dubtrack.session.id) {
             window.setTimeout(check, interval);
         },
         emoji : {
-            // example of the new emojione url
-            // https://www.dubtrack.fm/assets/emoji/emojione/1f44d.svg?v=2.2.6.1
-            template: function(id) {
-                if (!/^:/.test(id)) {
-                    id = ":"+id+":";
-                }
-                return emojione.shortnameToImage(id).replace(/(.+src=")((?!").+)(".*)/, '$2'); 
-            }
+            // example of the new emojify url
+            template: function(id) { return emojify.defaultConfig.img_dir+'/'+encodeURI(id)+'.png'; },
         },
         twitch : {
             template: function(id) { return "//static-cdn.jtvnw.net/emoticons/v1/" + id + "/3.0"; },
@@ -943,6 +937,9 @@ if (!hello_run && Dubtrack.session.id) {
 
                 if (!self.twitch.emotes[_key] || el.emoticon_set === null){
                     // if emote doesn't exist, add it
+                    self.twitch.emotes[_key] = el.id;
+                } else if (!self.twitch.emotes[_key] || el.emoticon_set === null){
+                    // if emote doesn't exist, add it
                     // OR override if it's a global emote (null set = global emote)
                     self.twitch.emotes[_key] = el.id;
                 }
@@ -984,8 +981,8 @@ if (!hello_run && Dubtrack.session.id) {
             var tastyEmotesKeys = Object.keys(self.tasty.emotes);
             tastyEmotesKeys = tastyEmotesKeys.map(function(key){
                 var keyLC = key.toLowerCase();
-                if (hello.emojiNames.indexOf(keyLC) >= 0 || hello.emojiNames.indexOf(key) >= 0) {
-                    // don't want to override emojione emojis
+                if (emojify.emojiNames.indexOf(keyLC) >= 0 || emojify.emojiNames.indexOf(key) >= 0) {
+                    // don't want to override emojify emojis
                     var newKey = keyLC + '_tasty';
                     // add new key
                     self.tasty.emotes[newKey] = self.tasty.emotes[key];
